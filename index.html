@@ -127,7 +127,7 @@
         <div class="badges">
             <span class="badge blue">100 Senators</span>
             <span class="badge green">432 House Members</span>
-            <span class="badge purple">MI · IL · NC · OK · OH · GA · NY · NV · TX · CA · WI · WA State Legs</span>
+            <span class="badge purple">MI · IL · NC · OK · OH · GA · NY · NV · TX · CA · WI · WA · NJ State Legs</span>
         </div>
     </div>
 
@@ -268,7 +268,7 @@
     </div>
 
     <div class="footer-info">
-        <strong>Database:</strong> US Senate (100) · US House (432) · MI State (148) · IL State (177) · NC State (169) · OK State (147) · OH State (132) · GA State (231) · NY State (213) · NV State (63) · TX State (180) · CA State (120) · WI State (132) · WA State (147)<br>
+        <strong>Database:</strong> US Senate (100) · US House (432) · MI State (148) · IL State (177) · NC State (169) · OK State (147) · OH State (132) · GA State (231) · NY State (213) · NV State (63) · TX State (180) · CA State (120) · WI State (132) · WA State (147) · NJ State (120)<br>
         <strong>Formats recognized:</strong> "AK Murkowski" · "CA11" · "NY14 AOC" · "MI-SH-74 Hope" · "OK-SS-1" · last name search
     </div>
 </div>
@@ -317,7 +317,6 @@ CA|10|Mark|DeSaulnier|(202) 225-2095
 CA|11|Nancy|Pelosi|(202) 225-4965
 CA|12|Lateefah|Simon|(202) 225-2661
 CA|13|Adam|Gray|(202) 225-1947
-CA|14|Eric|Swalwell|(202) 225-5065
 CA|15|Kevin|Mullin|(202) 225-3531
 CA|16|Sam|Liccardo|(202) 225-8104
 CA|17|Ro|Khanna|(202) 225-2631
@@ -411,6 +410,7 @@ GA|10|Mike|Collins|(202) 225-4101
 GA|11|Barry|Loudermilk|(202) 225-2931
 GA|12|Rick|Allen|(202) 225-2823
 GA|13|David|Scott|(202) 225-2939
+GA|14|Clay|Fuller|(202) 225-5211
 HI|1|Ed|Case|(202) 225-2726
 HI|2|Jill|Tokuda|(202) 225-4906
 ID|1|Russ|Fulcher|(202) 225-6611
@@ -534,6 +534,7 @@ NJ|7|Thomas|Kean|(202) 225-5361
 NJ|8|Robert|Menendez|(202) 225-7919
 NJ|9|Nellie|Pou|(202) 225-5751
 NJ|10|LaMonica|McIver|(202) 225-3436
+NJ|11|Analilia|Mejia|(202) 225-5034
 NJ|12|Bonnie|Watson Coleman|(202) 225-5801
 NM|1|Melanie|Stansbury|(202) 225-6316
 NM|2|Gabe|Vasquez|(202) 225-2365
@@ -663,7 +664,6 @@ TX|19|Jodey|Arrington|(202) 225-4005
 TX|20|Joaquin|Castro|(202) 225-3236
 TX|21|Chip|Roy|(202) 225-4236
 TX|22|Troy|Nehls|(202) 225-5951
-TX|23|Tony|Gonzales|(202) 225-4511
 TX|24|Beth|Van Duyne|(202) 225-6605
 TX|25|Roger|Williams|(202) 225-9896
 TX|26|Brandon|Gill|(202) 225-7772
@@ -947,13 +947,32 @@ waSenData.split('|').reduce((acc, val) => {
     return acc;
 }, []);
 
+// New Jersey General Assembly (40 districts × 2 members = 80 members)
+// Data format: dist|pos|first|last|phone (5 fields per member)
+const njHouseData = "1|1|Antwan|McClellan|609-778-2012|1|2|Erik|Simonsen|609-778-2012|2|1|Donald|Guardian|609-677-8266|2|2|Maureen|Rowan|609-241-1905|3|1|David|Bailey Jr.|856-226-3530|3|2|Heather|Simmons|856-226-3530|4|1|Dan|Hutchison|856-401-3073|4|2|Cody|Miller|856-232-6700|5|1|William|Moen Jr.|856-547-4800|5|2|William|Spearman|856-853-2960|6|1|Louis|Greenwald|856-435-1247|6|2|Melinda|Kane|856-435-1247|7|1|Carol|Murphy|856-242-2018|7|2|Balvir|Singh|856-461-3997|8|1|Anthony|Angelozzi|640-600-4279|8|2|Andrea|Katz|609-850-2397|9|1|Gregory|Myhre|609-693-6700|9|2|Brian|Rumpf|609-693-6700|10|1|Paul|Kanitra|732-840-9028|10|2|Gregory|McGuckin|732-840-9028|11|1|Margie|Donlon|732-704-3808|11|2|Luanne|Peterpaul|732-704-3808|12|1|Robert|Clifton|732-970-6386|12|2|Alex|Sauickie|609-758-0205|13|1|Victoria|Flynn|732-856-9833|13|2|Gerry|Scharfenberger|732-856-9294|14|1|Wayne|DeAngelo|609-631-7501|14|2|Tennille|McCoy|609-631-0198|15|1|Verlina|Reynolds-Jackson|609-571-9638|15|2|Anthony|Verrelli|609-292-0500|16|1|Mitchelle|Drulis|908-968-4329|16|2|Roy|Freiman|908-829-4191|17|1|Joe|Danielsen|732-247-3999|17|2|Kevin|Egan|732-249-4550|18|1|Robert|Karabinchak|732-548-1406|18|2|Sterley|Stanley|732-875-3833|19|1|Craig|Coughlin|732-855-7441|19|2|Yvonne|Lopez|732-638-5057|20|1|Annette|Quijano|908-316-0266|20|2|Ed|Rodriguez|908-445-7145|21|1|Vincent|Kearney|908-516-2880|21|2|Andrew|Macurdy|908-679-8499|22|1|Linda|Carter|908-561-5757|22|2|James|Kennedy|732-943-2660|23|1|John|DiMaio|908-684-9550|23|2|Erik|Peterson|908-238-0251|24|1|Dawn|Fantasia|973-300-0200|24|2|Michael|Inganamort|973-300-0200|25|1|Aura|Dunn|973-206-1876|25|2|Marisa|Sweeney|973-933-2114|26|1|Brian|Bergen|973-539-8113|26|2|Jay|Webber|973-917-3420|27|1|Rosaura|Bagolie|973-535-5017|27|2|Alixon|Collazos-Gill|973-509-0388|28|1|Chigozie|Onyema|973-762-1886|28|2|Cleopatra|Tucker|973-926-4320|29|1|Eliana|Pintor Marin|973-589-0713|29|2|Shanique|Speight|862-237-9752|30|1|Sean|Kean|732-974-0400|30|2|Alexander|Schnall|848-245-9486|31|1|William|Sampson IV|201-455-2966|31|2|Jerry|Walker|201-451-5100|32|1|Ravi|Bhalla|201-683-7917|32|2|Katie|Brennan|551-256-7022|33|1|Gabriel|Rodriguez|201-223-4247|33|2|Larry|Wainstein|201-305-5139|34|1|Carmen|Morales|973-450-0484|34|2|Michael|Venezia|973-893-5869|35|1|Al|Abdelaziz|862-264-2540|35|2|Kenyatta|Stewart|973-925-7063|36|1|Clinton|Calabrese|201-943-0615|36|2|Gary|Schaer|973-249-3665|37|1|Shama|Haider|201-308-7061|37|2|Ellen|Park|201-308-7062|38|1|Lisa|Swain|201-576-9199|38|2|Chris|Tully|201-576-9199|39|1|Robert|Auth|201-564-7420|39|2|John|Azzariti Jr.|201-666-0881|40|1|Al|Barlas|862-702-8458|40|2|Christopher|DePhillips|201-444-9719";
+stateLeg['NJ-SH'] = [];
+njHouseData.split('|').reduce((acc, val) => {
+    acc.push(val);
+    if (acc.length === 5) { stateLeg['NJ-SH'].push({d: acc[0], pos: acc[1], f: acc[2], l: acc[3], p: acc[4]}); acc.length = 0; }
+    return acc;
+}, []);
+
+// New Jersey State Senate (40 districts)
+const njSenData = "1|Michael|Testa Jr.|609-778-2012|2|Vincent|Polistina|609-677-8266|3|John|Burzichelli|856-226-3530|4|Paul|Moriarty|856-232-6700|5|Nilsa|Cruz-Perez|856-541-1251|6|James|Beach|856-429-1572|7|Troy|Singleton|856-234-2790|8|Latham|Tiver|856-817-2143|9|Carmen|Amato Jr.|732-678-1355|10|James|Holzapfel|732-840-9028|11|Vin|Gopal|732-704-3808|12|Owen|Henry|732-607-7580|13|Declan|O'Scanlon Jr.|732-444-1388|14|Linda|Greenstein|609-395-9911|15|Shirley|Turner|609-323-7239|16|Andrew|Zwicker|908-308-8672|17|Bob|Smith|732-752-0770|18|Patrick|Diegnan Jr.|908-757-1677|19|Joseph|Vitale|732-855-7441|20|Joseph|Cryan|908-624-0880|21|Jon|Bramnick|908-232-2073|22|Nicholas|Scutari|732-827-7480|23|Douglas|Steinhardt|908-835-0552|24|Parker|Space|973-300-0200|25|Anthony|Bucco|973-627-9700|26|Joseph|Pennacchio|973-227-4012|27|John|McKeon|862-930-7071|28|Renee|Burgess|862-231-6577|29|M. Teresa|Ruiz|973-484-1000|30|Robert|Singer|732-987-5669|31|Angela|McKnight|201-360-2502|32|Raj|Mukherji|201-626-4000|33|Brian|Stack|201-721-5263|34|Britnee|Timberlake|973-395-1166|35|Benjie|Wimberly|973-925-7061|36|Paul|Sarlo|201-804-8118|37|Gordon|Johnson|201-308-7060|38|Joseph|Lagana|201-576-9199|39|Holly|Schepisi|201-666-0881|40|Kristin|Corrado|973-237-1360";
+stateLeg['NJ-SS'] = [];
+njSenData.split('|').reduce((acc, val) => {
+    acc.push(val);
+    if (acc.length === 4) { stateLeg['NJ-SS'].push({d: acc[0], f: acc[1], l: acc[2], p: acc[3]}); acc.length = 0; }
+    return acc;
+}, []);
+
 // Nickname map for well-known members
 // State House/Assembly Speakers — used for title "Speaker X" instead of "Representative X"
 // Format: 'STATE-SH': 'district' or 'STATE-SH': 'district-pos' for multi-member
 const stateSpeakers = {
     'MI-SH': '42', 'IL-SH': '7', 'NC-SH': '87', 'OK-SH': '29', 'OH-SH': '78',
     'GA-SH': '159', 'NY-SH': '83', 'NV-SH': '9', 'TX-SH': '83', 'CA-SH': '29',
-    'WI-SH': '33', 'WA-SH': '27-2'
+    'WI-SH': '33', 'WA-SH': '27-2', 'NJ-SH': '19-1'
 };
 
 // Helper: get title for a state leg member
@@ -1475,11 +1494,22 @@ function parseEmail() {
         const st = m[1].toUpperCase(), chamber = m[2].toUpperCase(), dist = m[3];
         const key = `${st}-${chamber}`;
         if (stateLeg[key]) {
-            // Find ALL members from this district (handles multi-member districts like WA)
-            const legs = stateLeg[key].filter(l => l.d === dist);
+            let legs = stateLeg[key].filter(l => l.d === dist);
+            // Check for name after district code to filter multi-member districts
+            if (legs.length > 1) {
+                const afterMatch = text.substring(m.index + m[0].length, m.index + m[0].length + 80);
+                const nameAfter = afterMatch.match(/^\s+([A-Za-z][A-Za-z'-]+(?:\s+[A-Za-z][A-Za-z'-]+)*)/);
+                if (nameAfter) {
+                    const nameWords = nameAfter[1].trim().split(/\s+/);
+                    const filtered = legs.filter(leg => nameWords.some(w => 
+                        leg.l.toLowerCase() === w.toLowerCase() || leg.f.toLowerCase() === w.toLowerCase() ||
+                        leg.l.toLowerCase().startsWith(w.toLowerCase()) || leg.f.toLowerCase().startsWith(w.toLowerCase())
+                    ));
+                    if (filtered.length) legs = filtered;
+                }
+            }
             legs.forEach(leg => {
                 const prefix = chamber === 'SS' ? 'SD' : 'HD';
-                const chamberName = chamber === 'SS' ? 'Senator' : 'Representative';
                 const maxDist = Math.max(...stateLeg[key].map(l => parseInt(l.d) || 0));
                 const padLen = maxDist >= 100 ? 3 : 2;
                 const paddedDist = String(dist).padStart(padLen, '0');
@@ -1490,13 +1520,57 @@ function parseEmail() {
         }
     }
 
+    // 2.5 HD/SD prefix patterns: "HD-27", "WA HD-27", "HD 27 Jinkins", "SD-5"
+    // These look up directly in state legislature data
+    for (let m of text.matchAll(/\b(?:([A-Z]{2})\s+)?(HD|SD)[-\s]?(\d{1,3})\b/gi)) {
+        const stHint = m[1] ? m[1].toUpperCase() : null;
+        const prefix = m[2].toUpperCase();
+        const dist = m[3];
+        const chamber = prefix === 'HD' ? 'SH' : 'SS';
+        
+        // Check if there's a name after the district code in the surrounding text
+        const afterMatch = text.substring(m.index + m[0].length, m.index + m[0].length + 80);
+        const nameAfter = afterMatch.match(/^\s+([A-Za-z][A-Za-z'-]+(?:\s+[A-Za-z][A-Za-z'-]+)*)/);
+        
+        // Search all states (or just the hinted one)
+        for (let key in stateLeg) {
+            const [st, ch] = key.split('-');
+            if (ch !== chamber) continue;
+            if (stHint && st !== stHint) continue;
+            let legs = stateLeg[key].filter(l => l.d === dist);
+            if (legs.length) {
+                // If a name follows the district code, filter to only matching members
+                if (nameAfter && legs.length > 1) {
+                    const nameWords = nameAfter[1].trim().split(/\s+/);
+                    const filtered = legs.filter(leg => {
+                        return nameWords.some(w => 
+                            leg.l.toLowerCase() === w.toLowerCase() || 
+                            leg.f.toLowerCase() === w.toLowerCase() ||
+                            leg.l.toLowerCase().startsWith(w.toLowerCase()) ||
+                            leg.f.toLowerCase().startsWith(w.toLowerCase())
+                        );
+                    });
+                    if (filtered.length) legs = filtered;
+                }
+                const maxDist = Math.max(...stateLeg[key].map(l => parseInt(l.d) || 0));
+                const padLen = maxDist >= 100 ? 3 : 2;
+                const paddedDist = String(dist).padStart(padLen, '0');
+                legs.forEach(leg => {
+                    const entry = {state:st, target:`${prefix}${paddedDist}`, distNum:dist, chamberType:chamber, first:leg.f, last:leg.l, title:getStateLegTitle(key, dist, leg.l, leg.pos), phone:leg.p, pronunciation:'', level:`${st} ${chamber === 'SS' ? 'State Senate' : 'State House'} D-${dist}`};
+                    if (leg.pos) entry.flop = leg.pos;
+                    addIfNew(entry);
+                });
+            }
+        }
+    }
+
     // 3. US House district codes: CA-11, NY-14, FL-26
     // Also catches patterns like "FL 26 mario" or "FL-26 Diaz-Balart"
     for (let m of text.matchAll(/\b([A-Z]{2})[-\s]?(\d{1,2})\b/gi)) {
         const st = m[1].toUpperCase(), dist = m[2];
-        // Skip if SH/SS precedes the number (already caught above)
+        // Skip if SH/SS/HD/SD precedes the number (already caught above)
         const lookback = text.substring(Math.max(0, m.index - 5), m.index + m[0].length);
-        if (/S[HS]/i.test(lookback)) continue;
+        if (/S[HS]|HD|SD/i.test(lookback)) continue;
         if (house[st]) {
             const rep = house[st].find(h => h.d === dist);
             if (rep) {
