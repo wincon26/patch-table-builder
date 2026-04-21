@@ -127,7 +127,7 @@
         <div class="badges">
             <span class="badge blue">100 Senators</span>
             <span class="badge green">432 House Members</span>
-            <span class="badge purple">MI · IL · NC · OK · OH · GA · NY · NV · TX · CA · WI · WA · NJ State Legs</span>
+            <span class="badge purple">MI · IL · NC · OK · OH · GA · NY · NV · TX · CA · WI · WA · NJ · PA · OR · MN · VA · AZ State Legs</span>
         </div>
     </div>
 
@@ -268,7 +268,7 @@
     </div>
 
     <div class="footer-info">
-        <strong>Database:</strong> US Senate (100) · US House (432) · MI State (148) · IL State (177) · NC State (169) · OK State (147) · OH State (132) · GA State (231) · NY State (213) · NV State (63) · TX State (180) · CA State (120) · WI State (132) · WA State (147) · NJ State (120)<br>
+        <strong>Database:</strong> US Senate (100) · US House (432) · MI State (148) · IL State (177) · NC State (169) · OK State (147) · OH State (132) · GA State (231) · NY State (213) · NV State (63) · TX State (180) · CA State (120) · WI State (132) · WA State (147) · NJ State (120) · PA State (251) · OR State (90) · MN State (201) · VA State (140) · AZ State (90)<br>
         <strong>Formats recognized:</strong> "AK Murkowski" · "CA11" · "NY14 AOC" · "MI-SH-74 Hope" · "OK-SS-1" · last name search
     </div>
 </div>
@@ -733,247 +733,198 @@ const stateLeg = {};
 // Michigan State House (110 districts) — Updated with individual phone numbers
 const miHouseData = "1|Tyrone|Carter|517-373-0154|2|Tullio|Liberati Jr.|517-373-1776|3|Alabas|Farhat|517-373-0144|4|Karen|Whitsett|517-373-1008|5|Regina|Weiss|517-373-0844|6|Natalie|Price|517-373-0823|7|Tonya|Myers Phillips|517-373-2276|8|Helena|Scott|517-373-3815|9|Joe|Tate|517-373-6990|10|Veronica|Paiz|517-373-0857|11|Donavan|McKinney|517-373-0849|12|Kimberly|Edwards|517-373-0852|13|Mai|Xiong|517-373-0845|14|Mike|McFall|517-373-0140|15|Erin|Byrnes|517-373-0847|16|Stephanie|Young|517-373-2576|17|Laurie|Pohutsky|517-373-1530|18|Jason|Hoskins|517-373-1180|19|Samantha|Steckloff|517-373-3920|20|Noah|Arbit|517-373-3816|21|Kelly|Breen|517-373-2575|22|Matt|Koleszar|517-373-0854|23|Jason|Morgan|517-373-0855|24|Ranjeev|Puri|517-373-0113|25|Peter|Herzberg|517-373-2275|26|Dylan|Wegela|517-373-3818|27|Rylee|Linting|517-373-0478|28|Jamie|Thompson|517-373-1772|29|James|DeSana|517-373-0475|30|William|Bruck|517-373-7768|31|Reggie|Miller|517-373-0159|32|Jimmie|Wilson Jr.|517-373-8931|33|Morgan|Foreman|517-373-0820|34|Nancy|Jenkins-Arno|517-373-8808|35|Jennifer|Wortz|517-373-1788|36|Steve|Carra|517-373-0843|37|Brad|Paquette|517-373-1793|38|Joey|Andrews IV|517-373-0827|39|Pauline|Wendzel|517-373-1799|40|Matt|Longjohn|517-373-8670|41|Julie|Rogers|517-373-1783|42|Matt|Hall|517-373-1784|43|Rachelle|Smit|517-373-0615|44|Steve|Frisbie|517-373-2616|45|Sarah|Lightner|517-373-1773|46|Kathy|Schmaltz|517-373-1798|47|Carrie|Rheingans|517-373-8835|48|Jennifer|Conlin|517-373-7557|49|Ann|Bollin|517-373-7515|50|Jason|Woolford|517-373-3906|51|Matt|Maddock|517-373-1780|52|Mike|Harris|517-373-0828|53|Brenda|Carter|517-373-2577|54|Donni|Steele|517-373-1771|55|Mark|Tisdel|517-373-1792|56|Sharon|MacDonell|517-373-2617|57|Tom|Kuhn|517-373-1706|58|Ron|Robinson|517-373-1794|59|Doug|Wozniak|517-373-0832|60|Joseph|Aragona|517-373-1785|61|Denise|Mentzer|517-373-1774|62|Alicia|St. Germaine|517-373-0555|63|Jay|DeBoyer|517-373-1787|64|Joseph|Pavlov|517-373-1795|65|Jaime|Greene|517-373-1775|66|Josh|Schriver|517-373-0839|67|Phil|Green|517-373-0587|68|David|Martin|517-373-0826|69|Jasper|Martus|517-373-1786|70|Cynthia|Neeley|517-373-0834|71|Brian|BeGole|517-373-0853|72|Mike|Mueller|517-373-0840|73|Julie|Brixie|517-373-0218|74|Kara|Hope|517-373-8900|75|Penelope|Tsernoglou|517-373-2668|76|Angela|Witwer|517-373-0822|77|Emily|Dievendorf|517-373-2277|78|Gina|Johnsen|517-373-1796|79|Angela|Rigas|517-373-1403|80|Phil|Skaggs|517-373-0836|81|Stephen|Wooden|517-373-1790|82|Kristian|Grant|517-373-1800|83|John|Fitzgerald|517-373-0835|84|Carol|Glanville|517-373-0476|85|Bradley|Slagh|517-373-0841|86|Nancy|De Boer|517-373-0846|87|Will|Snyder|517-373-0842|88|Greg|VanWoerkom|517-373-1830|89|Luke|Meerman|517-373-0838|90|Bryan|Posthumus|517-373-0830|91|Pat|Outman|517-373-3436|92|Jerry|Neyer|517-373-2646|93|Tim|Kelly|517-373-1778|94|Amos|O'Neal|517-373-0837|95|Bill|Schuette|517-373-0152|96|Timmy|Beson|517-373-0158|97|Matthew|Bierlein|517-373-8962|98|Greg|Alexander|517-373-1791|99|Mike|Hoadley|517-373-1789|100|Tom|Kunse|517-373-7317|101|Joseph|Fox|517-373-0825|102|Curt|VanderWall|517-373-1747|103|Betsy|Coffia|517-373-3817|104|John|Roth|517-373-1766|105|Ken|Borton|517-373-0829|106|Cam|Cavitt|517-373-0833|107|Parker|Fairbairn|517-373-2629|108|Dave|Prestin|517-373-0156|109|Karl|Bohnak|517-373-0498|110|Greg|Markkanen|517-373-0850";
 stateLeg['MI-SH'] = [];
-miHouseData.split('|').reduce((acc, val) => {
-    acc.push(val);
-    if (acc.length === 4) { stateLeg['MI-SH'].push({d: acc[0], f: acc[1], l: acc[2], p: acc[3]}); acc.length = 0; }
-    return acc;
-}, []);
+miHouseData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['MI-SH'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
 // Michigan State Senate (38 districts) — Updated with individual phone numbers
 const miSenData = "1|Erika|Geiss|517-373-7800|2|Sylvia|Santana|517-373-0990|3|Stephanie|Chang|517-373-7346|4|Darrin|Camilleri|517-373-7918|5|Dayna|Polehanki|517-373-7350|6|Mary|Cavanagh|517-373-7748|7|Jeremy|Moss|517-373-7888|8|Mallory|McMorrow|517-373-2523|9|Mike|Webber|517-373-0994|10|Paul|Wojno|517-373-8360|11|Veronica|Klinefelt|517-373-7670|12|Kevin|Hertel|517-373-7315|13|Rosemary|Bayer|517-373-2417|14|Sue|Shink|517-373-2426|15|Jeff|Irwin|517-373-2406|16|Joseph|Bellino|517-373-5932|17|Jonathan|Lindsey|517-373-3543|18|Thomas|Albert|517-373-1734|19|Sean|McCann|517-373-5100|20|Aric|Nesbitt|517-373-0793|21|Sarah|Anthony|517-373-6960|22|Lana|Theis|517-373-2420|23|Jim|Runestad|517-373-1758|24|Ruth|Johnson|517-373-1636|25|Dan|Lauwers|517-373-7708|26|Kevin|Daley|517-373-1777|27|John|Cherry|517-373-0142|28|Sam|Singh|517-373-3447|29|Winnie|Brinks|517-373-1801|30|Mark|Huizenga|517-373-0797|31|Roger|Victory|517-373-6920|32|Jon|Bumstead|517-373-1635|33|Rick|Outman|517-373-3760|34|Roger|Hauck|517-373-1760|36|Michele|Hoitenga|517-373-7946|37|John|Damoose|517-373-2413|38|Ed|McBroom|517-373-7840";
 stateLeg['MI-SS'] = [];
-miSenData.split('|').reduce((acc, val) => {
-    acc.push(val);
-    if (acc.length === 4) { stateLeg['MI-SS'].push({d: acc[0], f: acc[1], l: acc[2], p: acc[3]}); acc.length = 0; }
-    return acc;
-}, []);
+miSenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['MI-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
 // Illinois State Senate (59 districts) — Updated with individual phone numbers
 const ilSenData = "1|Javier|Cervantes|(217) 782-9415|2|Omar|Aquino|(217) 782-5652|3|Mattie|Hunter|(217) 782-5966|4|Kimberly|Lightford|(217) 782-8505|5|Lakesia|Collins|(217) 782-6252|6|Sara|Feigenholtz|(217) 557-0523|7|Mike|Simmons|(217) 782-8492|8|Ram|Villivalam|(217) 782-5500|9|Laura|Fine|(217) 782-2119|10|Robert|Martwick|(217) 782-1035|11|Mike|Porfirio|(217) 782-0054|12|Celina|Villanueva|(217) 782-5304|13|Robert|Peters|(217) 782-5338|14|Emil|Jones III|(217) 782-9573|15|Napoleon|Harris III|(217) 782-8066|16|Willie|Preston|(217) 782-1607|17|Elgie|Sims Jr.|(217) 782-3201|18|Bill|Cunningham|(217) 782-5145|19|Michael|Hastings|(217) 782-9595|20|Graciela|Guzmán|(217) 782-8191|21|Laura|Ellman|(217) 782-8192|22|Cristina|Castro|(217) 782-7746|23|Suzy|Glowiak Hilton|(217) 782-8148|24|Seth|Lewis|(217) 782-9463|25|Karina|Villa|(217) 782-0471|26|Darby|Hills|(217) 782-8010|27|Mark|Walker|(217) 782-4471|28|Laura|Murphy|(217) 782-3875|29|Julie|Morrison|(217) 782-3650|30|Adriane|Johnson|(217) 782-8181|31|Mary|Edly-Allen|(217) 782-7353|32|Craig|Wilcox|(217) 782-8000|33|Donald|DeWitte|(217) 782-1977|34|Steve|Stadelman|(217) 782-8022|35|Dave|Syverson|(217) 782-5413|36|Michael|Halpin|(217) 782-4307|37|Li|Arellano Jr.|(217) 782-1942|38|Sue|Rezin|(217) 782-3840|39|Don|Harmon|(217) 782-8176|40|Patrick|Joyce|(217) 782-7419|41|John|Curran|(217) 782-9407|42|Linda|Holmes|(217) 782-0422|43|Rachel|Ventura|(217) 782-8800|44|Sally|Turner|(217) 782-6216|45|Andrew|Chesney|(217) 782-0180|46|David|Koehler|(217) 782-8250|47|Neil|Anderson|(217) 782-5957|48|Doris|Turner|(217) 782-0228|49|Meg|Loughran Cappel|(217) 782-0052|50|Jil|Tracy|(217) 782-2479|51|Chapin|Rose|(217) 558-1006|52|Paul|Faraci|(217) 782-2507|53|Chris|Balkema|(217) 782-6597|54|Steve|McClure|(217) 782-8206|55|Jason|Plummer|(217) 782-5755|56|Erica|Harriss|(217) 782-5247|57|Christopher|Belt|(217) 782-5399|58|Terri|Bryant|(217) 782-8137|59|Dale|Fowler|(217) 782-5509";
 stateLeg['IL-SS'] = [];
-ilSenData.split('|').reduce((acc, val) => {
-    acc.push(val);
-    if (acc.length === 4) { stateLeg['IL-SS'].push({d: acc[0], f: acc[1], l: acc[2], p: acc[3]}); acc.length = 0; }
-    return acc;
-}, []);
+ilSenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['IL-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
 // Illinois State House (118 districts) — Updated with individual phone numbers
 const ilHouseData = "1|Aarón|Ortíz|(217) 782-1117|2|Lisa|Hernandez|(217) 782-8173|3|Eva-Dina|Delgado|(217) 782-0480|4|Lilian|Jiménez|(217) 782-0150|5|Kimberly|Du Buclet|(217) 782-4535|6|Sonya|Harper|(217) 782-5971|7|Chris|Welch|(217) 782-5350|8|La Shawn|Ford|(217) 782-5962|9|Yolonda|Morris|(217) 782-8116|10|Jawaharial|Williams|(217) 782-8077|11|Ann|Williams|(217) 782-2458|12|Margaret|Croke|(217) 782-8062|13|Hoan|Huynh|(217) 782-4089|14|Kelly|Cassidy|(217) 782-8088|15|Michael|Kelly|(217) 782-8198|16|Kevin|Olickal|(217) 782-1252|17|Jennifer|Gong-Gershowitz|(217) 782-4194|18|Robyn|Gabel|(217) 782-8052|19|Lindsey|LaPointe|(217) 782-8400|20|Brad|Stephens|(217) 782-8182|21|Abdelnasser|Rashid|(217) 782-5280|22|Angelica|Guerrero-Cuellar|(217) 782-0584|23|Edgar|González Jr.|(217) 782-7752|24|Theresa|Mah|(217) 782-2855|25|Curtis|Tarver II|(217) 782-8121|26|Kam|Buckner|(217) 782-2023|27|Justin|Slaughter|(217) 782-0010|28|Bob|Rita|(217) 558-1000|29|Thaddeus|Jones|(217) 782-8087|30|Will|Davis|(217) 782-8197|31|Michael|Crawford|(217) 782-4207|32|Lisa|Davis|(217) 782-1702|33|Marcus|Evans Jr.|(217) 782-8272|34|Nicholas|Smith|(217) 782-6476|35|Mary|Gill|(217) 782-8200|36|Rick|Ryan|(217) 782-0515|37|Patrick|Sheehan|(217) 782-0424|38|Debbie|Meyers-Martin|(217) 558-1007|39|Will|Guzzardi|(217) 558-1032|40|Jaime|Andrade Jr.|(217) 782-8117|41|Janet|Yang Rohr|(217) 782-6507|42|Margaret|DeLaRosa|(217) 782-8037|43|Anna|Moeller|(217) 782-8020|44|Fred|Crespo|(217) 782-0347|45|Martha|Deuter|(217) 782-1448|46|Diane|Blair-Sherlock|(217) 782-8158|47|Amy|Grant|(217) 558-1037|48|Jennifer|Sanalitro|(217) 782-4014|49|Maura|Hirschauer|(217) 782-1653|50|Barbara|Hernandez|(217) 558-1002|51|Nabeela|Syed|(217) 782-3696|52|Martin|McLaughlin|(217) 782-1517|53|Nicolle|Grasse|(217) 782-3739|54|Mary Beth|Canty|(217) 782-8026|55|Justin|Cochran|(217) 782-8007|56|Michelle|Mussman|(217) 782-3725|57|Tracy|Katz Muhl|(217) 558-1004|58|Bob|Morgan|(217) 782-0902|59|Daniel|Didech|(217) 782-0499|60|Rita|Mayfield|(217) 558-1012|61|Joyce|Mason|(217) 782-8151|62|Laura|Faver Dias|(217) 782-7320|63|Steven|Reick|(217) 782-1717|64|Tom|Weber|(217) 782-1664|65|Dan|Ugaste|(217) 782-5457|66|Suzanne|Ness|(217) 782-0432|67|Maurice|West II|(217) 782-3167|68|Dave|Vella|(217) 782-0455|69|Joe|Sosnowski|(217) 782-0548|70|Jeff|Keicher|(217) 782-0425|71|Dan|Swanson|(217) 782-8032|72|Gregg|Johnson|(217) 782-5970|73|Ryan|Spain|(217) 782-8108|74|Bradley|Fritts|(217) 782-0535|75|Jed|Davis|(217) 782-5997|76|Amy|Briel|(217) 782-0140|77|Norma|Hernandez|(217) 782-3374|78|Camille|Lilly|(217) 782-6400|79|Jackie|Haas|(217) 782-5981|80|Anthony|DeLuca|(217) 782-1719|81|Anne|Stava-Murray|(217) 782-6578|82|Nicole|La Ha|(217) 782-0494|83|Matt|Hanson|(217) 782-1486|84|Stephanie|Kifowit|(217) 782-8028|85|Dagmara|Avelar|(217) 782-4179|86|Larry|Walsh Jr.|(217) 782-8090|87|William|Hauter|(217) 782-0221|88|Regan|Deering|(217) 782-8163|89|Tony|McCombie|(217) 782-3992|90|John|Cabello|(217) 782-8186|91|Sharon|Chung|(217) 782-5199|92|Jehan|Gordon-Booth|(217) 782-3186|93|Travis|Weaver|(217) 782-8152|94|Norine|Hammond|(217) 782-0416|95|Michael|Coffey Jr.|(217) 782-0053|96|Sue|Scherer|(217) 524-0353|97|Harry|Benton|(217) 782-1331|98|Natalie|Manley|(217) 782-3316|99|Kyle|Moore|(217) 782-8096|100|C.D.|Davidsmeyer|(217) 782-1840|101|Chris|Miller|(217) 558-1040|102|Adam|Niemerg|(217) 782-2087|103|Carol|Ammons|(217) 558-1009|104|Brandun|Schweizer|(217) 782-4811|105|Dennis|Tipsword|(217) 782-0044|106|Jason|Bunting|(217) 558-1039|107|Brad|Halbrook|(217) 782-8398|108|Wayne|Rosenthal|(217) 782-8071|109|Charlie|Meier|(217) 782-6401|110|Blaine|Wilhour|(217) 782-0066|111|Amy|Elik|(217) 782-5996|112|Katie|Stuart|(217) 782-8018|113|Jay|Hoffman|(217) 782-0104|114|Kevin|Schmidt|(217) 782-5951|115|David|Friess|(217) 782-1018|116|Dave|Severin|(217) 782-1051|117|Patrick|Windhorst|(217) 782-5131|118|Paul|Jacobs|(217) 782-0387";
 stateLeg['IL-SH'] = [];
-ilHouseData.split('|').reduce((acc, val) => {
-    acc.push(val);
-    if (acc.length === 4) { stateLeg['IL-SH'].push({d: acc[0], f: acc[1], l: acc[2], p: acc[3]}); acc.length = 0; }
-    return acc;
-}, []);
+ilHouseData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['IL-SH'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
 // North Carolina State Senate (50 districts) — Updated with individual phone numbers
 const ncSenData = "1|Bobby|Hanig|(919) 715-8293|2|Norman|Sanderson|(919) 733-5706|3|Bob|Brinson|(919) 733-5621|4|Buck|Newton|(919) 733-5878|5|Kandie|Smith|(919) 715-8363|6|Michael|Lazzara|(919) 715-3034|7|Michael|Lee|(919) 715-2525|8|Bill|Rabon|(919) 733-5563|9|Brent|Jackson|(919) 733-5705|10|Benton|Sawrey|(919) 715-3040|11|Lisa|Barnes|(919) 715-3030|12|Jim|Burgin|(919) 733-5748|13|Lisa|Grafstein|(919) 733-9349|14|Dan|Blue|(919) 733-5752|15|Jay|Chaudhuri|(919) 715-6400|16|Gale|Adcock|(919) 715-3036|17|Sydney|Batch|(919) 733-5653|18|Terence|Everitt|(919) 733-5850|19|Val|Applewhite|(919) 733-5776|20|Natalie|Murdock|(919) 733-4599|21|Tom|McInnis|(919) 733-5953|22|Sophia|Chitlik|(919) 733-4809|23|Jonah|Garson|(919) 733-5804|24|Danny Earl|Britt Jr.|(919) 733-5651|25|Amy|Galey|(919) 301-1446|26|Phil|Berger|(919) 733-5708|27|Michael|Garrett|(919) 733-5856|28|Gladys|Robinson|(919) 715-3042|29|David|Craven Jr.|(919) 733-5870|30|Steve|Jarvis|(919) 733-5743|31|Dana|Jones|(919) 733-7850|32|Paul|Lowe Jr.|(919) 733-5620|33|Carl|Ford|(919) 733-5665|34|Chris|Measmer|(919) 733-7223|35|Todd|Johnson|(919) 733-7659|36|Eddie|Settle|(919) 733-5742|37|Vickie|Sawyer|(919) 715-3038|38|Mujtaba|Mohammed|(919) 733-5955|39|DeAndrea|Salvador|(919) 733-5655|40|Joyce|Waddell|(919) 733-5650|41|Caleb|Theodros|(919) 715-3050|42|Woodson|Bradley|(919) 715-8331|43|Brad|Overcash|(919) 733-5734|44|W. Ted|Alexander|(919) 715-0690|45|Mark|Hollo|(919) 733-5876|46|Warren|Daniel|(919) 715-7823|47|Ralph|Hise|(919) 733-3360|48|Timothy|Moffitt|(919) 733-5745|49|Julie|Mayfield|(919) 715-3001|50|Kevin|Corbin|(919) 733-5875";
 stateLeg['NC-SS'] = [];
-ncSenData.split('|').reduce((acc, val) => {
-    acc.push(val);
-    if (acc.length === 4) { stateLeg['NC-SS'].push({d: acc[0], f: acc[1], l: acc[2], p: acc[3]}); acc.length = 0; }
-    return acc;
-}, []);
+ncSenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['NC-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
 // North Carolina State House (120 districts) — Updated with individual phone numbers
 const ncHouseData = "1|Edward|Goodwin|(919) 733-0010|2|B. Ray|Jeffers|(919) 715-0850|3|Steve|Tyson|(919) 733-5853|4|Jimmy|Dixon|(919) 715-3021|5|Bill|Ward|(919) 733-5780|6|Joseph|Pike|(919) 733-5906|7|Matthew|Winslow|(919) 715-3032|8|Gloristine|Brown|(919) 715-3023|9|Timothy|Reeder|(919) 733-5757|10|John|Bell IV|(919) 715-3017|11|Allison|Dahle|(919) 733-5755|12|Chris|Humphrey|(919) 733-5995|13|Celeste|Cairns|(919) 733-6275|14|Wyatt|Gable|(919) 715-6707|15|Phil|Shepard|(919) 715-9644|16|Carson|Smith|(919) 715-9664|17|Frank|Iler|(919) 301-1450|18|Deb|Butler|(919) 733-5754|19|Charles|Miller|(919) 733-5830|20|Ted|Davis Jr.|(919) 733-5786|21|Ya|Liu|(919) 733-5863|22|William|Brisson|(919) 733-5772|23|Shelly|Willingham|(919) 715-3024|24|Dante|Pittman|(919) 733-5898|25|Allen|Chesser|(919) 733-5802|26|Donna|McDowell White|(919) 733-5605|27|Rodney|Pierce|(919) 733-5662|28|Larry|Strickland|(919) 733-5849|29|Vernetta|Alston|(919) 733-5872|30|Marcia|Morey|(919) 733-7663|31|Zack|Hawkins|(919) 715-2528|32|Bryan|Cohn|(919) 733-5824|33|Monika|Johnson-Hostler|(919) 733-5880|34|Tim|Longest|(919) 733-5773|35|Mike|Schietzelt|(919) 715-3010|36|Julie|von Haefen|(919) 715-0795|37|Erin|Paré|(919) 733-2962|38|Abe|Jones|(919) 733-5758|39|James|Roberson|(919) 733-5974|40|Phil|Rubin|(919) 733-5530|41|Maria|Cervania|(919) 733-5602|42|Mike|Colvin|(919) 733-5775|43|Diane|Wheatley|(919) 733-5959|44|Charles|Smith|(919) 733-5601|45|Frances|Jackson|(919) 733-9892|46|Brenden|Jones|(919) 733-5821|47|John|Lowery|(919) 715-0875|48|Garland|Pierce|(919) 733-5803|49|Cynthia|Ball|(919) 733-5860|50|Renée|Price|(919) 715-3019|51|John|Sauls|(919) 715-3026|52|Ben|Moss Jr.|(919) 733-5903|53|Howard|Penny Jr.|(919) 715-3015|54|Robert|Reives II|(919) 733-0057|55|Mark|Brody|(919) 715-3029|56|Allen|Buansi|(919) 733-7208|57|Tracy|Clark|(919) 733-5781|58|Amos|Quick III|(919) 733-5902|59|Jerry|Branson|(919) 733-5191|60|Amanda|Cook|(919) 733-5825|61|Pricey|Harrison|(919) 733-5771|62|John|Blust|(919) 733-5877|63|Stephen|Ross|(919) 733-5820|64|Dennis|Riddell|(919) 733-5905|65|A. Reece|Pyrtle Jr.|(919) 733-5779|66|Sarah|Crawford|(919) 733-5823|67|Cody|Huneycutt|(919) 733-5908|68|David|Willis|(919) 733-2406|69|Dean|Arp|(919) 715-3007|70|Brian|Biggs|(919) 733-5865|71|Kanika|Brown|(919) 733-5777|72|Amber|Baker|(919) 733-5829|73|Jonathan|Almond|(919) 715-8361|74|Jeff|Zenger|(919) 733-5787|75|Donny|Lambeth|(919) 733-5747|76|Harry|Warren|(919) 733-5784|77|Julia|Howard|(919) 733-5904|78|Neal|Jackson|(919) 715-4946|79|Keith|Kidwell|(919) 733-5881|80|Sam|Watford|(919) 715-2526|81|Larry|Potts|(919) 715-0873|82|Brian|Echevarria|(919) 733-5861|83|Grant|Campbell|(919) 715-2009|84|Jeffrey|McNeely|(919) 733-5661|85|Dudley|Greene|(919) 733-5862|86|Hugh|Blackwell|(919) 733-5805|87|Destin|Hall|(919) 733-3451|88|Mary|Belk|(919) 733-5607|89|Mitchell|Setzer|(919) 733-4948|90|Sarah|Stevens|(919) 715-1883|91|Kyle|Hall|(919) 733-5609|92|Terry|Brown Jr.|(919) 733-5654|93|Ray|Pickett|(919) 733-7727|94|Blair|Eddins|(919) 733-5935|95|Todd|Carver|(919) 733-5741|96|Jay|Adams|(919) 733-5988|97|Heather|Rhyne|(919) 733-5782|98|Beth|Helfrich|(919) 733-5828|99|Nasif|Majeed|(919) 733-5606|100|Julia|Greenfield|(919) 715-0706|101|Carolyn|Logan|(919) 715-2530|102|Becky|Carney|(919) 733-5827|103|Laura|Budd|(919) 733-5800|104|Brandon|Lofton|(919) 715-3009|105|Tricia Ann|Cotham|(919) 733-5886|106|Carla|Cunningham|(919) 733-5807|107|Aisha|Dew|(919) 733-5778|108|John|Torbett|(919) 733-5868|109|Donnie|Loftis|(919) 733-5809|110|Kelly|Hastings|(919) 715-2002|111|Paul|Scott|(919) 733-4838|112|Jordan|Lopez|(919) 733-5749|113|Jake|Johnson|(919) 715-4466|114|Eric|Ager|(919) 715-2013|115|Lindsey|Prather|(919) 733-5746|116|Brian|Turner|(919) 715-3012|117|Jennifer|Balkcom|(919) 733-5956|118|Mark|Pless|(919) 733-5732|120|Karl|Gillespie|(919) 733-5859";
 stateLeg['NC-SH'] = [];
-ncHouseData.split('|').reduce((acc, val) => {
-    acc.push(val);
-    if (acc.length === 4) { stateLeg['NC-SH'].push({d: acc[0], f: acc[1], l: acc[2], p: acc[3]}); acc.length = 0; }
-    return acc;
-}, []);
+ncHouseData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['NC-SH'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
 // Oklahoma State House (101 districts)
 const okHouseData = "1|Eddy|Dempsey|(405) 557-7363|2|Jim|Olsen|(405) 557-7315|3|Rick|West|(405) 557-7413|4|Bob|Culver|(405) 557-7408|5|Josh|West|(405) 557-7415|6|Rusty|Cornwell|(405) 557-7319|7|Steve|Bashore|(405) 557-7399|8|Tom|Gann|(405) 557-7364|9|Mark|Lepak|(405) 557-7380|10|Judd|Strom|(405) 557-7402|11|John|Kane|(405) 557-7358|12|Mark|Chapman|(405) 557-7388|13|Neil|Hays|(405) 557-7302|14|Chris|Sneed|(405) 557-7310|15|Tim|Turner|(405) 557-7375|16|Scott|Fetgatter|(405) 557-7373|17|Jim|Grego|(405) 557-7381|18|David|Smith|(405) 557-7376|19|Justin|Humphrey|(405) 557-7382|20|Jonathan|Wilk|(405) 557-7308|21|Cody|Maynard|(405) 557-7366|22|Ryan|Eaves|(405) 557-7412|23|Derrick|Hildebrant|(405) 557-7379|24|Chris|Banning|(405) 557-7306|25|Ronny|Johns|(405) 557-7336|26|Dell|Kerbs|(405) 557-7345|27|Danny|Sterling|(405) 557-7349|28|Danny|Williams|(405) 557-7372|29|Kyle|Hilbert|(405) 557-7353|30|Mark|Lawson|(405) 557-7414|31|Collin|Duel|(405) 557-7350|32|Jim|Shaw|(405) 557-7368|33|Molly|Jenkins|(405) 557-7304|34|Trish|Ranson|(405) 557-7411|35|Dillon|Travis|(405) 557-7344|36|John|George|(405) 557-7322|37|Ken|Luttrell|(405) 557-7355|38|John|Pfeiffer|(405) 557-7332|39|Erick|Harris|(405) 557-7342|40|Chad|Caldwell|(405) 557-7317|41|Denise|Crosswhite Hader|(405) 557-7321|42|Cynthia|Roe|(405) 557-7365|43|Jay|Steagall|(405) 557-7352|44|Jared|Deck|(405) 557-7323|45|Annie|Menz|(405) 557-7386|46|Jacob|Rosecrants|(405) 557-7329|47|Brian|Hill|(405) 557-7333|48|Tammy|Townley|(405) 557-7326|49|Josh|Cantrell|(405) 557-7383|50|Stacy|Adams|(405) 557-7327|51|Brad|Boles|(405) 557-7405|52|Gerrid|Kendrix|(405) 557-7369|53|Jason|Blair|(405) 557-7346|54|Kevin|West|(405) 557-7343|55|Nick|Archer|(405) 557-7312|56|Dick|Lowe|(405) 557-7401|57|Anthony|Moore|(405) 557-7325|58|Carl|Newton|(405) 557-7339|59|Mike|Dobrinski|(405) 557-7407|60|Mike|Kelley|(405) 557-7311|61|Kenton|Patzkowsky|(405) 557-7384|62|Daniel|Pae|(405) 557-7374|63|Trey|Caldwell|(405) 557-7307|64|Rande|Worthen|(405) 557-7398|65|Toni|Hasenbeck|(405) 557-7305|66|Clay|Staires|(405) 557-7390|67|Rob|Hall|(405) 557-7341|68|Mike|Lay|(405) 557-7340|69|Mark|Tedford|(405) 557-7331|70|Suzanne|Schreiber|(405) 557-7359|71|Amanda|Clinton|(405) 557-7361|72|Michelle|McCane|(405) 557-7391|73|Ronald|Stewart|(405) 557-7406|74|Kevin|Norwood|(405) 557-7377|75|T.J.|Marti|(405) 557-7356|76|Ross|Ford|(405) 557-7347|77|John|Waldron|(405) 557-7410|78|Meloyde|Blancett|(405) 557-7334|79|Melissa|Provenzano|(405) 557-7330|80|Stan|May|(405) 557-7338|81|Mike|Osburn|(405) 557-7360|82|Nicole|Miller|(405) 557-7357|83|Eric|Roberts|(405) 557-7409|84|Tammy|West|(405) 557-7348|85|Cyndi|Munson|(405) 557-7392|86|David|Hardin|(405) 557-7394|87|Ellyn|Hefner|(405) 557-7335|88|Ellen|Pogemiller|(405) 557-7396|89|Arturo|Alonso Sandoval|(405) 557-7397|90|Emily|Gise|(405) 557-7354|91|Chris|Kannady|(405) 557-7337|93|Mickey|Dollens|(405) 557-7371|94|Andy|Fugate|(405) 557-7370|95|Max|Wolfley|(405) 557-7314|96|Preston|Stinson|(405) 557-7400|97|Aletia|Timmons|(405) 557-7367|98|Gabe|Woolley|(405) 557-7362|100|Marilyn|Stark|(405) 557-7403|101|Robert|Manger|(405) 557-7395";
 stateLeg['OK-SH'] = [];
-okHouseData.split('|').reduce((acc, val, i) => {
-    acc.push(val);
-    if (acc.length === 4) { stateLeg['OK-SH'].push({d: acc[0], f: acc[1], l: acc[2], p: acc[3]}); acc.length = 0; }
-    return acc;
-}, []);
+okHouseData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['OK-SH'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
 // Oklahoma State Senate (48 districts)
 const okSenData = "1|Micheal|Bergstrom|(405) 521-5561|2|Ally|Seifried|(405) 521-5555|3|Julie|McIntosh|(405) 521-5574|4|Tom|Woods|(405) 521-5576|5|George|Burns|(405) 521-5614|6|David|Bullard|(405) 521-5586|7|Warren|Hamilton|(405) 521-5604|8|Bryan|Logan|(405) 521-5588|9|Avery|Frix|(405) 521-5533|10|Bill|Coleman|(405) 521-5581|11|Regina|Goodwin|(405) 521-5598|12|Todd|Gollihare|(405) 521-5528|13|Jonathan|Wingard|(405) 521-5541|14|Jerry|Alvord|(405) 521-5607|15|Lisa|Standridge|(405) 521-5535|16|Mary B.|Boren|(405) 521-5553|17|Shane|Jett|(405) 521-5539|18|Jack|Stewart|(405) 521-5590|19|Roland|Pederson|(405) 521-5630|20|Chuck|Hall|(405) 521-5628|21|Randy|Grellner|(405) 521-5572|22|Kristen|Thompson|(405) 521-5592|23|Lonnie|Paxton|(405) 521-5537|24|Darrell|Weaver|(405) 521-5569|25|Brian|Guthrie|(405) 521-5675|26|Darcy|Jech|(405) 521-5545|27|Casey|Murdock|(405) 521-5626|28|Grant|Green|(405) 521-5547|29|Julie|Daniels|(405) 521-5634|30|Julia|Kirt|(405) 521-5636|31|Spencer|Kern|(405) 521-5563|32|Dusty|Deevers|(405) 521-5567|33|Christi|Gillespie|(405) 521-5551|34|Dana|Prieto|(405) 521-5566|35|Jo Anna|Dossett|(405) 521-5624|36|John|Haste|(405) 521-5602|37|Aaron|Reinhardt|(405) 521-5600|38|Brent|Howard|(405) 521-5612|39|Dave|Rader|(405) 521-5620|40|Carri|Hicks|(405) 521-5543|41|Adam|Pugh|(405) 521-5622|42|Brenda|Stanley|(405) 521-5584|43|Kendal|Sacchieri|(405) 521-5522|44|Michael|Brooks|(405) 521-5557|45|Paul|Rosino|(405) 521-5618|46|Mark|Mann|(405) 521-5610|47|Kelly|Hines|(405) 521-5632|48|Nikki|Nice|(405) 521-5531";
 stateLeg['OK-SS'] = [];
-okSenData.split('|').reduce((acc, val, i) => {
-    acc.push(val);
-    if (acc.length === 4) { stateLeg['OK-SS'].push({d: acc[0], f: acc[1], l: acc[2], p: acc[3]}); acc.length = 0; }
-    return acc;
-}, []);
+okSenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['OK-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
 // Ohio State House (99 districts)
 const ohHouseData = "1|Dontavius|Jarrells|(614) 466-5343|2|Latyna|Humphrey|(614) 466-8010|3|Ismail|Mohamed|(614) 466-1896|4|Beryl|Brown Piccolantonio|(614) 466-4847|5|Meredith|Lawson-Rowe|(614) 644-6002|6|Christine|Cockley|(614) 644-6005|7|C. Allison|Russo|(614) 466-8012|8|Anita|Somani|(614) 466-5358|9|Munira|Abdullahi|(614) 466-2473|10|Mark|Sigrist|(614) 466-9690|11|Crystal|Lett|(614) 644-6030|12|Brian|Stewart|(614) 466-1464|13|Tristan|Rader|(614) 466-5921|14|Sean|Brennan|(614) 466-3485|15|Chris|Glassburn|(614) 466-3100|16|Bride Rose|Sweeney|(614) 466-3350|17|Michael|Dovilla|(614) 466-4895|18|Juanita|Brent|(614) 466-1408|19|Phillip|Robinson Jr.|(614) 644-6041|20|Terrence|Upchurch|(614) 466-7954|21|Eric|Synenberg|(614) 644-5079|22|Darnell|Brewer|(614) 466-1414|23|Daniel|Troy|(614) 466-7251|24|Dani|Isaacsohn|(614) 466-5786|25|Cecil|Thomas|(614) 466-1645|26|Ashley|Bryant Bailey|(614) 466-1308|27|Rachel|Baker|(614) 644-6886|28|Karen|Brownlee|(614) 466-8120|29|Cindy|Abrams|(614) 466-9091|30|Mike|Odioso|(614) 466-8258|31|Bill|Roemer|(614) 644-5085|32|Jack|Daniels|(614) 466-1790|33|Veronica|Sims|(614) 644-6037|34|Derrick|Hall|(614) 466-1177|35|Steve|Demetriou|(614) 644-5088|36|Andrea|White|(614) 644-6008|37|Tom|Young|(614) 466-6504|38|Desiree|Tims|(614) 466-1607|39|Phil|Plummer|(614) 644-8051|40|Rodney|Creech|(614) 466-2960|41|Erika|White|(614) 466-1731|42|Elgin|Rogers Jr.|(614) 466-1401|43|Michele|Grim|(614) 644-6017|44|Josh|Williams|(614) 466-1418|45|Jennifer|Gross|(614) 466-8550|46|Thomas|Hall|(614) 644-5094|47|Diane|Mullins|(614) 644-6721|48|Scott|Oelslager|(614) 752-2438|49|Jim|Thomas|(614) 466-8030|50|Matthew|Kishman|(614) 466-9078|51|Jodi|Salvo|(614) 466-8035|52|Gayle|Manning|(614) 644-5076|53|Joseph|Miller III|(614) 466-5141|54|Kellie|Deeter|(614) 466-9628|55|Michelle|Teska|(614) 644-6023|56|Adam|Mathews|(614) 644-6027|57|Jamie|Callender|(614) 644-6074|58|Lauren|McNally|(614) 466-9435|59|Tex|Fischer|(614) 466-6107|60|Brian|Lorenz|(614) 644-6711|61|Beth|Lear|(614) 466-1431|62|Jean|Schmidt|(614) 466-8134|63|Adam|Bird|(614) 644-6034|64|Nick|Santucci|(614) 466-5441|65|David|Thomas|(614) 466-3488|66|Sharon|Ray|(614) 466-8140|67|Melanie|Miller|(614) 466-0961|68|Thaddeus|Claggett|(614) 466-1482|69|Kevin|Miller|(614) 466-2500|70|Brian|Lampton|(614) 644-6020|71|Levi|Dean|(614) 466-1470|72|Heidi|Workman|(614) 466-2004|73|Jeff|LaRe|(614) 466-8100|74|Bernard|Willis|(614) 466-2038|75|Haraz|Ghanbari|(614) 466-8104|76|Marilyn|John|(614) 466-5802|77|Meredith|Craig|(614) 466-1474|78|Matt|Huffman|(614) 466-6344|79|Monica|Robb Blasdel|(614) 466-8022|80|Johnathan|Newman|(614) 466-8114|81|James|Hoops|(614) 466-3760|82|Roy|Klopfenstein|(614) 644-5091|83|Ty|Mathews|(614) 466-3819|84|Angela|King|(614) 466-9624|85|Tim|Barhorst|(614) 466-1507|86|Tracy|Richardson|(614) 466-8147|87|Riordan|McClain|(614) 644-6265|88|Gary|Click|(614) 466-1374|89|D.J.|Swearingen|(614) 644-6011|90|Justin|Pizzulli|(614) 466-2124|91|Bob|Peterson|(614) 466-3506|92|Mark|Johnson|(614) 644-7928|93|Jason|Stephens|(614) 466-1366|94|Kevin|Ritter|(614) 466-2158|95|Ty|Moore|(614) 644-8728|96|Ron|Ferguson|(614) 466-3735|97|Adam|Holmes|(614) 644-6014|98|Mark|Hiner|(614) 466-2994|99|Sarah|Fowler Arthur|(614) 466-1405";
 stateLeg['OH-SH'] = [];
-ohHouseData.split('|').reduce((acc, val) => {
-    acc.push(val);
-    if (acc.length === 4) { stateLeg['OH-SH'].push({d: acc[0], f: acc[1], l: acc[2], p: acc[3]}); acc.length = 0; }
-    return acc;
-}, []);
+ohHouseData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['OH-SH'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
 // Ohio State Senate (33 districts)
 const ohSenData = "1|Rob|McColley|(614) 466-8150|2|Theresa|Gavarone|(614) 466-8060|3|Michele|Reynolds|(614) 466-8064|4|George|Lang|(614) 466-8072|5|Steve|Huffman|(614) 466-6247|6|Willis|Blackshear|(614) 466-4538|7|Steve|Wilson|(614) 466-9737|8|Louis|Blessing|(614) 466-8068|9|Catherine|Ingram|(614) 466-5980|10|Kyle|Koehler|(614) 466-3780|11|Paula|Hicks-Hudson|(614) 466-5204|12|Susan|Manchester|(614) 466-7584|13|Nathan|Manning|(614) 644-7713|14|Terry|Johnson|(614) 466-8082|15|Hearcel|Craig|(614) 466-5131|16|Beth|Liston|(614) 466-5981|17|Shane|Wilkin|(614) 466-8156|18|Jerry|Cirino|(614) 644-7718|19|Andy|Brenner|(614) 466-8086|20|Tim|Schaffer|(614) 466-8076|21|Kent|Smith|(614) 466-4857|22|Mark|Romanchuk|(614) 466-7505|23|Nickie|Antonio|(614) 466-5123|24|Tom|Patton|(614) 466-8056|25|Bill|DeMora|(614) 466-4583|26|Bill|Reineke|(614) 466-8049|27|Kristina|Roegner|(614) 466-4823|28|Casey|Weinstein|(614) 466-7041|29|Jane|Timken|(614) 466-0626|30|Brian|Chavez|(614) 466-6508|31|Al|Landis|(614) 466-5838|32|Sandra|O'Brien|(614) 466-7182|33|Al|Cutrona|(614) 466-8285";
 stateLeg['OH-SS'] = [];
-ohSenData.split('|').reduce((acc, val) => {
-    acc.push(val);
-    if (acc.length === 4) { stateLeg['OH-SS'].push({d: acc[0], f: acc[1], l: acc[2], p: acc[3]}); acc.length = 0; }
-    return acc;
-}, []);
+ohSenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['OH-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
 // Georgia State House (180 districts, 3 vacant: 94, 130, 177)
 const gaHouseData = "1|Mike|Cameron|404-656-0188|2|Steve|Tarvin|404-463-3793|3|Mitchell|Horner|404-656-0325|4|Kasey|Carpenter|404-656-7857|5|Matt|Barton|404-656-3947|6|Jason|Ridley|404-656-3947|7|Johnny|Chastain|404-656-0325|8|Stan|Gunter|404-656-5125|9|Will|Wade|404-651-7737|10|Victor|Anderson|404-656-0325|11|Rick|Jasperse|404-656-7153|12|Eddie|Lumsden|404-656-7850|13|Katie|Dempsey|404-463-2248|14|Mitchell|Scoggins|404-656-0254|15|Matthew|Gambill|404-651-7737|16|Trey|Kelley|404-656-0188|17|Martin|Momtahan|404-656-0178|18|Tyler Paul|Smith|404-463-7853|19|Joseph|Gullett|404-463-2248|20|Charlice|Byrd|404-656-0213|21|Brad|Thomas|404-656-0152|22|Jordan|Ridley|404-656-0254|23|Bill|Fincher|404-656-0254|24|Carter|Barrett|404-656-0152|25|Todd|Jones|404-656-9210|26|Lauren|McDonald III|404-656-7855|27|Lee|Hawkins|404-656-7855|28|Brent|Cox|404-656-0152|29|Matt|Dubnik|404-463-2246|30|Derrick|McCollum|404-656-0152|31|Emory|Dunahoo Jr.|404-656-7857|32|Chris|Erwin|404-656-7850|33|Alan|Powell|404-463-3793|34|Devan|Seabaugh|404-651-7737|35|Lisa|Campbell|404-656-0202|36|Ginny|Ehrhart|404-656-5024|37|Mary Frances|Williams|404-656-0287|38|David|Wilkerson|404-656-0314|39|Terry|Cummings|404-656-0202|40|Kimberly|New|404-656-0325|41|Michael|Smith|404-656-0265|42|Gabriel|Sanchez|404-656-0126|43|Solomon|Adesanya|404-656-0220|44|Don|Parsons|404-656-5143|45|Sharon|Cooper|404-656-5069|46|John|Carson|404-656-7855|47|Jan|Jones|404-656-5072|48|Scott|Hilton|404-656-0188|49|Chuck|Martin|404-656-5146|50|Michelle|Au|404-656-0314|51|Esther|Panitch|404-656-0287|52|Shea|Roberts|404-656-0298|53|Deborah|Silcox|404-657-1803|54|Betsy|Holland|404-656-0116|55|Inga|Willis|404-656-6372|56|Bryce|Berry|404-656-0220|57|Stacey|Evans|404-656-0116|58|Park|Cannon|404-656-0287|59|Phil|Olaleye|404-656-0220|60|Sheila|Jones|404-656-0308|61|Mekyah|McQueen|404-656-0109|62|Tanya|Miller|404-656-0298|63|Kim|Schofield|404-656-0298|64|Sylvia|Wayfer Baker|404-656-6372|65|Robert|Dawson|404-656-6372|66|Kimberly|Alexander|404-656-7859|67|Lydia|Glaize|404-656-0116|68|Derrick|Jackson|404-656-7859|69|Debra|Bazemore|404-656-0202|70|Lynn|Smith|404-656-7149|71|Jutt|Howard|404-656-0177|72|David|Huddleston|404-656-0325|73|Josh|Bonner|404-463-7853|74|Robert|Flournoy Jr.|404-656-7859|75|Eric|Bell|404-656-0126|76|Sandra|Scott|404-656-0314|77|Rhonda|Burnough|404-656-0116|78|Demetrius|Douglas|404-656-7859|79|Yasmin|Neal|404-656-6372|80|Long|Tran|404-656-7859|81|Noelle|Kahaian|404-656-0177|82|Karen|Mathiak|404-656-0213|83|Karen|Lupton|404-656-0314|84|Mary Margaret|Oliver|404-656-0265|85|Karla|Drenner|404-656-0202|86|Imani|Barnes|404-656-0202|87|Viola|Davis|404-656-0109|88|Billy|Mitchell|404-656-0287|89|Omari|Crawford|404-656-0314|90|Saira|Draper|404-656-0265|91|Angela|Moore|404-656-0126|92|Rhonda|Taylor|404-656-0265|93|Doreen|Carter|404-656-0220|95|Dar'shun|Kendrick|404-656-0202|96|Arlene|Beckles|404-656-0109|97|Ruwa|Romman|404-656-0220|98|Marvin|Lim|404-656-0314|99|Matt|Reeves|404-656-0152|100|David|Clark|404-656-0188|101|Scott|Holcomb|404-656-6372|102|Gabe|Okoye|404-656-0220|103|Soo|Hong|404-656-5025|104|Chuck|Efstration|404-656-5052|105|Sandy|Donatucci|404-656-0177|106|Akbar|Ali|404-656-0116|107|Sam|Park|404-656-5059|108|Jasmine|Clark|404-656-0287|109|Dewey|McClain|404-656-0220|110|Segun|Adeyina|404-656-6372|111|Rey|Martinez|404-656-0254|112|Bruce|Williamson|404-656-5025|113|Sharon|Henderson|404-656-7859|114|Tim|Fleming|404-656-0188|115|Regina|Lewis-Ward|404-656-0287|116|El-Mahdi|Holly|404-656-0287|117|Mary Ann|Santos|404-656-0202|118|Clint|Crowe|404-656-0325|119|Holt|Persinger|404-656-0213|120|Houston|Gaines|404-656-0152|121|Eric|Gisler|404-656-0287|122|Spencer|Frye|404-656-0265|123|Robert|Leverett|404-656-5132|124|Trey|Rhodes|404-656-5099|125|Gary|Richardson|404-656-0254|126|L.C.|Myles Jr.|404-656-0265|127|Mark|Newton|404-656-7855|128|Mack|Jackson|404-656-0314|129|Karlton|Howard|404-656-6372|131|Rob|Clifton|404-657-1803|132|Brian|Prince|404-656-0298|133|Danny|Mathis|404-656-0152|134|Robert|Dickey|404-656-5099|135|Beth|Camp|404-656-7153|136|David|Jenkins|404-656-0188|137|Debbie|Buckner|404-656-0116|138|Vance|Smith|404-656-0254|139|Carmen|Rice|404-656-0188|140|Tremaine|Teddy Reese|404-656-0109|141|Carolyn|Hugley|404-656-5058|142|Miriam|Paris|404-656-0109|143|Anissa|Jones|404-656-0314|144|Dale|Washburn|404-656-0152|145|Tangie|Herring|404-656-0202|146|Shaw|Blackmon|404-656-5103|147|Bethany|Ballard|404-656-0325|148|Noel|Williams Jr.|404-656-5146|149|Floyd|Griffin|404-656-7859|150|Patty Marie|Stinson|404-656-0213|151|Mike|Cheokas|404-463-7853|152|Bill|Yearta|404-463-2248|153|David|Sampson|404-656-0109|154|Gerald|Greene|404-656-9210|155|Matt|Hatchett|404-463-2247|156|Leesa|Hagan|404-656-0177|157|Bill|Werkheiser|404-656-5132|158|Butch|Parrish|404-656-5141|159|Jon|Burns|404-656-5020|160|Lehman|Franklin|404-656-0178|161|Bill|Hitchens|404-656-5126|162|Carl|Gilliard|404-656-7859|163|Anne Allen|Westbrook|404-656-0116|164|Ron|Stephens|404-656-5115|165|Edna|Jackson|404-656-0265|166|Jesse|Petrea|404-656-5115|167|Buddy|DeLoach|404-656-7857|168|Al|Williams|404-656-6372|169|Angie|O'Steen|404-656-0254|170|Jaclyn|Ford|404-656-0325|171|Joe|Campbell|404-656-0254|172|Chas|Cannon|404-656-0177|173|Darlene|Taylor|404-463-2246|174|John|Corbett|404-656-5105|175|John|LaHood|404-656-5105|176|James|Burchett|404-656-5024|178|Steven|Meeks|404-463-2246|179|Rick|Townsend|404-656-0178|180|Steven|Sainz|404-657-1803";
 stateLeg['GA-SH'] = [];
-gaHouseData.split('|').reduce((acc, val) => {
-    acc.push(val);
-    if (acc.length === 4) { stateLeg['GA-SH'].push({d: acc[0], f: acc[1], l: acc[2], p: acc[3]}); acc.length = 0; }
-    return acc;
-}, []);
+gaHouseData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['GA-SH'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
 // Georgia State Senate (56 districts, 2 vacant: 7, 53)
 const gaSenData = "1|Ben|Watson|404-656-7880|2|Derek|Mallow|404-656-7586|3|Mike|Hodges|404-656-7127|4|Billy|Hickman|404-463-1371|5|Sheikh|Rahman|404-656-7871|6|Matt|Brass|404-656-0057|8|Russ|Goodman|404-463-1318|9|Nikki|Merritt|404-463-1310|10|Emanuel|Jones|404-656-0502|11|Sam|Watson|404-656-0065|12|Freddie Powell|Sims|404-463-5259|13|Carden|Summers|404-656-9224|14|Josh|McLaurin|404-463-4228|15|Ed|Harbison|404-656-0074|16|Marty|Harbin|404-656-0078|17|Gail|Davenport|404-463-5260|18|Steven|McNeel|404-463-2593|19|Blake|Tillery|404-656-5038|20|Larry|Walker III|404-656-0095|21|Jason|Dickerson|404-463-1378|22|Harold|Jones II|404-656-0036|23|Max|Burns|404-463-1376|24|Lee|Anderson|404-656-5114|25|Rick|Williams|404-656-0082|26|David|Lucas|404-656-0150|27|Greg|Dolezal|404-656-0040|28|Donzella|James|404-463-1379|29|Randy|Robertson|404-656-0045|30|Tim|Bearden|404-656-7872|31|Jason|Anavitarte|404-656-0085|32|Kay|Kirkpatrick|404-463-2518|33|Michael|Rhett|404-656-0054|34|Kenya|Wicks|404-463-1562|35|Jaha|Howard|404-657-2099|36|Nan|Orrock|404-463-8054|37|Ed|Setzler|404-656-0256|38|RaShaun|Kemp|404-656-0105|39|Sonya|Halpern|404-656-9644|40|Sally|Harrell|404-656-7871|41|Kim|Jackson|404-656-6882|42|Brian|Strickland|404-656-0508|43|Tonya|Anderson|404-463-2598|44|Elena|Parent|404-656-5109|45|Clint|Dixon|404-463-2518|46|Bill|Cowsert|404-463-1366|47|Frank|Ginn|404-656-9224|48|Shawn|Still|404-463-3932|49|Drew|Echols|404-463-3931|50|Bo|Hatchett|404-656-7454|51|Steve|Gooch|404-656-9221|52|Chuck|Hufstetler|404-656-0034|54|Chuck|Payne|404-656-5080|55|Randal|Mangham|404-657-4640|56|John|Albers|404-463-8055";
 stateLeg['GA-SS'] = [];
-gaSenData.split('|').reduce((acc, val) => {
-    acc.push(val);
-    if (acc.length === 4) { stateLeg['GA-SS'].push({d: acc[0], f: acc[1], l: acc[2], p: acc[3]}); acc.length = 0; }
-    return acc;
-}, []);
+gaSenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['GA-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
 // New York State Assembly (150 districts)
 const nyHouseData = "1|Tommy John|Schiavoni|518-455-5997|2|Jodi|Giglio|518-455-5294|3|Joe|DeStefano|518-455-4901|4|Rebecca|Kassay|518-455-3600|5|Douglas|Smith|518-455-5937|6|Philip|Ramos|518-455-5185|7|Jarett|Gandolfo|518-455-4611|8|Michael|Fitzpatrick|518-455-5021|9|Michael|Durso|518-455-5305|10|Steve|Stern|518-455-5732|11|Kwani|O'Pharrow|518-455-5787|12|Keith|Brown|518-455-5952|13|Charles|Lavine|518-455-5456|14|David|McDonough|518-455-4633|15|Jake|Blumencranz|518-455-4684|16|Daniel|Norber|518-455-5192|17|John|Mikulin|518-455-5341|18|Noah|Burroughs|518-455-5861|19|Ed|Ra|518-455-3751|20|Ari|Brown|518-455-3028|21|Judy|Griffin|518-455-5801|22|Michaelle|Solages|518-455-4465|23|Stacey|Pheffer Amato|518-455-4292|24|David|Weprin|518-455-5806|25|Nily|Rozic|518-455-5172|26|Edward|Braunstein|518-455-5425|27|Sam|Berger|518-455-4404|28|Andrew|Hevesi|518-455-4926|29|Alicia|Hyndman|518-455-4451|30|Steven|Raga|518-455-4755|31|Khaleel|Anderson|518-455-5668|32|Vivian|Cook|518-455-4203|33|Clyde|Vanel|518-455-4711|34|Jessica|González-Rojas|518-455-4545|35|Larinda|Hooks|518-455-4561|36|Diana|Moreno|518-455-5014|37|Claire|Valdez|518-455-4851|38|Jenifer|Rajkumar|518-455-4621|39|Catalina|Cruz|518-455-4567|40|Ron|Kim|518-455-5411|41|Kalman|Yeger|518-455-5462|42|Rodneyse|Bichotte Hermelyn|518-455-5385|43|Brian|Cunningham|518-455-5262|44|Robert|Carroll|518-455-5377|45|Michael|Novakhov|518-455-5403|46|Alec|Brook-Krasny|518-455-5434|47|William|Colton|518-455-5828|48|Simcha|Eichenstein|518-455-5721|49|Lester|Chang|518-455-3060|50|Emily|Gallagher|518-455-4477|51|Marcela|Mitaynes|518-455-3821|52|Jo Anne|Simon|518-455-5426|53|Maritza|Davila|518-455-5537|54|Erik|Dilan|518-455-5821|55|Latrice|Walker|518-455-4466|56|Stefani|Zinerman|518-455-5474|57|Phara|Souffrant Forrest|518-455-5325|58|Monique|Chandler-Waterman|518-455-4166|59|Jaime|Williams|518-455-5211|60|Nikki|Lucas|518-455-5912|61|Charles|Fall|518-455-4677|62|Michael|Reilly|518-455-4495|63|Sam|Pirozzolo|518-455-5481|64|Michael|Tannousis|518-455-5716|65|Grace|Lee|518-455-3640|66|Deborah|Glick|518-455-4841|67|Linda|Rosenthal|518-455-5802|68|Edward|Gibbs|518-455-4781|69|Micah|Lasher|518-455-5603|70|Jordan|Wright|518-455-4793|71|Al|Taylor|518-455-5491|72|Manny|De Los Santos|518-455-5807|73|Alex|Bores|518-455-4794|74|Keith|Powers|518-455-5506|75|Tony|Simone|518-455-4941|76|Rebecca|Seawright|518-455-5676|77|Landon|Dais|518-455-5671|78|George|Alvarez|518-455-5414|79|Chantel|Jackson|518-455-5272|80|John|Zaccaro Jr.|518-455-5848|81|Jeffrey|Dinowitz|518-455-5965|82|Michael|Benedetto|518-455-5296|83|Carl|Heastie|518-455-3791|84|Amanda|Septimo|518-455-5402|85|Emérita|Torres|518-455-5514|86|Yudelka|Tapia|518-455-5511|87|Karines|Reyes|518-455-5102|88|Amy|Paulin|518-455-5585|89|J. Gary|Pretlow|518-455-5291|90|Nader|Sayegh|518-455-3662|91|Steven|Otis|518-455-4897|92|MaryJane|Shimsky|518-455-5753|93|Chris|Burdick|518-455-5397|94|Matt|Slater|518-455-5783|95|Dana|Levenberg|518-455-5348|96|Patrick|Carroll|518-455-5735|97|Aron|Wieder|518-455-5118|98|Karl|Brabenec|518-455-5991|99|Chris|Eachus|518-455-5441|100|Paula Elaine|Kay|518-455-5355|101|Brian|Maher|518-455-4807|102|Christopher|Tague|518-455-5363|103|Sarahana|Shrestha|518-455-4436|104|Jonathan|Jacobson|518-455-5762|105|Anil|Beephan Jr.|518-455-5725|106|Didi|Barrett|518-455-5177|107|Scott|Bendett|518-455-5777|108|John|McDonald III|518-455-4474|109|Gabriella|Romero|518-455-4178|110|Phil|Steck|518-455-5931|111|Angelo|Santabarbara|518-455-5197|112|Mary Beth|Walsh|518-455-5772|113|Carrie|Woerner|518-455-5404|114|Matt|Simpson|518-455-5565|115|Michael|Cashman|518-455-5943|116|Scott|Gray|518-455-5545|117|Ken|Blankenbush|518-455-5797|118|Robert|Smullen|518-455-5393|119|Marianne|Buttenschon|518-455-5454|120|William|Barclay|518-455-5841|121|Joe|Angelino|518-455-5741|122|Brian|Miller|518-455-5334|123|Donna|Lupardo|518-455-5431|124|Christopher|Friend|518-455-4538|125|Anna|Kelles|518-455-5444|126|John|Lemondes|518-455-5878|127|Albert|Stirpe Jr.|518-455-4505|128|Pamela|Hunter|518-455-5383|129|William|Magnarelli|518-455-4826|130|Brian|Manktelow|518-455-5655|131|Jeff|Gallahan|518-455-3979|132|Philip|Palmesano|518-455-5791|133|Andrea|Bailey|518-455-5662|134|Josh|Jensen|518-455-4664|135|Jen|Lunsford|518-455-5784|136|Sarah|Clark|518-455-5373|137|Demond|Meeks|518-455-5606|138|Harry|Bronson|518-455-4527|139|Stephen|Hawley|518-455-5811|140|William|Conrad|518-455-4767|141|Crystal|Peoples-Stokes|518-455-5005|142|Patrick|Burke|518-455-4691|143|Patrick|Chludzinski|518-455-5921|144|Paul|Bologna|518-455-4601|145|Angelo|Morinello|518-455-5284|146|Karen|McMahon|518-455-4618|147|David|DiPietro|518-455-5314|148|Joe|Sempolinski|518-455-5241|149|Jonathan|Rivera|518-455-4886|150|Andrew|Molitor|518-455-4511";
 stateLeg['NY-SH'] = [];
-nyHouseData.split('|').reduce((acc, val) => {
-    acc.push(val);
-    if (acc.length === 4) { stateLeg['NY-SH'].push({d: acc[0], f: acc[1], l: acc[2], p: acc[3]}); acc.length = 0; }
-    return acc;
-}, []);
+nyHouseData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['NY-SH'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
 // New York State Senate (63 districts)
 const nySenData = "1|Anthony|Palumbo|518-455-3121|2|Mario|Mattera|518-455-2071|3|Dean|Murray|518-455-3341|4|Monica|Martinez|518-455-2765|5|Steven|Rhoads|518-455-3361|6|Siela|Bynoe|518-455-3260|7|Jack|Martins|518-455-2677|8|Alexis|Weik|518-455-2950|9|Patricia|Canzoneri-Fitzpatrick|518-455-2400|10|James|Sanders Jr.|518-455-3531|11|Toby Ann|Stavisky|518-455-3461|12|Michael|Gianaris|518-455-3486|13|Jessica|Ramos|518-455-2529|14|Leroy|Comrie|518-455-2701|15|Joseph|Addabbo Jr.|518-455-2322|16|John|Liu|518-455-2210|17|Stephen|Chan|518-455-3401|18|Julia|Salazar|518-455-2177|19|Roxanne|Persaud|518-455-2788|20|Zellnor|Myrie|518-455-2410|21|Kevin|Parker|518-455-2580|22|Sam|Sutton|518-455-2754|23|Jessica|Scarcella-Spanton|518-455-2437|24|Andrew|Lanza|518-455-3215|25|Jabari|Brisport|518-455-3451|26|Andrew|Gounardes|518-455-3270|27|Brian|Kavanagh|518-455-2625|28|Liz|Krueger|518-455-2297|29|Jose|Serrano|518-455-2795|30|Cordell|Cleare|518-455-2441|31|Robert|Jackson|518-455-2041|32|Luis|Sepúlveda|518-455-2511|33|Gustavo|Rivera|518-455-3395|34|Nathalia|Fernandez|518-455-3595|35|Andrea|Stewart-Cousins|518-455-2585|36|Jamaal|Bailey|518-455-2061|37|Shelley|Mayer|518-455-2031|38|Bill|Weber|518-455-2911|39|Rob|Rolison|518-455-2945|40|Peter|Harckham|518-455-2340|41|Michelle|Hinchey|518-455-2350|42|James|Skoufis|518-455-3290|43|Jacob|Ashby|518-455-2381|44|James|Tedisco|518-455-2181|45|Daniel|Stec|518-455-2811|46|Patricia|Fahy|518-455-2225|47|Erik|Bottcher|518-455-2451|48|Rachel|May|518-455-2838|49|Mark|Walczyk|518-455-3438|50|Christopher|Ryan|518-455-3511|51|Peter|Oberacker|518-455-3131|52|Lea|Webb|518-455-2170|53|Joseph|Griffo|518-455-3334|54|Pamela|Helming|518-455-2366|55|Samra|Brouk|518-455-2215|56|Jeremy|Cooney|518-455-2909|57|George|Borrello|518-455-3563|58|Thomas|O'Mara|518-455-2091|59|Kristen|Gonzalez|518-455-3250|60|Patrick|Gallivan|518-455-3471|61|Jeremy|Zellner|518-455-3240|62|Robert|Ortt|518-455-2024|63|April|Baskin|518-455-2426";
 stateLeg['NY-SS'] = [];
-nySenData.split('|').reduce((acc, val) => {
-    acc.push(val);
-    if (acc.length === 4) { stateLeg['NY-SS'].push({d: acc[0], f: acc[1], l: acc[2], p: acc[3]}); acc.length = 0; }
-    return acc;
-}, []);
+nySenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['NY-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
 // Nevada State Assembly (42 districts)
 const nvHouseData = "1|Daniele|Monroe-Moreno|775-684-8509|2|Heidi|Kasama|775-684-8827|3|Selena|Torres-Fossett|775-684-8599|4|Lisa|Cole|775-684-8829|5|Brittney|Miller|775-684-8833|6|Jovan|Jackson|775-684-8545|7|Tanya|Flanagan|775-684-8587|8|Duy|Nguyen|775-684-8537|9|Steve|Yeager|775-684-8549|10|Venise|Karris|775-684-8541|11|Cinthia|Zermeño Moore|775-684-8553|12|Max|Carter II|775-684-8819|13|Brian|Hibbetts|775-684-8853|14|Erica|Mosca|775-684-8597|15|Howard|Watts|775-684-8835|16|Cecelia|González|775-684-8595|17|Linda|Hunt|775-684-8569|18|Venicia|Considine|775-684-8801|19|Jason|Patchett|775-684-8857|20|David|Orentlicher|775-684-8577|21|Elaine|Marzola|775-684-8839|22|Melissa|Hardy|775-684-8823|23|Danielle|Gallant|775-684-8503|24|Erica|Roth|775-684-8559|25|Selena|La Rue Hatch|775-684-8837|26|Rich|DeLong|775-684-8848|27|Heather|Goulding|775-684-8845|28|Reuben|D'Silva|775-684-8583|29|Joe|Dalia|775-684-8855|30|Natha|Anderson|775-684-8841|31|Jill|Dickman|775-684-8563|32|Alexis|Hansen|775-684-8851|33|Bert|Gurr|775-684-8831|34|Hanadi|Nadeem|775-684-8847|35|Rebecca|Edgeworth|775-684-8573|36|Gregory|Hafen II|775-684-8805|37|Shea|Backus|775-684-8505|38|Gregory|Koenig|775-684-8507|39|Blayne|Osborn|775-684-8843|40|PK|O'Neill|775-684-8825|41|Sandra|Jauregui|775-684-8821|42|Tracy|Brown-May|775-684-8803";
 stateLeg['NV-SH'] = [];
-nvHouseData.split('|').reduce((acc, val) => {
-    acc.push(val);
-    if (acc.length === 4) { stateLeg['NV-SH'].push({d: acc[0], f: acc[1], l: acc[2], p: acc[3]}); acc.length = 0; }
-    return acc;
-}, []);
+nvHouseData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['NV-SH'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
 // Nevada State Senate (21 districts)
 const nvSenData = "1|Michelee|Cruz-Crawford|775-684-1424|2|Edgar|Flores|775-684-1431|3|Rochelle|Nguyen|775-684-1422|4|Dina|Neal|775-684-1429|5|Carrie Ann|Buck|775-684-1457|6|Nicole|Cannizzaro|775-684-1475|7|Roberta|Lange|775-684-6504|8|Marilyn|Dondero Loop|775-684-1445|9|Melanie|Scheible|775-684-1421|10|Fabian|Doñate|775-684-1427|11|Lori|Rogich|775-684-6502|12|Julie|Pazina|775-684-1462|13|Skip|Daly|775-684-1433|14|Ira|Hansen|775-684-1480|15|Angela|Taylor|775-684-1419|16|Lisa|Krasner|775-684-1450|17|Robin|Titus|775-684-1470|18|John|Steinbeck|775-684-1442|19|John|Ellison|775-684-1447|20|Jeff|Stone|775-684-1481|21|James|Ohrenschall|775-684-6503";
 stateLeg['NV-SS'] = [];
-nvSenData.split('|').reduce((acc, val) => {
-    acc.push(val);
-    if (acc.length === 4) { stateLeg['NV-SS'].push({d: acc[0], f: acc[1], l: acc[2], p: acc[3]}); acc.length = 0; }
-    return acc;
-}, []);
+nvSenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['NV-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
 // Texas State House (150 districts)
 const txHouseData = "1|Gary|VanDeaver|512-463-0692|2|Brent|Money|512-463-0880|3|Cecil|Bell Jr.|512-463-0650|4|Keith|Bell|512-463-0458|5|Cole|Hefner|512-463-0271|6|Daniel|Alders|512-463-0584|7|Jay|Dean|512-463-0750|8|Cody|Harris|512-463-0730|9|Trent|Ashby|512-463-0508|10|Brian|Harrison|512-463-0516|11|Joanne|Shofner|512-463-0592|12|Trey|Wharton|512-463-0412|13|Angelia|Orr|512-463-0600|14|Paul|Dyson|512-463-0698|15|Steve|Toth|512-463-0797|16|Will|Metcalf|512-463-0726|17|Stan|Gerdes|512-463-0682|18|Janis|Holt|512-463-0570|19|Ellen|Troxclair|512-463-0490|20|Terry|Wilson|512-463-0309|21|Dade|Phelan|512-463-0706|22|Christian|Manuel|512-463-0662|23|Terri Leo|Wilson|512-463-0502|24|Greg|Bonnen|512-463-0729|25|Cody|Vasut|512-463-0564|26|Matt|Morgan|512-463-0710|27|Ron|Reynolds|512-463-0494|28|Gary|Gates|512-463-0657|29|Jeff|Barry|512-463-0707|30|AJ|Louderback|512-463-0456|31|Ryan|Guillen|512-463-0416|32|Todd|Hunter|512-463-0672|33|Katrina|Pierson|512-463-0484|34|Denise|Villalobos|512-463-0462|35|Oscar|Longoria|512-463-0645|36|Sergio|Muñoz Jr.|512-463-0704|37|Janie|Lopez|512-463-0640|38|Erin Elizabeth|Gámez|512-463-0606|39|Armando|Martinez|512-463-0530|40|Terry|Canales|512-463-0426|41|R.D. Bobby|Guerra|512-463-0578|42|Richard Peña|Raymond|512-463-0558|43|J.M.|Lozano|512-463-0463|44|Alan|Schoolcraft|512-463-0602|45|Erin|Zwiener|512-463-0647|46|Sheryl|Cole|512-463-0506|47|Vikki|Goodwin|512-463-0652|48|Donna|Howard|512-463-0631|49|Gina|Hinojosa|512-463-0668|50|James|Talarico|512-463-0821|51|Lulu|Flores|512-463-0674|52|Caroline Harris|Davila|512-463-0670|53|Wes|Virdell|512-463-0536|54|Brad|Buckley|512-463-0684|55|Hillary|Hickland|512-463-0630|56|Pat|Curry|512-463-0135|57|Richard|Hayes|512-463-0556|58|Helen|Kerwin|512-463-0538|59|Shelby|Slawson|512-463-0628|60|Mike|Olcott|512-463-0656|61|Keresa|Richardson|512-463-0738|62|Shelley|Luther|512-463-0297|63|Benjamin|Bumgarner|512-463-0688|64|Andy|Hopper|512-463-0582|65|Mitch|Little|512-463-0478|66|Matt|Shaheen|512-463-0594|67|Jeff|Leach|512-463-0544|68|David|Spiller|512-463-0526|69|James|Frank|512-463-0534|70|Mihaela|Plesa|512-463-0356|71|Stan|Lambert|512-463-0718|72|Drew|Darby|512-463-0331|73|Carrie|Isaac|512-463-0325|74|Eddie|Morales|512-463-0566|75|Mary|González|512-463-0613|76|Suleman|Lalani|512-463-0596|77|Vince|Perez|512-463-0638|78|Joe|Moody|512-463-0728|79|Claudia|Ordaz|512-463-0622|80|Don|McLaughlin Jr.|512-463-0194|81|Brooks|Landgraf|512-463-0546|82|Tom|Craddick|512-463-0500|83|Dustin|Burrows|512-463-0542|84|Carl|Tepper|512-463-0676|85|Stan|Kitzman|512-463-0604|86|John|Smithee|512-463-0702|87|Caroline|Fairly|512-463-0470|88|Ken|King|512-463-0736|89|Candy|Noble|512-463-0186|90|Ramon|Romero Jr.|512-463-0740|91|David|Lowe|512-463-0599|92|Salman|Bhojani|512-463-0522|93|Nate|Schatzline|512-463-0562|94|Tony|Tinderholt|512-463-0624|95|Nicole|Collier|512-463-0716|96|David|Cook|512-463-0374|97|John|McQueeney|512-463-0608|98|Giovanni|Capriglione|512-463-0690|99|Charlie|Geren|512-463-0610|100|Venton|Jones|512-463-0586|101|Chris|Turner|512-463-0574|102|Ana-María|Rodríguez Ramos|512-463-0454|103|Rafael|Anchía|512-463-0746|104|Jessica|González|512-463-0408|105|Terry|Meza|512-463-0641|106|Jared|Patterson|512-463-0694|107|Linda|Garcia|512-463-0244|108|Morgan|Meyer|512-463-0367|109|Aicha|Davis|512-463-0953|110|Toni|Rose|512-463-0664|111|Yvonne|Davis|512-463-0598|112|Angie Chen|Button|512-463-0486|113|Rhetta|Bowers|512-463-0464|114|John|Bryant|512-463-0576|115|Cassandra|Garcia Hernandez|512-463-0468|116|Trey|Martinez Fischer|512-463-0616|117|Philip|Cortez|512-463-0269|118|John|Lujan|512-463-0714|119|Liz|Campos|512-463-0452|120|Barbara|Gervin-Hawkins|512-463-0708|121|Marc|LaHood|512-463-0686|122|Mark|Dorazio|512-463-0646|123|Diego|Bernal|512-463-0532|124|Josey|Garcia|512-463-0634|125|Ray|López|512-463-0669|126|Sam|Harless|512-463-0496|127|Charles|Cunningham|512-463-0520|128|Briscoe|Cain|512-463-0733|129|Dennis|Paul|512-463-0734|130|Tom|Oliverson|512-463-0661|131|Alma|Allen|512-463-0744|132|Mike|Schofield|512-463-0528|133|Mano|DeAyala|512-463-0514|134|Ann|Johnson|512-463-0389|135|Jon|Rosenthal|512-463-0722|136|John|Bucy III|512-463-0696|137|Gene|Wu|512-463-0492|138|Lacey|Hull|512-463-0727|139|Charlene|Ward Johnson|512-463-0554|140|Armando|Walle|512-463-0924|141|Senfronia|Thompson|512-463-0720|142|Harold|Dutton Jr.|512-463-0510|143|Ana|Hernandez|512-463-0614|144|Mary Ann|Perez|512-463-0460|145|Christina|Morales|512-463-0732|146|Lauren|Simmons|512-463-0518|147|Jolanda|Jones|512-463-0524|148|Penny|Morales Shaw|512-463-0620|149|Hubert|Vo|512-463-0568|150|Valoree|Swanson|512-463-0572";
 stateLeg['TX-SH'] = [];
-txHouseData.split('|').reduce((acc, val) => {
-    acc.push(val);
-    if (acc.length === 4) { stateLeg['TX-SH'].push({d: acc[0], f: acc[1], l: acc[2], p: acc[3]}); acc.length = 0; }
-    return acc;
-}, []);
+txHouseData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['TX-SH'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
 // Texas State Senate (31 districts, SD-4 vacant)
 const txSenData = "1|Bryan|Hughes|512-463-0101|2|Bob|Hall|512-463-0102|3|Robert|Nichols|512-463-0103|5|Charles|Schwertner|512-463-0105|6|Carol|Alvarado|512-463-0106|7|Paul|Bettencourt|512-463-0107|8|Angela|Paxton|512-463-0108|9|Taylor|Rehmet|512-463-0109|10|Phil|King|512-463-0110|11|Mayes|Middleton|512-463-0111|12|Tan|Parker|512-463-0112|13|Borris|Miles|512-463-0113|14|Sarah|Eckhardt|512-463-0114|15|Molly|Cook|512-463-0115|16|Nathan|Johnson|512-463-0116|17|Joan|Huffman|512-463-0117|18|Lois|Kolkhorst|512-463-0118|19|Roland|Gutierrez|512-463-0119|20|Juan|Hinojosa|512-463-0120|21|Judith|Zaffirini|512-463-0121|22|Brian|Birdwell|512-463-0122|23|Royce|West|512-463-0123|24|Pete|Flores|512-463-0124|25|Donna|Campbell|512-463-0125|26|José|Menéndez|512-463-0126|27|Adam|Hinojosa|512-463-0127|28|Charles|Perry|512-463-0128|29|César|Blanco|512-463-0129|30|Brent|Hagenbuch|512-463-0130|31|Kevin|Sparks|512-463-0131";
 stateLeg['TX-SS'] = [];
-txSenData.split('|').reduce((acc, val) => {
-    acc.push(val);
-    if (acc.length === 4) { stateLeg['TX-SS'].push({d: acc[0], f: acc[1], l: acc[2], p: acc[3]}); acc.length = 0; }
-    return acc;
-}, []);
+txSenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['TX-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
 // California State Assembly (80 districts)
 const caHouseData = "1|Heather|Hadwick|916-319-2001|2|Chris|Rogers|916-319-2002|3|James|Gallagher|916-319-2003|4|Cecilia|Aguiar-Curry|916-319-2004|5|Joe|Patterson|916-319-2005|6|Maggy|Krell|916-319-2006|7|Josh|Hoover|916-319-2007|8|David|Tangipa|916-319-2008|9|Heath|Flora|916-319-2009|10|Stephanie|Nguyen|916-319-2010|11|Lori|Wilson|916-319-2011|12|Damon|Connolly|916-319-2012|13|Rhodesia|Ransom|916-319-2013|14|Buffy|Wicks|916-319-2014|15|Anamarie|Ávila Farías|916-319-2015|16|Rebecca|Bauer-Kahan|916-319-2016|17|Matt|Haney|916-319-2017|18|Mia|Bonta|916-319-2018|19|Catherine|Stefani|916-319-2019|20|Liz|Ortega|916-319-2020|21|Diane|Papan|916-319-2021|22|Juan|Alanis|916-319-2022|23|Marc|Berman|916-319-2023|24|Alex|Lee|916-319-2024|25|Ash|Kalra|916-319-2025|26|Patrick|Ahrens|916-319-2026|27|Esmeralda|Soria|916-319-2027|28|Gail|Pellerin|916-319-2028|29|Robert|Rivas|916-319-2029|30|Dawn|Addis|916-319-2030|31|Joaquin|Arambula|916-319-2031|32|Stan|Ellis|916-319-2032|33|Alexandra|Macedo|916-319-2033|34|Tom|Lackey|916-319-2034|35|Jasmeet Kaur|Bains|916-319-2035|36|Jeff|Gonzalez|916-319-2036|37|Gregg|Hart|916-319-2037|38|Steve|Bennett|916-319-2038|39|Juan|Carrillo|916-319-2039|40|Pilar|Schiavo|916-319-2040|41|John|Harabedian|916-319-2041|42|Jacqui|Irwin|916-319-2042|43|Celeste|Rodriguez|916-319-2043|44|Nick|Schultz|916-319-2044|45|James|Ramos|916-319-2045|46|Jesse|Gabriel|916-319-2046|47|Greg|Wallis|916-319-2047|48|Blanca|Rubio|916-319-2048|49|Mike|Fong|916-319-2049|50|Robert|Garcia|916-319-2050|51|Rick Chavez|Zbur|916-319-2051|52|Jessica|Caloza|916-319-2052|53|Michelle|Rodriguez|916-319-2053|54|Mark|González|916-319-2054|55|Isaac|Bryan|916-319-2055|56|Lisa|Calderon|916-319-2056|57|Sade|Elhawary|916-319-2057|58|Leticia|Castillo|916-319-2058|59|Phillip|Chen|916-319-2059|60|Corey|Jackson|916-319-2060|61|Tina|McKinnor|916-319-2061|62|José Luis|Solache Jr.|916-319-2062|63|Natasha|Johnson|916-319-2063|64|Blanca|Pacheco|916-319-2064|65|Mike|Gipson|916-319-2065|66|Al|Muratsuchi|916-319-2066|67|Sharon|Quirk-Silva|916-319-2067|68|Avelino|Valencia|916-319-2068|69|Josh|Lowenthal|916-319-2069|70|Tri|Ta|916-319-2070|71|Kate|Sanchez|916-319-2071|72|Diane|Dixon|916-319-2072|73|Cottie|Petrie-Norris|916-319-2073|74|Laurie|Davies|916-319-2074|75|Carl|DeMaio|916-319-2075|76|Darshana|Patel|916-319-2076|77|Tasha|Boerner|916-319-2077|78|Christopher|Ward|916-319-2078|79|LaShae|Sharp-Collins|916-319-2079|80|David|Alvarez|916-319-2080";
 stateLeg['CA-SH'] = [];
-caHouseData.split('|').reduce((acc, val) => {
-    acc.push(val);
-    if (acc.length === 4) { stateLeg['CA-SH'].push({d: acc[0], f: acc[1], l: acc[2], p: acc[3]}); acc.length = 0; }
-    return acc;
-}, []);
+caHouseData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['CA-SH'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
 // California State Senate (40 districts)
 const caSenData = "1|Megan|Dahle|916-651-4001|2|Mike|McGuire|916-651-4002|3|Christopher|Cabaldon|916-651-4003|4|Marie|Alvarado-Gil|916-651-4004|5|Jerry|McNerney|916-651-4005|6|Roger|Niello|916-651-4006|7|Jesse|Arreguín|916-651-4007|8|Angelique|Ashby|916-651-4008|9|Tim|Grayson|916-651-4009|10|Aisha|Wahab|916-651-4410|11|Scott|Wiener|916-651-4011|12|Shannon|Grove|916-651-4012|13|Josh|Becker|916-651-4013|14|Anna|Caballero|916-651-4014|15|Dave|Cortese|916-651-4015|16|Melissa|Hurtado|916-651-4016|17|John|Laird|916-651-4017|18|Steve|Padilla|916-651-4018|19|Rosilicie|Ochoa Bogh|916-651-4019|20|Caroline|Menjivar|916-651-4020|21|Monique|Limón|916-651-4021|22|Susan|Rubio|916-651-4022|23|Suzette|Martinez Valladares|916-651-4023|24|Ben|Allen|916-651-4024|25|Sasha Renée|Pérez|916-651-4025|26|Maria Elena|Durazo|916-651-4026|27|Henry|Stern|916-651-4027|28|Lola|Smallwood-Cuevas|916-651-4028|29|Eloise|Gómez Reyes|916-651-4029|30|Bob|Archuleta|916-651-4030|31|Sabrina|Cervantes|916-651-4031|32|Kelly|Seyarto|916-651-4032|33|Lena|Gonzalez|916-651-4033|34|Thomas|Umberg|916-651-4034|35|Laura|Richardson|916-651-4035|36|Tony|Strickland|916-651-4036|37|Steven|Choi|916-651-4037|38|Catherine|Blakespear|916-651-4038|39|Akilah|Weber Pierson|916-651-4039|40|Brian|Jones|916-651-4040";
 stateLeg['CA-SS'] = [];
-caSenData.split('|').reduce((acc, val) => {
-    acc.push(val);
-    if (acc.length === 4) { stateLeg['CA-SS'].push({d: acc[0], f: acc[1], l: acc[2], p: acc[3]}); acc.length = 0; }
-    return acc;
-}, []);
+caSenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['CA-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
 // Wisconsin State Assembly (99 districts)
 const wiHouseData = "1|Joel|Kitchens|608-237-9101|2|Shae|Sortwell|608-237-9102|3|Ron|Tusler|608-237-9103|4|David|Steffen|608-237-9104|5|Joy|Goeben|608-237-9105|6|Elijah|Behnke|608-237-9106|7|Karen|Kirsch|608-237-9107|8|Sylvia|Ortiz-Velez|608-237-9108|9|Priscilla|Prado|608-237-9109|10|Darrin|Madison|608-237-9110|11|Sequanna|Taylor|608-237-9111|12|Russell|Goodwin|608-237-9112|13|Robyn|Vining|608-237-9113|14|Angelito|Tenorio|608-237-9114|15|Adam|Neylon|608-237-9115|16|Kalan|Haywood|608-237-9116|17|Supreme|Moore Omokunde|608-237-9117|18|Margaret|Arney|608-237-9118|19|Ryan|Clancy|608-237-9119|20|Christine|Sinicki|608-237-9120|21|Jessie|Rodriguez|608-237-9121|22|Paul|Melotik|608-237-9122|23|Deb|Andraca|608-237-9123|24|Dan|Knodl|608-237-9124|25|Paul|Tittl|608-237-9125|26|Joe|Sheehan|608-237-9126|27|Lindee|Brill|608-237-9127|28|Rob|Kreibich|608-237-9128|29|Treig|Pronschinske|608-237-9129|30|Shannon|Zimmerman|608-237-9130|31|Tyler|August|608-237-9131|32|Amanda|Nedweski|608-237-9132|33|Robin|Vos|608-237-9133|34|Rob|Swearingen|608-237-9134|35|Calvin|Callahan|608-237-9135|36|Jeff|Mursau|608-237-9136|37|Mark|Born|608-237-9137|38|William|Penterman|608-237-9138|39|Alex|Dallman|608-237-9139|40|Karen|DeSanto|608-237-9140|41|Tony|Kurtz|608-237-9141|42|Maureen|McCarville|608-237-9142|43|Brienne|Brown|608-237-9143|44|Ann|Roe|608-237-9144|45|Clinton|Anderson|608-237-9145|46|Joan|Fitzgerald|608-237-9146|47|Randy|Udell|608-237-9147|48|Andrew|Hysell|608-237-9148|49|Travis|Tranel|608-237-9149|50|Jenna|Jacobson|608-237-9150|51|Todd|Novak|608-237-9151|52|Lee|Snodgrass|608-237-9152|53|Dean|Kaufert|608-237-9153|54|Lori|Palmeri|608-237-9154|55|Nate|Gustafson|608-237-9155|56|David|Murphy|608-237-9156|57|Kevin|Petersen|608-237-9157|58|Rick|Gundrum|608-237-9158|59|Robert|Brooks|608-237-9159|60|Jerry|O'Connor|608-237-9160|61|Bob|Donovan|608-237-9161|62|Angelina|Cruz|608-237-9162|63|Robert|Wittke|608-237-9163|64|Tip|McGuire|608-237-9164|65|Ben|DeSmidt|608-237-9165|66|Greta|Neubauer|608-237-9166|67|David|Armstrong|608-237-9167|68|Rob|Summerfield|608-237-9168|69|Karen|Hurd|608-237-9169|70|Nancy|VanderMeer|608-237-9170|71|Vinnie|Miresse|608-237-9171|72|Scott|Krug|608-237-9172|73|Angela|Stroud|608-237-9173|74|Chanz|Green|608-237-9174|75|Duke|Tucker|608-237-9175|76|Francesca|Hong|608-237-9176|77|Renuka|Mayadev|608-237-9177|78|Sheila|Stubbs|608-237-9178|79|Lisa|Subeck|608-237-9179|80|Mike|Bare|608-237-9180|81|Alex|Joers|608-237-9181|82|Scott|Allen|608-237-9182|83|Dave|Maxey|608-237-9183|84|Chuck|Wichgers|608-237-9184|85|Patrick|Snyder|608-237-9185|86|John|Spiros|608-237-9186|87|Brent|Jacobson|608-237-9187|88|Benjamin|Franklin|608-237-9188|89|Ryan|Spaude|608-237-9189|90|Amaad|Rivera-Wagner|608-237-9190|91|Jodi|Emerson|608-237-9191|92|Clint|Moses|608-237-9192|93|Christian|Phelps|608-237-9193|94|Steve|Doyle|608-237-9194|95|Jill|Billings|608-237-9195|96|Tara|Johnson|608-237-9196|97|Cindi|Duchow|608-237-9197|98|Jim|Piwowarczyk|608-237-9198|99|Barbara|Dittrich|608-237-9199";
 stateLeg['WI-SH'] = [];
-wiHouseData.split('|').reduce((acc, val) => {
-    acc.push(val);
-    if (acc.length === 4) { stateLeg['WI-SH'].push({d: acc[0], f: acc[1], l: acc[2], p: acc[3]}); acc.length = 0; }
-    return acc;
-}, []);
+wiHouseData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['WI-SH'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
 // Wisconsin State Senate (33 districts)
 const wiSenData = "1|André|Jacque|608-266-3512|2|Eric|Wimberger|608-266-5670|3|Tim|Carpenter|608-266-8535|4|Dora|Drake|608-266-5810|5|Rob|Hutton|608-266-2512|6|LaTonya|Johnson|608-266-2500|7|Chris|Larson|608-266-7505|8|Jodi|Habush Sinykin|608-266-5830|9|Devin|LeMahieu|608-266-2056|10|Rob|Stafsholt|608-266-7745|11|Steve|Nass|608-266-2635|12|Mary|Felzkowski|608-266-2509|13|John|Jagler|608-266-5660|14|Sarah|Keyeski|608-266-0751|15|Mark|Spreitzer|608-266-2253|16|Melissa|Ratcliff|608-266-9170|17|Howard|Marklein|608-266-0703|18|Kristin|Dassler-Alfheim|608-266-7519|19|Rachael|Cabral-Guevara|608-266-0718|20|Dan|Feyen|608-266-5300|21|Van|Wanggaard|608-266-1832|22|Robert|Wirch|608-267-8979|23|Jesse|James|608-266-7511|24|Patrick|Testin|608-266-3123|25|Romaine|Quinn|608-266-3510|26|Kelda|Roys|608-266-1627|27|Dianne|Hesselbein|608-266-6670|28|Julian|Bradley|608-266-5400|29|Cory|Tomczyk|608-266-2502|30|Jamie|Wall|608-266-0484|31|Jeff|Smith|608-266-8546|32|Brad|Pfaff|608-266-5490|33|Chris|Kapenga|608-266-9174";
 stateLeg['WI-SS'] = [];
-wiSenData.split('|').reduce((acc, val) => {
-    acc.push(val);
-    if (acc.length === 4) { stateLeg['WI-SS'].push({d: acc[0], f: acc[1], l: acc[2], p: acc[3]}); acc.length = 0; }
-    return acc;
-}, []);
+wiSenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['WI-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
 // Washington State House (49 districts × 2 positions = 98 members)
 // Data format: dist|pos|first|last|phone (5 fields per member)
 const waHouseData = "1|1|Davina|Duerr|360-786-7928|1|2|Shelley|Kloba|360-786-7900|2|1|Andrew|Barkis|360-786-7824|2|2|Matt|Marshall|360-786-7912|3|1|Natasha|Hill|360-786-7888|3|2|Timm|Ormsby|360-786-7946|4|1|Rob|Chase|360-786-7984|4|2|Suzanne|Schmidt|360-786-7820|5|1|Lisa|Callan|360-786-7876|5|2|Zach|Hall|360-786-7852|6|1|Jenny|Graham|360-786-7962|6|2|Mike|Volz|360-786-7922|7|1|Hunter|Abell|360-786-7988|7|2|Andrew|Engell|360-786-7908|8|1|Stephanie|Barnard|360-786-7986|8|2|April|Connors|360-786-7882|9|1|Mary|Dye|360-786-7942|9|2|Joe|Schmick|360-786-7844|10|1|Dave|Paul|360-786-7914|10|2|Clyde|Shavers|360-786-7884|11|1|Steve|Bergquist|360-786-7862|11|2|David|Hackney|360-786-7956|12|1|Brian|Burnett|360-786-7954|12|2|Mike|Steele|360-786-7832|13|1|Tom|Dent|360-786-7932|13|2|Alex|Ybarra|360-786-7808|14|1|Deb|Manjarrez|360-786-7856|14|2|Gloria|Mendoza|360-786-7960|15|1|Chris|Corry|360-786-7810|15|2|Jeremie|Dufault|360-786-7874|16|1|Mark|Klicker|360-786-7836|16|2|Skyler|Rude|360-786-7828|17|1|David|Stuebe|360-786-7976|17|2|Kevin|Waters|360-786-7994|18|1|John|Ley|360-786-7812|18|2|Stephanie|McClintock|360-786-7850|19|1|Joel|McEntire|360-786-7870|19|2|Jim|Walsh|360-786-7806|20|1|Peter|Abbarno|360-786-7896|20|2|Ed|Orcutt|360-786-7990|21|1|Lillian|Ortiz-Self|360-786-7972|21|2|Strom|Peterson|360-786-7950|22|1|Beth|Doglio|360-786-7940|22|2|Lisa|Parshley|360-786-7992|23|1|Greg|Nance|360-786-7842|23|2|Tarra|Simmons|360-786-7934|24|1|Adam|Bernbaum|360-786-7916|24|2|Steve|Tharinger|360-786-7904|25|1|Cyndy|Jacobsen|360-786-7968|25|2|Michael|Keaton|360-786-7948|26|1|Adison|Richards|360-786-7964|26|2|Michelle|Valdez|360-786-7802|27|1|Jake|Fey|360-786-7974|27|2|Laurie|Jinkins|360-786-7930|28|1|Dan|Bronoske|360-786-7958|28|2|Mari|Leavitt|360-786-7890|29|1|Sharlett|Mena|360-786-7996|29|2|Melanie|Morgan|360-786-7906|30|1|Kristine|Reeves|360-786-7830|30|2|Jamila|Taylor|360-786-7898|31|1|Joshua|Penner|360-786-7866|31|2|Drew|Stokesbary|360-786-7846|32|1|Lauren|Davis|360-786-7910|32|2|Cindy|Ryu|360-786-7880|33|1|Mia|Gregerson|360-786-7868|33|2|Edwin|Obras|360-786-7834|34|1|Joe|Fitzgibbon|360-786-7952|34|2|Brianna|Thomas|360-786-7978|35|1|Travis|Couture|360-786-7902|35|2|Dan|Griffey|360-786-7966|36|1|Liz|Berry|360-786-7860|36|2|Julia|Reed|360-786-7814|37|1|Sharon Tomiko|Santos|360-786-7944|37|2|Chipalo|Street|360-786-7838|38|1|Julio|Cortes|360-786-7840|38|2|Mary|Fosse|360-786-7864|39|1|Carolyn|Eslick|360-786-7816|39|2|Sam|Low|360-786-7967|40|1|Debra|Lekanoff|360-786-7800|40|2|Alex|Ramel|360-786-7970|41|1|My-Linh|Thai|360-786-7926|41|2|Janice|Zahn|360-786-7894|42|1|Alicia|Rule|360-786-7980|42|2|Joe|Timmons|360-786-7854|43|1|Nicole|Macri|360-786-7826|43|2|Shaun|Scott|360-786-7920|44|1|April|Berg|360-786-7892|44|2|Brandy|Donaghy|360-786-7804|45|1|Roger|Goodman|360-786-7878|45|2|Larry|Springer|360-786-7822|46|1|Darya|Farivar|360-786-7818|46|2|Gerry|Pollet|360-786-7886|47|1|Debra|Entenman|360-786-7918|47|2|Chris|Stearns|360-786-7858|48|1|Osman|Salahuddin|360-786-7936|48|2|Amy|Walen|360-786-7848|49|1|Monica Jurado|Stonier|360-786-7872|49|2|Sharon|Wylie|360-786-7924";
 stateLeg['WA-SH'] = [];
-waHouseData.split('|').reduce((acc, val) => {
-    acc.push(val);
-    if (acc.length === 5) { stateLeg['WA-SH'].push({d: acc[0], pos: acc[1], f: acc[2], l: acc[3], p: acc[4]}); acc.length = 0; }
-    return acc;
-}, []);
+waHouseData.split('|').forEach((val, i, arr) => { if (i % 5 === 0) stateLeg['WA-SH'].push({d: arr[i], pos: arr[i+1], f: arr[i+2], l: arr[i+3], p: arr[i+4]}); });
 
 // Washington State Senate (49 districts)
 const waSenData = "1|Derek|Stanford|360-786-7600|2|Jim|McCune|360-786-7602|3|Marcus|Riccelli|360-786-7604|4|Leonard|Christian|360-786-7606|5|Victoria|Hunt|360-786-7608|6|Jeff|Holy|360-786-7610|7|Shelly|Short|360-786-7612|8|Matt|Boehnke|360-786-7614|9|Mark|Schoesler|360-786-7620|10|Ron|Muzzall|360-786-7618|11|Bob|Hasegawa|360-786-7616|12|Keith|Goehner|360-786-7622|13|Judy|Warnick|360-786-7624|14|Curtis|King|360-786-7626|15|Nikki|Torres|360-786-7684|16|Perry|Dozier|360-786-7630|17|Paul|Harris|360-786-7632|18|Adrian|Cortes|360-786-7634|19|Jeff|Wilson|360-786-7636|20|John|Braun|360-786-7638|21|Marko|Liias|360-786-7640|22|Jessica|Bateman|360-786-7642|23|Drew|Hansen|360-786-7644|24|Mike|Chapman|360-786-7646|25|Chris|Gildon|360-786-7648|26|Deborah|Krishnadasan|360-786-7650|27|Yasmin|Trudeau|360-786-7652|28|T'wina|Nobles|360-786-7654|29|Steve|Conway|360-786-7656|30|Claire|Wilson|360-786-7658|31|Phil|Fortunato|360-786-7660|32|Jesse|Salomon|360-786-7662|33|Tina|Orwall|360-786-7664|34|Emily|Alvarado|360-786-7667|35|Drew|MacEwen|360-786-7668|36|Noel|Frame|360-786-7670|37|Rebecca|Saldaña|360-786-7688|38|June|Robinson|360-786-7674|39|Keith|Wagoner|360-786-7676|40|Liz|Lovelett|360-786-7678|41|Lisa|Wellman|360-786-7641|42|Sharon|Shewmake|360-786-7682|43|Jamie|Pedersen|360-786-7628|44|John|Lovick|360-786-7686|45|Manka|Dhingra|360-786-7672|46|Javier|Valdez|360-786-7690|47|Claudia|Kauffman|360-786-7692|48|Vandana|Slatter|360-786-7694|49|Annette|Cleveland|360-786-7696";
 stateLeg['WA-SS'] = [];
-waSenData.split('|').reduce((acc, val) => {
-    acc.push(val);
-    if (acc.length === 4) { stateLeg['WA-SS'].push({d: acc[0], f: acc[1], l: acc[2], p: acc[3]}); acc.length = 0; }
-    return acc;
-}, []);
+waSenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['WA-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
 // New Jersey General Assembly (40 districts × 2 members = 80 members)
 // Data format: dist|pos|first|last|phone (5 fields per member)
 const njHouseData = "1|1|Antwan|McClellan|609-778-2012|1|2|Erik|Simonsen|609-778-2012|2|1|Donald|Guardian|609-677-8266|2|2|Maureen|Rowan|609-241-1905|3|1|David|Bailey Jr.|856-226-3530|3|2|Heather|Simmons|856-226-3530|4|1|Dan|Hutchison|856-401-3073|4|2|Cody|Miller|856-232-6700|5|1|William|Moen Jr.|856-547-4800|5|2|William|Spearman|856-853-2960|6|1|Louis|Greenwald|856-435-1247|6|2|Melinda|Kane|856-435-1247|7|1|Carol|Murphy|856-242-2018|7|2|Balvir|Singh|856-461-3997|8|1|Anthony|Angelozzi|640-600-4279|8|2|Andrea|Katz|609-850-2397|9|1|Gregory|Myhre|609-693-6700|9|2|Brian|Rumpf|609-693-6700|10|1|Paul|Kanitra|732-840-9028|10|2|Gregory|McGuckin|732-840-9028|11|1|Margie|Donlon|732-704-3808|11|2|Luanne|Peterpaul|732-704-3808|12|1|Robert|Clifton|732-970-6386|12|2|Alex|Sauickie|609-758-0205|13|1|Victoria|Flynn|732-856-9833|13|2|Gerry|Scharfenberger|732-856-9294|14|1|Wayne|DeAngelo|609-631-7501|14|2|Tennille|McCoy|609-631-0198|15|1|Verlina|Reynolds-Jackson|609-571-9638|15|2|Anthony|Verrelli|609-292-0500|16|1|Mitchelle|Drulis|908-968-4329|16|2|Roy|Freiman|908-829-4191|17|1|Joe|Danielsen|732-247-3999|17|2|Kevin|Egan|732-249-4550|18|1|Robert|Karabinchak|732-548-1406|18|2|Sterley|Stanley|732-875-3833|19|1|Craig|Coughlin|732-855-7441|19|2|Yvonne|Lopez|732-638-5057|20|1|Annette|Quijano|908-316-0266|20|2|Ed|Rodriguez|908-445-7145|21|1|Vincent|Kearney|908-516-2880|21|2|Andrew|Macurdy|908-679-8499|22|1|Linda|Carter|908-561-5757|22|2|James|Kennedy|732-943-2660|23|1|John|DiMaio|908-684-9550|23|2|Erik|Peterson|908-238-0251|24|1|Dawn|Fantasia|973-300-0200|24|2|Michael|Inganamort|973-300-0200|25|1|Aura|Dunn|973-206-1876|25|2|Marisa|Sweeney|973-933-2114|26|1|Brian|Bergen|973-539-8113|26|2|Jay|Webber|973-917-3420|27|1|Rosaura|Bagolie|973-535-5017|27|2|Alixon|Collazos-Gill|973-509-0388|28|1|Chigozie|Onyema|973-762-1886|28|2|Cleopatra|Tucker|973-926-4320|29|1|Eliana|Pintor Marin|973-589-0713|29|2|Shanique|Speight|862-237-9752|30|1|Sean|Kean|732-974-0400|30|2|Alexander|Schnall|848-245-9486|31|1|William|Sampson IV|201-455-2966|31|2|Jerry|Walker|201-451-5100|32|1|Ravi|Bhalla|201-683-7917|32|2|Katie|Brennan|551-256-7022|33|1|Gabriel|Rodriguez|201-223-4247|33|2|Larry|Wainstein|201-305-5139|34|1|Carmen|Morales|973-450-0484|34|2|Michael|Venezia|973-893-5869|35|1|Al|Abdelaziz|862-264-2540|35|2|Kenyatta|Stewart|973-925-7063|36|1|Clinton|Calabrese|201-943-0615|36|2|Gary|Schaer|973-249-3665|37|1|Shama|Haider|201-308-7061|37|2|Ellen|Park|201-308-7062|38|1|Lisa|Swain|201-576-9199|38|2|Chris|Tully|201-576-9199|39|1|Robert|Auth|201-564-7420|39|2|John|Azzariti Jr.|201-666-0881|40|1|Al|Barlas|862-702-8458|40|2|Christopher|DePhillips|201-444-9719";
 stateLeg['NJ-SH'] = [];
-njHouseData.split('|').reduce((acc, val) => {
-    acc.push(val);
-    if (acc.length === 5) { stateLeg['NJ-SH'].push({d: acc[0], pos: acc[1], f: acc[2], l: acc[3], p: acc[4]}); acc.length = 0; }
-    return acc;
-}, []);
+njHouseData.split('|').forEach((val, i, arr) => { if (i % 5 === 0) stateLeg['NJ-SH'].push({d: arr[i], pos: arr[i+1], f: arr[i+2], l: arr[i+3], p: arr[i+4]}); });
 
 // New Jersey State Senate (40 districts)
 const njSenData = "1|Michael|Testa Jr.|609-778-2012|2|Vincent|Polistina|609-677-8266|3|John|Burzichelli|856-226-3530|4|Paul|Moriarty|856-232-6700|5|Nilsa|Cruz-Perez|856-541-1251|6|James|Beach|856-429-1572|7|Troy|Singleton|856-234-2790|8|Latham|Tiver|856-817-2143|9|Carmen|Amato Jr.|732-678-1355|10|James|Holzapfel|732-840-9028|11|Vin|Gopal|732-704-3808|12|Owen|Henry|732-607-7580|13|Declan|O'Scanlon Jr.|732-444-1388|14|Linda|Greenstein|609-395-9911|15|Shirley|Turner|609-323-7239|16|Andrew|Zwicker|908-308-8672|17|Bob|Smith|732-752-0770|18|Patrick|Diegnan Jr.|908-757-1677|19|Joseph|Vitale|732-855-7441|20|Joseph|Cryan|908-624-0880|21|Jon|Bramnick|908-232-2073|22|Nicholas|Scutari|732-827-7480|23|Douglas|Steinhardt|908-835-0552|24|Parker|Space|973-300-0200|25|Anthony|Bucco|973-627-9700|26|Joseph|Pennacchio|973-227-4012|27|John|McKeon|862-930-7071|28|Renee|Burgess|862-231-6577|29|M. Teresa|Ruiz|973-484-1000|30|Robert|Singer|732-987-5669|31|Angela|McKnight|201-360-2502|32|Raj|Mukherji|201-626-4000|33|Brian|Stack|201-721-5263|34|Britnee|Timberlake|973-395-1166|35|Benjie|Wimberly|973-925-7061|36|Paul|Sarlo|201-804-8118|37|Gordon|Johnson|201-308-7060|38|Joseph|Lagana|201-576-9199|39|Holly|Schepisi|201-666-0881|40|Kristin|Corrado|973-237-1360";
 stateLeg['NJ-SS'] = [];
-njSenData.split('|').reduce((acc, val) => {
-    acc.push(val);
-    if (acc.length === 4) { stateLeg['NJ-SS'].push({d: acc[0], f: acc[1], l: acc[2], p: acc[3]}); acc.length = 0; }
-    return acc;
-}, []);
+njSenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['NJ-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
-// Nickname map for well-known members
-// State House/Assembly Speakers — used for title "Speaker X" instead of "Representative X"
-// Format: 'STATE-SH': 'district' or 'STATE-SH': 'district-pos' for multi-member
+// Pennsylvania House of Representatives (203 districts, 2 vacancies: HD-12, HD-196)
+const paHouseData = "1|Pat|Harkins|717-787-7406|2|Robert|Merski|717-787-4358|3|Ryan|Bizzarro|717-772-2297|4|Jake|Banta|717-783-9087|5|Eric|Weaknecht|717-772-9940|6|Brad|Roae|717-787-2353|7|Parke|Wentling|717-783-5008|8|Aaron|Bernstine|717-783-8322|9|Marla|Brown|717-783-2017|10|Amen|Brown|717-783-3832|11|Marci|Mustello|717-787-7686|13|John|Lawrence|717-260-6117|14|Roman|Kozak|717-260-6432|15|Josh|Kail|717-260-6144|16|Robert|Matzie|717-787-4444|17|Tim|Bonner|717-783-6438|18|K.C.|Tomlinson|717-783-7319|19|Aerion|Abney|717-783-3783|20|Emily|Kinkead|717-787-5470|21|Lindsay|Powell|717-783-9114|22|Ana|Tiburcio|717-705-6433|23|Dan|Frankel|717-705-1875|24|La'Tasha|Mayes|717-783-1017|25|Brandon|Markosek|717-772-4511|26|Paul|Friel|717-772-1411|27|Dan|Deasy|717-772-8187|28|Jeremy|Shaffer|717-772-9943|29|Tim|Brennan|717-772-2361|30|Arvind|Venkat|717-772-2363|31|Perry|Warren|717-787-5475|32|Joe|McAndrew|717-783-1011|33|Mandy|Steele|717-705-7141|34|Abigail|Salisbury|717-783-1914|35|Dan|Goughnour|717-783-1018|36|Jessica|Benham|717-783-0411|37|Mindy|Fee|717-772-5290|38|John|Inglis III|717-787-8175|39|Andrew|Kuzma|717-260-6122|40|Natalie|Mihalek|717-783-1524|41|Brett|Miller|717-705-7161|42|Jen|Mazzocco|717-783-1850|43|Keith|Greiner|717-783-6422|44|Valerie|Gaydos|717-787-6651|45|Anita Astorino|Kulik|717-783-3780|46|Jason|Ortitay|717-787-1281|47|Joe|D'Orsie|717-705-7167|48|Tim|O'Neal|717-787-3315|49|Ismail|Smith-Wade-El|717-772-0752|50|Bud|Cook|717-783-8655|51|Charity Grimm|Krupa|717-783-5173|52|Ryan|Warner|717-787-1540|53|Steve|Malagari|717-783-8515|54|Greg|Scott|717-772-0749|55|Jill|Cooper|717-787-8939|56|Brian|Rasel|717-260-6132|57|Eric|Nelson|717-260-6146|58|Eric|Davanzo|717-783-3825|59|Leslie|Rossi|717-783-9311|60|Abby|Major|717-783-5327|61|Liz|Hanbidge|717-783-4102|62|Jim|Struzzi|717-705-7173|63|Josh|Bashline|717-772-9908|64|Lee|James|717-783-8188|65|Kathy|Rapp|717-787-1367|66|Brian|Smith|717-787-3845|67|Martin|Causer|717-787-5075|68|Clint|Owlett|717-772-5371|69|Carl Walker|Metzgar|717-783-8756|70|Matthew|Bradford|717-772-2572|71|James|Rigby|717-772-9924|72|Frank|Burns|717-772-8056|73|Dallas|Kephart|717-787-7099|74|Dan K.|Williams|717-783-4103|75|Michael|Armanini|717-260-6142|76|Stephanie|Borowicz|717-772-9925|77|H. Scott|Conklin|717-787-9473|78|Jesse|Topper|717-787-7076|79|Andrea|Verobishk|717-787-6419|80|Scott|Barger|717-787-9020|81|Rich|Irvin|717-787-3335|82|Paul|Takac|717-772-0750|83|Jamie|Flick|717-787-2885|84|Joe|Hamm|717-787-5270|85|David|Rowe|717-787-3343|86|Perry|Stambaugh|717-783-1593|87|Thomas|Kutz|717-783-2063|88|Sheryl|Delozier|717-783-5282|89|Rob|Kauffman|717-705-2004|90|Chad|Reichard|717-783-5218|91|Dan|Moul|717-783-5217|92|Marc|Anderson|717-783-8783|93|Mike|Jones|717-783-8389|94|Wendy|Fink|717-783-6426|95|Carol|Hill-Evans|717-787-7514|96|Nikki|Rivera|717-787-3555|97|Steven|Mentzer|717-787-1776|98|Tom|Jones|717-783-2076|99|David|Zimmerman|717-787-3531|100|Bryan|Cutler|717-783-6424|101|John|Schlegel|717-783-1815|102|Russ|Diamond|717-787-2686|103|Nathan|Davidson|717-783-9342|104|Dave|Madsen|717-772-2362|105|Justin|Fleming|717-772-0674|106|Tom|Mehaffie|717-787-2684|107|Joanne|Stehr|717-260-6134|108|Michael|Stender|717-787-3485|109|Robert|Leadbeter|717-783-1102|110|Tina|Pickett|717-783-8238|111|Jonathan|Fritz|717-783-2910|112|Kyle|Mullins|717-783-5043|113|Kyle|Donahue|717-787-8981|114|Bridget|Kosierowski|717-783-4874|115|Maureen|Madden|717-787-5811|116|Dane|Watro|717-260-6136|117|Jamie|Walsh|717-787-1117|118|Jim|Haddock|717-787-3589|119|Alec|Ryncavage|717-783-2041|120|Brenda|Pugh|717-787-3798|121|Eddie Day|Pashinski|717-783-0686|122|Doyle|Heffley|717-260-6139|123|Tim|Twardzik|717-787-8956|124|Jamie|Barton|717-787-9029|125|Joe|Kerwin|717-260-6148|126|Jacklyn|Rusnock|717-783-3290|127|Manny|Guzman Jr.|717-787-3525|128|Mark|Gillen|717-787-8550|129|Johanny|Cepeda-Freytiz|717-772-1858|130|David|Maloney|717-260-6161|131|Milou|Mackenzie|717-783-1673|132|Mike|Schlossberg|717-705-1869|133|Jeanne|McNeill|717-772-9902|134|Peter|Schweyer|717-787-2909|135|Steve|Samuelson|717-705-1881|136|Robert|Freeman|717-783-3815|137|Joe|Emrick|717-260-6159|138|Ann|Flood|717-783-8573|139|Jeffrey|Olsommer|717-783-2037|140|Jim|Prokopiak|717-787-1292|141|Tina|Davis|717-783-4903|142|Joe|Hogan|717-260-6140|143|Shelby|Labs|717-787-8556|144|Brian|Munroe|717-772-1983|145|Craig|Staats|717-783-3154|146|Joe|Ciresi|717-783-4086|147|Donna|Scheuren|717-787-9501|148|Mary Jo|Daley|717-787-9475|149|Tim|Briggs|717-705-7011|150|Joe|Webster|717-787-0419|151|Melissa|Cerrato|717-772-1999|152|Nancy|Guenst|717-705-2044|153|Ben|Sanchez|717-783-7619|154|Napoleon|Nelson|717-783-1079|155|Danielle Friel|Otten|717-783-5009|156|Chris|Pielli|717-705-2075|157|Melissa|Shusterman|717-787-7524|158|Christina|Sappey|717-772-9973|159|Carol|Kazeem|717-787-5881|160|Craig|Williams|717-783-3038|161|Leanne|Krueger|717-705-2567|162|David|Delloso|717-783-6437|163|Heather|Boyd|717-783-8099|164|Gina|Curry|717-783-4907|165|Jennifer|O'Mara|717-783-4090|166|Greg|Vitali|717-787-7647|167|Kristine|Howard|717-783-4088|168|Lisa|Borowski|717-772-2005|169|Kate|Klunk|717-787-4790|170|Martina|White|717-787-6740|171|Kerry|Benninghoff|717-783-1918|172|Sean|Dougherty|717-783-4944|173|Pat|Gallagher|717-787-4331|174|Ed|Neilson|717-772-4032|175|Mary|Isaacson|717-783-8098|176|Jack|Rader|717-787-7732|177|Joseph|Hohenstein|717-783-4087|178|Kristin|Marcell|717-772-9926|179|Jason|Dawkins|717-787-1354|180|Jose|Giral|717-787-1407|181|Malcolm|Kenyatta|717-787-9471|182|Ben|Waxman|717-783-4072|183|Zach|Mako|717-772-5398|184|Elizabeth|Fiedler|717-787-5774|185|Regina|Young|717-783-8634|186|Jordan|Harris|717-783-1540|187|Gary|Day|717-787-1000|188|Rick|Krajewski|717-783-1000|189|Tarah|Probst|717-772-1421|190|G. Roni|Green|717-705-1876|191|Joanna|McClinton|717-772-9850|192|Morgan|Cephas|717-783-2192|193|Catherine|Wallen|717-783-8875|194|Tarik|Khan|717-783-4945|195|Keith|Harris|717-787-3480|197|Danilo|Burgos|717-772-2004|198|Darisha|Parker|717-787-7727|199|Barbara|Gleim|717-772-2280|200|Chris|Rabb|717-783-2178|201|Andre|Carroll|717-787-3181|202|Jared|Solomon|717-787-4117|203|Anthony|Bellmon|717-783-4111";
+stateLeg['PA-SH'] = [];
+paHouseData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['PA-SH'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
+
+// Pennsylvania State Senate (50 districts)
+const paSenData = "1|Nikil|Saval|717-787-5662|2|Christine|Tartaglione|717-787-1141|3|Sharif|Street|717-787-6735|4|Art|Haywood|717-787-1427|5|Joe|Picozzi|717-787-9608|6|Frank|Farry|717-787-5072|7|Vincent|Hughes|717-787-7112|8|Anthony H.|Williams|717-787-5970|9|John|Kane|717-787-4712|10|Steve|Santarsiero|717-787-7305|11|Judy|Schwank|717-787-8925|12|Maria|Collett|717-787-6599|13|Scott|Martin|717-787-6535|14|Nick|Miller|717-787-7105|15|Patty|Kim|717-787-6801|16|Jarrett|Coleman|717-787-1349|17|Amanda|Cappelletti|717-787-5544|18|Lisa|Boscola|717-787-4236|19|Carolyn|Comitta|717-787-5709|20|Lisa|Baker|717-787-7428|21|Scott|Hutchinson|717-787-9684|22|Marty|Flynn|717-787-6481|23|Gene|Yaw|717-787-3280|24|Tracy|Pennycuick|717-787-1100|25|Cris|Dush|717-787-7084|26|Tim|Kearney|717-787-1350|27|Lynda Schlegel|Culver|717-787-8928|28|Kristin|Phillips-Hill|717-787-7085|29|Dave|Argall|717-787-2637|30|Judy|Ward|717-787-5490|31|Dawn|Keefer|717-787-8524|32|Patrick|Stefano|717-787-7175|33|Doug|Mastriano|717-787-4651|34|Greg|Rothman|717-787-1377|35|Wayne|Langerholc Jr.|717-787-5400|36|James|Malone|717-787-4420|37|Devlin|Robinson|717-787-5839|38|Lindsey|Williams|717-787-6538|39|Kim|Ward|717-787-6063|40|Rosemary|Brown|717-787-6113|41|Joe|Pittman|717-787-8724|42|Wayne|Fontana|717-787-5300|43|Jay|Costa|717-787-7683|44|Katie|Muth|717-787-1398|45|Nick|Pisciottano|717-787-5580|46|Camera|Bartolotta|717-787-1463|47|Elder|Vogel Jr.|717-787-3076|48|Chris|Gebhard|717-787-5708|49|Dan|Laughlin|717-787-8927|50|Michele|Brooks|717-787-1322";
+stateLeg['PA-SS'] = [];
+paSenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['PA-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
+
+// Oregon State House (60 districts)
+const orHouseData = "1|Court|Boice|503-986-1401|2|Virgle|Osborne|503-986-1402|3|Dwayne|Yunker|503-986-1403|4|Alek|Skarlatos|503-986-1404|5|Pam|Marsh|503-986-1405|6|Kim|Wallan|503-986-1406|7|John|Lively|503-986-1407|8|Lisa|Fragala|503-986-1408|9|Boomer|Wright|503-986-1409|10|David|Gomberg|503-986-1410|11|Jami|Cate|503-986-1411|12|Darin|Harbick|503-986-1412|13|Nancy|Nathanson|503-986-1413|14|Julie|Fahey|503-986-1414|15|Shelly|Boshart Davis|503-986-1415|16|Sarah Finger|McDonald|503-986-1416|17|Ed|Diehl|503-986-1417|18|Rick|Lewis|503-986-1418|19|Tom|Andersen|503-986-1419|20|Paul|Evans|503-986-1420|21|Kevin|Mannix|503-986-1421|22|Lesly|Muñoz|503-986-1422|23|Anna|Scharf|503-986-1423|24|Lucetta|Elmer|503-986-1424|25|Ben|Bowman|503-986-1425|26|Sue Rieke|Smith|503-986-1426|27|Ken|Helm|503-986-1427|28|Dacia|Grayber|503-986-1428|29|Susan|McLain|503-986-1429|30|Nathan|Sosa|503-986-1430|31|Darcey|Edwards|503-986-1431|32|Cyrus|Javadi|503-986-1432|33|Shannon|Isadore|503-986-1433|34|Mari|Watanabe|503-986-1434|35|Farrah|Chaichi|503-986-1435|36|Hai|Pham|503-986-1436|37|Jules|Walters|503-986-1437|38|Daniel|Nguyễn|503-986-1438|39|April|Dobson|503-986-1439|40|Annessa|Hartman|503-986-1440|41|Mark|Gamba|503-986-1441|42|Rob|Nosse|503-986-1442|43|Tawna D.|Sanchez|503-986-1443|44|Travis|Nelson|503-986-1444|45|Thủy|Trần|503-986-1445|46|Willy|Chotzen|503-986-1446|47|Andrea|Valderrama|503-986-1447|48|Lamar|Wise|503-986-1448|49|Zach|Hudson|503-986-1449|50|Ricki|Ruiz|503-986-1450|51|Matt|Bunch|503-986-1451|52|Jeff|Helfrich|503-986-1452|53|Emerson|Levy|503-986-1453|54|Jason|Kropf|503-986-1454|55|E. Werner|Reschke|503-986-1455|56|Emily|McIntire|503-986-1456|57|Gregory|Smith|503-986-1457|58|Bobby|Levy|503-986-1458|59|Vikki|Breese-Iverson|503-986-1459|60|Mark|Owens|503-986-1460";
+stateLeg['OR-SH'] = [];
+orHouseData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['OR-SH'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
+
+// Oregon State Senate (30 districts)
+const orSenData = "1|David Brock|Smith|503-986-1701|2|Noah|Robinson|503-986-1702|3|Jeff|Golden|503-986-1703|4|Floyd|Prozanski|503-986-1704|5|Dick|Anderson|503-986-1705|6|Cedric|Hayden|503-986-1706|7|James I.|Manning Jr.|503-986-1707|8|Sara|Gelser Blouin|503-986-1708|9|Fred|Girod|503-986-1709|10|Deb|Patterson|503-986-1710|11|Kim|Thatcher|503-986-1711|12|Bruce|Starr|503-986-1712|13|Courtney|Neron Misslin|503-986-1713|14|Kate|Lieber|503-986-1714|15|Janeen|Sollman|503-986-1715|16|Suzanne|Weber|503-986-1716|17|Lisa|Reynolds|503-986-1717|18|Wlnsvey|Campos|503-986-1718|19|Rob|Wagner|503-986-1600|20|Mark|Meek|503-986-1720|21|Kathleen|Taylor|503-986-1721|22|Lew|Frederick|503-986-1722|23|Khanh|Pham|503-986-1723|24|Kayse|Jama|503-986-1724|25|Chris|Gorsek|503-986-1725|26|Christine|Drazan|503-986-1726|27|Anthony|Broadman|503-986-1727|28|Diane|Linthicum|503-986-1728|29|Todd|Nash|503-986-1729|30|Mike|McLane|503-986-1730";
+stateLeg['OR-SS'] = [];
+orSenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['OR-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
+
+// Minnesota State House (134 members, districts 1A-67B)
+const mnHouseData = "1A|John|Burkel|651-296-9635|1B|Steve|Gander|651-296-5091|2A|Bidal|Duran Jr.|651-296-4265|2B|Matt|Bliss|651-296-5516|3A|Roger J.|Skraba|651-296-2190|3B|Natalie|Zeleznikar|651-296-2676|4A|Heather|Keeler|651-296-5515|4B|Jim|Joy|651-296-6829|5A|Krista|Knudsen|651-296-9918|5B|Mike|Wiener|651-296-4293|6A|Ben|Davis|651-296-0172|6B|Josh|Heintzeman|651-296-4333|7A|Spencer|Igo|651-296-4936|7B|Cal|Warwas|651-296-0170|8A|Pete|Johnson|651-296-4246|8B|Liish|Kozlowski|651-296-2228|9A|Jeff|Backer|651-296-4929|9B|Tom|Murphy|651-296-4946|10A|Ron|Kresha|651-296-4247|10B|Isaac|Schultz|651-296-6746|11A|Jeff|Dotseth|651-296-4308|11B|Nathan|Nelson|651-296-0518|12A|Paul|Anderson|651-296-4317|12B|Mary|Franson|651-296-3201|13A|Lisa|Demuth|651-296-4373|13B|Tim|O'Driscoll|651-296-7808|14A|Bernie|Perryman|651-296-6316|14B|Dan|Wolgamott|651-296-6612|15A|Chris|Swedzinski|651-296-5374|15B|Paul|Torkelson|651-296-9303|16A|Scott|Van Binsbergen|651-296-4344|16B|Dave|Baker|651-296-6206|17A|Dawn|Gillman|651-296-4228|17B|Bobbie|Harder|651-296-4229|18A|Erica|Schwartz|651-296-8634|18B|Luke|Frederick|651-296-3248|19A|Keith|Allen|651-296-8237|19B|Tom|Sexton|651-296-5368|20A|Pam|Altendorf|651-296-8635|20B|Steven|Jacob|651-296-2273|21A|Joe|Schomacker|651-296-5505|21B|Marj|Fogelman|651-296-5373|22A|Bjorn|Olson|651-296-3240|22B|Terry|Stier|651-296-7065|23A|Peggy|Bennett|651-296-8216|23B|Patricia|Mueller|651-296-4193|24A|Duane|Quam|651-296-9236|24B|Tina|Liebling|651-296-0573|25A|Kimberly C.|Hicks|651-296-4378|25B|Andy|Smith|651-296-9249|26A|Aaron|Repinski|651-296-8637|26B|Greg|Davids|651-296-9278|27A|Shane|Mekeland|651-296-2451|27B|Bryan|Lawrence|651-296-5364|28A|Jimmy|Gordon|651-296-4346|28B|Max|Rymer|651-296-5377|29A|Joe|McDonald|651-296-4336|29B|Marion|Rarick|651-296-5063|30A|Walter|Hudson|651-296-1534|30B|Paul|Novotny|651-296-4237|31A|Harry|Niska|651-296-2439|31B|Peggy|Scott|651-296-4231|32A|Nolan|West|651-296-4226|32B|Matt|Norris|651-296-2907|33A|Patti|Anderson|651-296-3018|33B|Josiah|Hill|651-296-4124|34A|Danny|Nadeau|651-296-4315|34B|Xp|Lee|651-296-4280|35A|Zack|Stephenson|651-296-5513|35B|Kari|Rehraur|651-296-1729|36A|Elliott|Engen|651-296-2365|36B|Brion|Curran|651-296-4342|37A|Kristin|Robbins|651-296-7806|37B|Kristin|Bahner|651-296-5502|38A|Huldah|Momanyi-Hiltsley|651-296-3751|38B|Samantha|Vang|651-296-3709|39A|Erin|Koegel|651-296-5369|39B|Sandra|Feist|651-296-4331|40A|Kelly|Moller|651-296-0141|40B|David|Gottfried|651-296-7153|41A|Wayne|Johnson|651-296-4244|41B|Tom|Dippel|651-296-3135|42A|Ned|Carroll|651-296-5510|42B|Ginny|Klevorn|651-296-5511|43A|Cedrick|Frazier|651-296-4255|43B|Mike|Freiberg|651-296-4176|44A|Peter|Fischer|651-296-5363|44B|Leon|Lillie|651-296-1188|45A|Andrew|Myers|651-296-9188|45B|Patty|Acomb|651-296-9934|46A|Larry|Kraft|651-296-7026|46B|Cheryl|Youakim|651-296-9889|47A|Shelley|Buck|651-296-7807|47B|Ethan|Cha|651-296-1147|48A|Jim|Nash|651-296-4282|48B|Lucy|Rehm|651-296-5066|49A|Alex|Falconer|651-296-3964|49B|Carlie|Kotyza-Witthuhn|651-296-7449|50A|Julie|Greene|651-296-4363|50B|Steve|Elkins|651-296-7803|51A|Michael|Howard|651-296-7158|51B|Nathan|Coulter|651-296-4218|52A|Liz|Reyer|651-296-4128|52B|Bianca|Virnig|651-296-4192|53A|Mary Frances|Clardy|651-296-3533|53B|Rick|Hansen|651-296-6828|54A|Brad|Tabke|651-296-8872|54B|Ben|Bakeberg|651-296-5185|55A|Jessica|Hanson|651-296-4212|55B|Kaela|Berg|651-296-5387|56A|Robert|Bierman|651-296-5506|56B|John|Huot|651-296-4306|57A|Jon|Koznick|651-296-6926|57B|Jeff|Witte|651-296-4240|58A|Kristi|Pursell|651-296-0171|58B|Drew|Roach|651-296-1069|59A|Fue|Lee|651-296-4262|59B|Esther|Agbaje|651-296-8659|60A|Sydney|Jordan|651-296-4219|60B|Mohamud|Noor|651-296-4257|61A|Katie|Jones|651-296-9281|61B|Jamie|Long|651-296-5375|62A|Aisha|Gomez|651-296-7152|62B|Anquam|Mahamoud|651-296-0294|63A|Samantha|Sencer-Mura|651-296-0173|63B|Emma|Greenman|651-296-4200|64A|Meg|Luger-Nikolai|651-296-8799|64B|Dave|Pinto|651-296-4199|65A|Samakab|Hussein|651-296-5158|65B|María Isa|Pérez-Vega|651-296-9714|66A|Leigh|Finke|651-296-3824|66B|Athena|Hollins|651-296-4224|67A|Liz|Lee|651-296-4277|67B|Jay|Xiong|651-296-4201";
+stateLeg['MN-SH'] = [];
+mnHouseData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['MN-SH'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
+
+// Minnesota State Senate (67 districts)
+const mnSenData = "1|Mark T.|Johnson|651-296-5782|2|Steve|Green|651-297-8063|3|Grant|Hauschild|651-296-1789|4|Robert J.|Kupec|651-296-3205|5|Paul J.|Utke|651-296-9651|6|Keri|Heintzeman|651-296-7079|7|Robert D.|Farnsworth|651-296-8436|8|Jennifer A.|McEwen|651-296-4188|9|Jordan|Rasmusson|651-296-4875|10|Nathan|Wesenberg|651-296-4913|11|Jason|Rarick|651-296-1508|12|Torrey N.|Westrom|651-296-3826|13|Jeff R.|Howe|651-296-2084|14|Aric|Putnam|651-296-6455|15|Gary H.|Dahms|651-296-8138|16|Andrew R.|Lang|651-296-4918|17|Glenn H.|Gruenhagen|651-296-4131|18|Nick A.|Frentz|651-296-6153|19|John R.|Jasinski|651-296-0284|20|Steve J.|Drazkowski|651-296-5612|21|Bill|Weber|651-296-5650|22|Rich|Draheim|651-296-5558|23|Gene|Dornink|651-296-5240|24|Carla J.|Nelson|651-296-4848|25|Liz|Boldon|651-296-3903|26|Jeremy R.|Miller|651-296-5649|27|Andrew|Mathews|651-296-8075|28|Mark W.|Koran|651-296-5419|29|Michael W.|Holmstrom|651-296-5981|30|Eric|Lucero|651-296-5655|31|Calvin K.|Bahr|651-296-3219|32|Michael E.|Kreun|651-296-1282|33|Karin|Housley|651-296-4351|34|John A.|Hoffman|651-296-4154|35|Jim|Abeler|651-296-3733|36|Heather|Gustafson|651-296-1253|37|Warren|Limmer|651-296-2159|38|Susan|Pha|651-296-2556|39|Mary K.|Kunesh|651-296-4334|40|John|Marty|651-296-5645|41|Judy|Seeberger|651-297-8060|42|Bonnie S.|Westlin|651-296-8869|43|Ann H.|Rest|651-296-2889|44|Tou|Xiong|651-296-6820|45|Ann M.|Johnson Stewart|651-296-9261|46|Ron|Latz|651-297-8065|47|Amanda|Hemmingsen-Jaeger|651-296-5537|48|Julia E.|Coleman|651-296-4387|49|Steve A.|Cwodzinski|651-296-1314|50|Alice|Mann|651-296-6238|51|Melissa H.|Wiklund|651-297-8061|52|Jim|Carlson|651-297-8073|53|Matt D.|Klein|651-296-4370|54|Eric R.|Pratt|651-296-4123|55|Lindsey|Port|651-296-5975|56|Erin K.|Maye Quade|651-296-4120|57|Zach|Duckworth|651-296-7633|58|Bill|Lieske|651-296-5019|59|Bobby Joe|Champion|651-296-9246|60|Doron|Clark|651-296-7809|61|D. Scott|Dibble|651-296-4191|62|Omar|Fateh|651-296-4261|63|Zaynab|Mohamed|651-296-4274|64|Erin P.|Murphy|651-296-5931|65|Sandra L.|Pappas|651-296-1802|66|Clare Oumou|Verbeten|651-296-8866|67|Foung|Hawj|651-296-5285";
+stateLeg['MN-SS'] = [];
+mnSenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['MN-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
+
+// Virginia House of Delegates (100 districts)
+const vaHouseData = "1|Patrick A.|Hope|804-698-1001|2|Adele Y.|McClure|804-698-1002|3|Alfonso H.|Lopez|804-698-1003|4|Charniele L.|Herring|804-698-1004|5|R. Kirk|McPike|804-698-1005|6|Richard C.|Sullivan Jr.|804-698-1006|7|Karen|Keys-Gamarra|804-698-1007|8|Irene|Shin|804-698-1008|9|Karrie K.|Delaney|804-698-1009|10|Dan|Helmer|804-698-1010|11|Gretchen M.|Bulova|804-698-1011|12|Holly M.|Seibold|804-698-1012|13|Marcus B.|Simon|804-698-1013|14|Vivian E.|Watts|804-698-1014|15|Laura Jane|Cohen|804-698-1015|16|Paul E.|Krizek|804-698-1016|17|Garrett|McGuire|804-698-1017|18|Kathy K.L.|Tran|804-698-1018|19|Rozia A.|Henson Jr.|804-698-1019|20|Michelle|Lopes Maldonado|804-698-1020|21|Josh|Thomas|804-698-1021|22|Elizabeth R.|Guzman|804-698-1022|23|Margaret Angela|Franklin|804-698-1023|24|Luke E.|Torian|804-698-1024|25|Briana D.|Sewell|804-698-1025|26|JJ|Singh|804-698-1026|27|Atoosa R.|Reaser|804-698-1027|28|David A.|Reid|804-698-1028|29|Fernando J.|Martinez|804-698-1029|30|John C.|McAuliff|804-698-1030|31|Delores|Oates|804-698-1031|32|William D.|Wiley|804-698-1032|33|Justin L.|Pence|804-698-1033|34|Tony O.|Wilt|804-698-1034|35|Chris|Runion|804-698-1035|36|Ellen H.|McLaughlin|804-698-1036|37|Terry L.|Austin|804-698-1037|38|Sam|Rasoul|804-698-1038|39|Will P.|Davis|804-698-1039|40|Joseph P.|McNamara|804-698-1040|41|Lily V.|Franklin|804-698-1041|42|Jason S.|Ballard|804-698-1042|43|James W.|Morefield|804-698-1043|44|Israel D.|O'Quinn|804-698-1044|45|Terry G.|Kilgore|804-698-1045|46|Mitchell|Cornett|804-698-1046|47|Wren M.|Williams|804-698-1047|48|Eric J.|Phillips|804-698-1048|49|Madison|Whittle|804-698-1049|50|Thomas C.|Wright Jr.|804-698-1050|51|Eric|Zehr|804-698-1051|52|Wendell S.|Walker|804-698-1052|53|Timothy P.|Griffin|804-698-1053|54|Katrina E.|Callsen|804-698-1054|55|Amy J.|Laufer|804-698-1055|56|Thomas A.|Garrett Jr.|804-698-1056|57|May|Nivar|804-698-1057|58|Rodney T.|Willett|804-698-1058|59|Hyland F.|Fowler Jr.|804-698-1059|60|Scott A.|Wyatt|804-698-1060|61|Michael J.|Webert|804-698-1061|62|Karen Fleming|Hamilton|804-698-1062|63|Phillip A.|Scott|804-698-1063|64|Stacey A.|Carroll|804-698-1064|65|Joshua G.|Cole|804-698-1065|66|Nicole|Cole|804-698-1066|67|Hillary Pugh|Kent|804-698-1067|68|M. Keith|Hodges|804-698-1068|69|Mark C.|Downey|804-698-1069|70|Shelly A.|Simonds|804-698-1070|71|Jessica L.|Anderson|804-698-1071|72|R. Lee|Ware|804-698-1072|73|Leslie Chambers|Mehta|804-698-1073|74|Mike A.|Cherry|804-698-1074|75|Lindsey|Dougherty|804-698-1075|76|Debra D.|Gardner|804-698-1076|77|Charles H.|Schmidt Jr.|804-698-1077|78|Betsy B.|Carr|804-698-1078|79|Rae C.|Cousins|804-698-1079|80|Destiny L.|LeVere Bolling|804-698-1080|81|Delores L.|McQuinn|804-698-1081|82|Kimberly Pope|Adams|804-698-1082|83|Howard Otto|Wachsmann Jr.|804-698-1083|84|Nadarius E.|Clark|804-698-1084|85|Marcia S.|Price|804-698-1085|86|Virgil Gene|Thornton Sr.|804-698-1086|87|Jeion A.|Ward|804-698-1087|88|Don L.|Scott Jr.|804-698-1088|89|Karen Robins|Carnegie|804-698-1089|90|James A.|Leftwich Jr.|804-698-1090|91|C.E.|Hayes Jr.|804-698-1091|92|Bonita G.|Anthony|804-698-1092|93|Jackie Hope|Glass|804-698-1093|94|Phil M.|Hernandez|804-698-1094|95|Alex Q.|Askew|804-698-1095|96|Kelly K.|Convirs-Fowler|804-698-1096|97|Michael|Feggans|804-698-1097|98|Andrew|Rice|804-698-1098|99|Anne Ferrell H.|Tata|804-698-1099|100|Robert S.|Bloxom Jr.|804-698-1000";
+stateLeg['VA-SH'] = [];
+vaHouseData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['VA-SH'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
+
+// Virginia State Senate (40 districts)
+const vaSenData = "1|Timmy|French|804-698-7501|2|Mark D.|Obenshain|804-698-7502|3|Christopher T.|Head|804-698-7503|4|David R.|Suetterlein|804-698-7504|5|T. Travis|Hackworth|804-698-7505|6|Todd E.|Pillion|804-698-7506|7|William M.|Stanley Jr.|804-698-7507|8|Mark J.|Peake|804-698-7508|9|Tammy Brankley|Mulchi|804-698-7509|10|Luther H.|Cifers III|804-698-7510|11|R. Creigh|Deeds|804-698-7511|12|Glen H.|Sturtevant Jr.|804-698-7512|13|Lashrecse D.|Aird|804-698-7513|14|Lamont|Bagby|804-698-7514|15|Michael J.|Jones|804-698-7515|16|Schuyler T.|VanValkenburg|804-698-7516|17|Emily M.|Jordan|804-698-7517|18|L. Louise|Lucas|804-698-7518|19|Christie New|Craig|804-698-7519|20|Bill|DeSteph|804-698-7520|21|Angelia Williams|Graves|804-698-7521|22|Aaron R.|Rouse|804-698-7522|23|Mamie E.|Locke|804-698-7523|24|J.D.|Diggs|804-698-7524|25|Richard H.|Stuart|804-698-7525|26|Ryan T.|McDougle|804-698-7526|27|Tara A.|Durant|804-698-7527|28|Bryce E.|Reeves|804-698-7528|29|Jeremy S.|McPike|804-698-7529|30|Danica A.|Roem|804-698-7530|31|Russet W.|Perry|804-698-7531|32|Kannan|Srinivasan|804-698-7532|33|Jennifer D.|Carroll Foy|804-698-7533|34|Scott A.|Surovell|804-698-7534|35|David W.|Marsden|804-698-7535|36|Stella G.|Pekarsky|804-698-7536|37|Saddam Azlan|Salim|804-698-7537|38|Jennifer B.|Boysko|804-698-7538|39|Elizabeth B.|Bennett-Parker|804-698-7539|40|Barbara A.|Favola|804-698-7540";
+stateLeg['VA-SS'] = [];
+vaSenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['VA-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
+
+// Arizona House of Representatives (30 districts × 2 members = 60 members)
+// Data format: dist|pos|first|last|phone (5 fields per member)
+const azHouseData = "1|1|Selina|Bliss|(602) 926-4018|1|2|Quang H.|Nguyen|(602) 926-3258|2|1|Stephanie|Simacek|(602) 926-3083|2|2|Justin|Wilmeth|(602) 926-5044|3|1|Cody|Reim|(602) 926-3436|3|2|Alexander|Kolodin|(602) 926-3560|4|1|Pamela|Carter|(602) 926-3153|4|2|Matt|Gress|(602) 926-4105|5|1|Sarah|Liguori|(602) 926-3264|5|2|Aaron|Márquez|(602) 926-3179|6|1|Mae|Peshlakai|(602) 926-3708|6|2|Myron|Tsosie|(602) 926-3157|7|1|Walter|Blackman|(602) 926-3244|7|2|David|Marshall Sr.|(602) 926-3579|8|1|Janeen|Connolly|(602) 926-3300|8|2|Brian|Garcia|(602) 926-3329|9|1|Lorena|Austin|(602) 926-3968|9|2|Seth|Blattman|(602) 926-3996|10|1|Ralph|Heap|(602) 926-3381|10|2|Justin|Olson|(602) 926-3376|11|1|Junelle|Cavero|(602) 926-3285|11|2|Oscar|De Los Santos|(602) 926-4098|12|1|Patricia|Contreras|(602) 926-4057|12|2|Anastasia|Travers|(602) 926-3917|13|1|Jeff|Weninger|(602) 926-3392|13|2|Julie|Willoughby|(602) 926-4153|14|1|Laurin|Hendrix|(602) 926-4209|14|2|Khyl|Powell|(602) 926-3415|15|1|Neal|Carter|(602) 926-5761|15|2|Michael|Way|(602) 926-3433|16|1|Chris|Lopez|(602) 926-3445|16|2|Teresa|Martinez|(602) 926-3158|17|1|Rachel|Keshel|(602) 926-3558|17|2|Kevin|Volk|(602) 926-3498|18|1|Nancy|Gutierrez|(602) 926-4134|18|2|Christopher|Mathis|(602) 926-3138|19|1|Lupe|Diaz|(602) 926-4852|19|2|Gail|Griffin|(602) 926-5895|20|1|Alma|Hernandez|(602) 926-3136|20|2|Betty J.|Villegas|(602) 926-3027|21|1|Consuelo|Hernandez|(602) 926-3523|21|2|Stephanie Stahl|Hamilton|(602) 926-3279|22|1|Lupe|Contreras|(602) 926-5284|22|2|Elda|Luna-Nájera|(602) 926-3881|23|1|Michele|Peña|(602) 926-3696|23|2|Mariana|Sandoval|(602) 926-3740|24|1|Anna|Abeytia|(602) 926-3501|24|2|Lydia|Hernandez|(602) 926-3553|25|1|Michael|Carbone|(602) 926-4038|25|2|Nickolas|Kupper|(602) 926-3512|26|1|Cesar|Aguilar|(602) 926-3953|26|2|Quantá|Crews|(602) 926-3256|27|1|Lisa|Fink|(602) 926-3516|27|2|Tony|Rivero|(602) 926-3528|28|1|David|Livingston|(602) 926-4178|28|2|Beverly|Pingerelli|(602) 926-3396|29|1|Steve|Montenegro|(602) 926-3635|29|2|James|Taylor|(602) 926-3564|30|1|Leo|Biasiucci|(602) 926-3018|30|2|John|Gillette|(602) 926-4100";
+stateLeg['AZ-SH'] = [];
+azHouseData.split('|').forEach((val, i, arr) => { if (i % 5 === 0) stateLeg['AZ-SH'].push({d: arr[i], pos: arr[i+1], f: arr[i+2], l: arr[i+3], p: arr[i+4]}); });
+
+// Arizona State Senate (30 districts)
+const azSenData = "1|Mark|Finchem|(602) 926-3631|2|Shawnna|Bolick|(602) 926-3314|3|John|Kavanagh|(602) 926-5170|4|Carine|Werner|(602) 926-3673|5|Lela|Alston|(602) 926-5829|6|Theresa|Hatathlie|(602) 926-5160|7|Wendy|Rogers|(602) 926-3042|8|Lauren|Kuby|(602) 926-4124|9|Kiana|Sears|(602) 926-3374|10|David C.|Farnsworth|(602) 926-3387|11|Catherine|Miranda|(602) 926-3413|12|Denise|Epstein|(602) 926-4870|13|J.D.|Mesnard|(602) 926-4481|14|Warren|Petersen|(602) 926-4136|15|Jake|Hoffman|(602) 926-3292|16|Thomas|Shope|(602) 926-3012|17|Venden|Leach|(602) 926-3694|18|Priya|Sundareshan|(602) 926-3437|19|David|Gowan|(602) 926-5154|20|Sally Ann|Gonzales|(602) 926-3278|21|Rosanna|Gabaldón|(602) 926-3424|22|Eva|Diaz|(602) 926-3473|23|Brian|Fernandez|(602) 926-3098|24|Analise|Ortiz|(602) 926-3633|25|Timothy|Dunn|(602) 926-4139|26|Flavio|Bravo|(602) 926-4033|27|Kevin|Payne|(602) 926-4854|28|Frank|Carroll|(602) 926-3249|29|Janae|Shamp|(602) 926-3499|30|Hildy|Angius|(602) 926-5051";
+stateLeg['AZ-SS'] = [];
+azSenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['AZ-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
+
 const stateSpeakers = {
     'MI-SH': '42', 'IL-SH': '7', 'NC-SH': '87', 'OK-SH': '29', 'OH-SH': '78',
     'GA-SH': '159', 'NY-SH': '83', 'NV-SH': '9', 'TX-SH': '83', 'CA-SH': '29',
-    'WI-SH': '33', 'WA-SH': '27-2', 'NJ-SH': '19-1'
+    'WI-SH': '33', 'WA-SH': '27-2', 'NJ-SH': '19-1', 'PA-SH': '191', 'OR-SH': '14',
+    'MN-SH': '13A', 'VA-SH': '88', 'AZ-SH': '29-1'
 };
+
+// Helper: pad district number, but skip padding for alphanumeric districts (e.g. MN's 13A)
+function padDist(dist, padLen) {
+    if (/[A-Za-z]/.test(dist)) return String(dist).toUpperCase();
+    return String(dist).padStart(padLen, '0');
+}
 
 // Helper: get title for a state leg member
 function getStateLegTitle(chamberKey, dist, lastName, pos) {
@@ -1140,7 +1091,7 @@ function loadChamber() {
         if (chamber === 'FED-HOUSE' || chamber === 'FED-BOTH') {
             for (let s in house) {
                 const stReps = house[s];
-                const cdPad = stReps.length > 0 ? (Math.max(...stReps.map(r => parseInt(r.d) || 0)) >= 100 ? 3 : 2) : 2;
+                const cdPad = stReps.length > 0 ? (stReps.reduce((mx, r) => Math.max(mx, parseInt(r.d) || 0), 0) >= 100 ? 3 : 2) : 2;
                 stReps.forEach(rep => {
                     const already = entries.find(e => e.first === rep.f && e.last === rep.l && e.phone === rep.p);
                     if (!already) {
@@ -1187,7 +1138,7 @@ function loadChamber() {
     // Per-state: Load US House
     if (chamber === 'US-HOUSE' || chamber === 'US-BOTH' || chamber === 'ALL') {
         const stReps = house[st] || [];
-        const cdPad = stReps.length > 0 ? (Math.max(...stReps.map(r => parseInt(r.d) || 0)) >= 100 ? 3 : 2) : 2;
+        const cdPad = stReps.length > 0 ? (stReps.reduce((mx, r) => Math.max(mx, parseInt(r.d) || 0), 0) >= 100 ? 3 : 2) : 2;
         stReps.forEach(rep => {
             const already = entries.find(e => e.first === rep.f && e.last === rep.l && e.phone === rep.p);
             if (!already) {
@@ -1207,18 +1158,23 @@ function loadChamber() {
     if (chamber === 'SH' || chamber === 'STATE-BOTH' || chamber === 'ALL') stateChambers.push('SH');
     if (chamber === 'SS' || chamber === 'STATE-BOTH' || chamber === 'ALL') stateChambers.push('SS');
 
-    stateChambers.forEach(ch => {
+    for (let ci = 0; ci < stateChambers.length; ci++) {
+        const ch = stateChambers[ci];
         const key = `${st}-${ch}`;
-        if (!stateLeg[key]) return;
+        if (!stateLeg[key]) continue;
         const prefix = ch === 'SS' ? 'SD' : 'HD';
-        const titlePrefix = ch === 'SS' ? 'Senator' : 'Representative';
-        const maxDist = Math.max(...stateLeg[key].map(l => parseInt(l.d) || 0));
+        const members = stateLeg[key];
+        const maxDist = members.reduce((mx, l) => Math.max(mx, parseInt(l.d) || 0), 0);
         const padLen = maxDist >= 100 ? 3 : 2;
 
-        stateLeg[key].forEach(leg => {
-            const paddedDist = String(leg.d).padStart(padLen, '0');
-            const already = entries.find(e => e.first === leg.f && e.last === leg.l && e.phone === leg.p);
-            if (!already) {
+        for (let li = 0; li < members.length; li++) {
+            const leg = members[li];
+            const paddedDist = padDist(leg.d, padLen);
+            let isDupe = false;
+            for (let ei = 0; ei < entries.length; ei++) {
+                if (entries[ei].first === leg.f && entries[ei].last === leg.l && entries[ei].phone === leg.p) { isDupe = true; break; }
+            }
+            if (!isDupe) {
                 const entry = {
                     state: st, target: `${prefix}${paddedDist}`, distNum: leg.d, chamberType: ch,
                     first: leg.f, last: leg.l, title: getStateLegTitle(key, leg.d, leg.l, leg.pos),
@@ -1228,9 +1184,9 @@ function loadChamber() {
                 entries.push(entry);
                 count++;
             }
-        });
+        }
         labels.push(ch === 'SH' ? 'State House' : 'State Senate');
-    });
+    }
 
     if (chamber === 'US-BOTH') labels.length = 0, labels.push('all federal delegation');
     if (chamber === 'STATE-BOTH') labels.length = 0, labels.push('both state chambers');
@@ -1302,7 +1258,10 @@ function finalizeParse(found) {
         document.getElementById('extractedDays').textContent = document.getElementById('campaignDays').value;
         document.getElementById('extractedTotal').textContent = document.getElementById('totalPatches').textContent;
         document.getElementById('targetsList').innerHTML = found.map(t => `<div class="item">✓ ${t.first} ${t.last} (${t.state}) — ${t.title} — ${t.phone}</div>`).join('');
-        found.forEach(f => { entries.push({...f, goal: getGoal(), total: getTotal()}); });
+        found.forEach(f => {
+            const isDupe = entries.some(e => e.first === f.first && e.last === f.last && e.phone === f.phone);
+            if (!isDupe) entries.push({...f, goal: getGoal(), total: getTotal()});
+        });
         fixSenatorTargets();
         render();
     } else {
@@ -1311,6 +1270,15 @@ function finalizeParse(found) {
 }
 
 // Helper: search all databases for a last name, optionally filtered by state/first name
+// Helper: flexible first name matching (handles nicknames like Patty/Patricia, Bob/Robert)
+function firstMatch(dbFirst, inputFirst) {
+    const a = dbFirst.toLowerCase(), b = inputFirst.toLowerCase();
+    if (a.startsWith(b) || b.startsWith(a)) return true;
+    // Share at least 3-char prefix (Pat matches Patricia, Patty)
+    if (a.length >= 3 && b.length >= 3 && a.substring(0,3) === b.substring(0,3)) return true;
+    return false;
+}
+
 function findByLastName(lastName, stateHint, firstHint) {
     const results = [];
     const re = new RegExp('^' + lastName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$', 'i');
@@ -1322,7 +1290,7 @@ function findByLastName(lastName, stateHint, firstHint) {
         if (stateHint && st !== stateHint) continue;
         senators[st].forEach((sen, i) => {
             if (re.test(sen.l) || partialRe.test(sen.l)) {
-                if (firstHint && !sen.f.toLowerCase().startsWith(firstHint.toLowerCase())) return;
+                if (firstHint && !firstMatch(sen.f, firstHint)) return;
                 results.push({state:st, target:`${st}Sn1`, first:sen.f, last:sen.l, title:`Senator ${sen.l}`, phone:sen.p, pronunciation:'', level:'US Senate'});
             }
         });
@@ -1332,8 +1300,8 @@ function findByLastName(lastName, stateHint, firstHint) {
         if (stateHint && st !== stateHint) continue;
         house[st].forEach(rep => {
             if (re.test(rep.l) || partialRe.test(rep.l)) {
-                if (firstHint && !rep.f.toLowerCase().startsWith(firstHint.toLowerCase())) return;
-                const cdPad = house[st].length > 0 ? (Math.max(...house[st].map(r => parseInt(r.d) || 0)) >= 100 ? 3 : 2) : 2;
+                if (firstHint && !firstMatch(rep.f, firstHint)) return;
+                const cdPad = house[st].length > 0 ? (house[st].reduce((mx, r) => Math.max(mx, parseInt(r.d) || 0), 0) >= 100 ? 3 : 2) : 2;
                 results.push({state:st, target:`CD${String(rep.d).padStart(cdPad,'0')}`, distNum:rep.d, first:rep.f, last:rep.l, title:`Rep. ${rep.l}`, phone:rep.p, pronunciation:'', level:`US House ${st}${rep.d}`});
             }
         });
@@ -1345,12 +1313,12 @@ function findByLastName(lastName, stateHint, firstHint) {
         const chamberName = chamber === 'SS' ? 'State Sen.' : 'State Rep.';
         const levelName = chamber === 'SS' ? 'State Senate' : 'State House';
         const prefix = chamber === 'SS' ? 'SD' : 'HD';
-        const maxDist = Math.max(...stateLeg[key].map(l => parseInt(l.d) || 0));
+        const maxDist = stateLeg[key].reduce((mx, l) => Math.max(mx, parseInt(l.d) || 0), 0);
         const padLen = maxDist >= 100 ? 3 : 2;
         stateLeg[key].forEach(leg => {
             if (re.test(leg.l) || partialRe.test(leg.l)) {
-                if (firstHint && !leg.f.toLowerCase().startsWith(firstHint.toLowerCase())) return;
-                const paddedDist = String(leg.d).padStart(padLen, '0');
+                if (firstHint && !firstMatch(leg.f, firstHint)) return;
+                const paddedDist = padDist(leg.d, padLen);
                 const entry = {state:st, target:`${prefix}${paddedDist}`, distNum:leg.d, chamberType:chamber, first:leg.f, last:leg.l, title:getStateLegTitle(key, leg.d, leg.l, leg.pos), phone:leg.p, pronunciation:'', level:`${st} ${levelName} D-${leg.d}`};
                 if (leg.pos) entry.flop = leg.pos;
                 results.push(entry);
@@ -1374,7 +1342,7 @@ function findByFirstName(firstName, stateHint) {
         if (stateHint && st !== stateHint) continue;
         house[st].forEach(rep => {
             if (re.test(rep.f)) {
-                const cdPad = Math.max(...house[st].map(r => parseInt(r.d) || 0)) >= 100 ? 3 : 2;
+                const cdPad = house[st].reduce((mx, r) => Math.max(mx, parseInt(r.d) || 0), 0) >= 100 ? 3 : 2;
                 results.push({state:st, target:`CD${String(rep.d).padStart(cdPad,'0')}`, distNum:rep.d, first:rep.f, last:rep.l, title:`Rep. ${rep.l}`, phone:rep.p, pronunciation:'', level:`US House ${st}${rep.d}`});
             }
         });
@@ -1384,11 +1352,11 @@ function findByFirstName(firstName, stateHint) {
         if (stateHint && st !== stateHint) continue;
         const chamberName = chamber === 'SS' ? 'Senator' : 'Representative';
         const prefix = chamber === 'SS' ? 'SD' : 'HD';
-        const maxDist = Math.max(...stateLeg[key].map(l => parseInt(l.d) || 0));
+        const maxDist = stateLeg[key].reduce((mx, l) => Math.max(mx, parseInt(l.d) || 0), 0);
         const padLen = maxDist >= 100 ? 3 : 2;
         stateLeg[key].forEach(leg => {
             if (re.test(leg.f)) {
-                const paddedDist = String(leg.d).padStart(padLen, '0');
+                const paddedDist = padDist(leg.d, padLen);
                 const entry = {state:st, target:`${prefix}${paddedDist}`, distNum:leg.d, chamberType:chamber, first:leg.f, last:leg.l, title:getStateLegTitle(key, leg.d, leg.l, leg.pos), phone:leg.p, pronunciation:'', level:`${st} ${key.split('-')[1] === 'SS' ? 'State Senate' : 'State House'} D-${leg.d}`};
                 if (leg.pos) entry.flop = leg.pos;
                 results.push(entry);
@@ -1399,8 +1367,56 @@ function findByFirstName(firstName, stateHint) {
 }
 
 function parseEmail() {
-    const text = document.getElementById('emailInput').value;
+    let text = document.getElementById('emailInput').value;
     if (!text) return alert('Please paste an email');
+
+    // Detect pre-formatted patch table data pasted back in
+    // Signs: column headers like "var1", "var3", "total patches", or table structure with State/HD/SD/Target columns
+    if (/\b(var1|var3|total\s*patches)\b/i.test(text) || /\b(State\s+HD\s+.*Target|State\s+SD\s+.*Target)\b/i.test(text)) {
+        const cleanedNames = [];
+        let detectedState = null;
+        // Split text into lines, but also split long lines that contain multiple "ST ##" table rows
+        let tlines = text.split(/\n/).map(s => s.trim()).filter(Boolean);
+        const expandedLines = [];
+        for (const line of tlines) {
+            // If line has multiple state-abbrev+district patterns inline, split them
+            // Split on state abbreviation boundaries: "AZ 5 1 HD05..." "AZ 12 1 HD12..."
+            const stateStarts = [];
+            const stRe = /\b([A-Z]{2})\s+\d+/g;
+            let stMatch;
+            while ((stMatch = stRe.exec(line)) !== null) {
+                // Verify it's actually a state with legislature data or federal data
+                const st = stMatch[1];
+                if (senators[st] || house[st] || stateLeg[st+'-SH'] || stateLeg[st+'-SS']) stateStarts.push(stMatch.index);
+            }
+            if (stateStarts.length > 1) {
+                for (let si = 0; si < stateStarts.length; si++) {
+                    const start = stateStarts[si];
+                    const end = si + 1 < stateStarts.length ? stateStarts[si + 1] : line.length;
+                    expandedLines.push(line.substring(start, end).trim());
+                }
+            } else {
+                expandedLines.push(line);
+            }
+        }
+        for (const line of expandedLines) {
+            // Skip header rows
+            if (/^(state|target|var1|var3|goal|total|flop|pronunciation|first|last)\b/i.test(line.replace(/[,|\t]/g,' ').trim())) continue;
+            if (/^State\s+(HD|SD|CD|Flop|Target)/i.test(line)) continue;
+            if (/^[|\s-]+$/.test(line)) continue;
+            if (/\btotal\b.*\d/i.test(line) && !/^[A-Z]{2}\s/.test(line)) continue;
+            if (/\bHouse\s+Representatives?\b|^Representatives?\s*\(/i.test(line)) continue;
+            if (/\bState\s+Senators?\b|^Senators?\s*\(/i.test(line)) continue;
+            // Extract name from table row
+            const m = line.match(/^(?:\|?\s*)?([A-Z]{2})\s+[\d,\s]*(?:HD|SD|CD)\d+\S*\s+(.+?)(?:\s+(?:Representative|Senator|Speaker|Rep\.|Sen\.)\s)/i);
+            if (m) { detectedState = m[1]; cleanedNames.push(`${m[1]} ${m[2].trim()}`); continue; }
+            if (/\b(representatives?|senators?)\b/i.test(line) && /\d+/.test(line)) continue;
+        }
+        if (cleanedNames.length > 0) {
+            text = `${detectedState || ''} Legislators\nTargets:\n` + cleanedNames.join('\n');
+            document.getElementById('emailInput').value = text;
+        }
+    }
 
     let found = [];
     const alreadyFound = new Set();
@@ -1482,7 +1498,7 @@ function parseEmail() {
             if (n.type === 'house' && house[n.st]) {
                 const rep = house[n.st].find(h => h.d === n.d);
                 if (rep) {
-                    const cdPad = Math.max(...house[n.st].map(r => parseInt(r.d) || 0)) >= 100 ? 3 : 2;
+                    const cdPad = house[n.st].reduce((mx, r) => Math.max(mx, parseInt(r.d) || 0), 0) >= 100 ? 3 : 2;
                     addIfNew({state:n.st, target:`CD${String(n.d).padStart(cdPad,'0')}`, distNum:n.d, first:rep.f, last:rep.l, title:`Rep. ${rep.l}`, phone:rep.p, pronunciation:'', level:`US House ${n.st}${n.d}`});
                 }
             }
@@ -1490,11 +1506,11 @@ function parseEmail() {
     }
 
     // 2. State legislature district codes: MI-SH-74, IL-SS-21, NC-SH-1, OK-SH-29
-    for (let m of text.matchAll(/([A-Z]{2})[-\s]?(SH|SS)[-\s]?(\d+)/gi)) {
+    for (let m of text.matchAll(/([A-Z]{2})[-\s]?(SH|SS)[-\s]?(\d+[A-Za-z]?)/gi)) {
         const st = m[1].toUpperCase(), chamber = m[2].toUpperCase(), dist = m[3];
         const key = `${st}-${chamber}`;
         if (stateLeg[key]) {
-            let legs = stateLeg[key].filter(l => l.d === dist);
+            let legs = stateLeg[key].filter(l => l.d.toUpperCase() === dist.toUpperCase());
             // Check for name after district code to filter multi-member districts
             if (legs.length > 1) {
                 const afterMatch = text.substring(m.index + m[0].length, m.index + m[0].length + 80);
@@ -1510,9 +1526,9 @@ function parseEmail() {
             }
             legs.forEach(leg => {
                 const prefix = chamber === 'SS' ? 'SD' : 'HD';
-                const maxDist = Math.max(...stateLeg[key].map(l => parseInt(l.d) || 0));
+                const maxDist = stateLeg[key].reduce((mx, l) => Math.max(mx, parseInt(l.d) || 0), 0);
                 const padLen = maxDist >= 100 ? 3 : 2;
-                const paddedDist = String(dist).padStart(padLen, '0');
+                const paddedDist = padDist(dist, padLen);
                 const entry = {state:st, target:`${prefix}${paddedDist}`, distNum:dist, chamberType:chamber, first:leg.f, last:leg.l, title:getStateLegTitle(`${st}-${chamber}`, dist, leg.l, leg.pos), phone:leg.p, pronunciation:'', level:`${st} ${chamber === 'SS' ? 'State Senate' : 'State House'} D-${dist}`};
                 if (leg.pos) entry.flop = leg.pos;
                 addIfNew(entry);
@@ -1522,7 +1538,7 @@ function parseEmail() {
 
     // 2.5 HD/SD prefix patterns: "HD-27", "WA HD-27", "HD 27 Jinkins", "SD-5"
     // These look up directly in state legislature data
-    for (let m of text.matchAll(/\b(?:([A-Z]{2})\s+)?(HD|SD)[-\s]?(\d{1,3})\b/gi)) {
+    for (let m of text.matchAll(/\b(?:([A-Z]{2})\s+)?(HD|SD)[-\s]?(\d{1,3}[A-Za-z]?)\b/gi)) {
         const stHint = m[1] ? m[1].toUpperCase() : null;
         const prefix = m[2].toUpperCase();
         const dist = m[3];
@@ -1537,7 +1553,7 @@ function parseEmail() {
             const [st, ch] = key.split('-');
             if (ch !== chamber) continue;
             if (stHint && st !== stHint) continue;
-            let legs = stateLeg[key].filter(l => l.d === dist);
+            let legs = stateLeg[key].filter(l => l.d.toUpperCase() === dist.toUpperCase());
             if (legs.length) {
                 // If a name follows the district code, filter to only matching members
                 if (nameAfter && legs.length > 1) {
@@ -1552,9 +1568,9 @@ function parseEmail() {
                     });
                     if (filtered.length) legs = filtered;
                 }
-                const maxDist = Math.max(...stateLeg[key].map(l => parseInt(l.d) || 0));
+                const maxDist = stateLeg[key].reduce((mx, l) => Math.max(mx, parseInt(l.d) || 0), 0);
                 const padLen = maxDist >= 100 ? 3 : 2;
-                const paddedDist = String(dist).padStart(padLen, '0');
+                const paddedDist = padDist(dist, padLen);
                 legs.forEach(leg => {
                     const entry = {state:st, target:`${prefix}${paddedDist}`, distNum:dist, chamberType:chamber, first:leg.f, last:leg.l, title:getStateLegTitle(key, dist, leg.l, leg.pos), phone:leg.p, pronunciation:'', level:`${st} ${chamber === 'SS' ? 'State Senate' : 'State House'} D-${dist}`};
                     if (leg.pos) entry.flop = leg.pos;
@@ -1574,8 +1590,61 @@ function parseEmail() {
         if (house[st]) {
             const rep = house[st].find(h => h.d === dist);
             if (rep) {
-                const cdPad = Math.max(...house[st].map(r => parseInt(r.d) || 0)) >= 100 ? 3 : 2;
+                const cdPad = house[st].reduce((mx, r) => Math.max(mx, parseInt(r.d) || 0), 0) >= 100 ? 3 : 2;
                 addIfNew({state:st, target:`CD${String(dist).padStart(cdPad,'0')}`, distNum:dist, first:rep.f, last:rep.l, title:`Rep. ${rep.l}`, phone:rep.p, pronunciation:'', level:`US House ${st}${dist}`});
+            }
+        }
+    }
+
+    // 3.5 Alphanumeric district codes: "MN 13A", "MN-13A", "MN 13A Demuth", "13A Demuth"
+    // Handles states like MN with districts like 13A, 67B
+    // Pattern A: State + alphanumeric district (e.g. "MN 13A")
+    for (let m of text.matchAll(/\b([A-Z]{2})[-\s]?(\d{1,3}[A-Za-z])\b/gi)) {
+        const st = m[1].toUpperCase(), dist = m[2].toUpperCase();
+        // Skip if SH/SS/HD/SD preceded this
+        const lookback = text.substring(Math.max(0, m.index - 5), m.index + m[0].length);
+        if (/S[HS]|HD|SD/i.test(lookback)) continue;
+        // Look up in state house data
+        for (let ch of ['SH', 'SS']) {
+            const key = `${st}-${ch}`;
+            if (!stateLeg[key]) continue;
+            let legs = stateLeg[key].filter(l => l.d.toUpperCase() === dist);
+            if (!legs.length) continue;
+            // Check for name after to filter
+            const afterMatch = text.substring(m.index + m[0].length, m.index + m[0].length + 80);
+            const nameAfter = afterMatch.match(/^\s+([A-Za-z][A-Za-z'-]+(?:\s+[A-Za-z][A-Za-z'-]+)*)/);
+            if (nameAfter && legs.length > 1) {
+                const nameWords = nameAfter[1].trim().split(/\s+/);
+                const filtered = legs.filter(leg => nameWords.some(w =>
+                    leg.l.toLowerCase() === w.toLowerCase() || leg.f.toLowerCase() === w.toLowerCase() ||
+                    leg.l.toLowerCase().startsWith(w.toLowerCase()) || leg.f.toLowerCase().startsWith(w.toLowerCase())
+                ));
+                if (filtered.length) legs = filtered;
+            }
+            const prefix = ch === 'SS' ? 'SD' : 'HD';
+            legs.forEach(leg => {
+                const entry = {state:st, target:`${prefix}${dist}`, distNum:dist, chamberType:ch, first:leg.f, last:leg.l, title:getStateLegTitle(key, dist, leg.l, leg.pos), phone:leg.p, pronunciation:'', level:`${st} ${ch === 'SS' ? 'State Senate' : 'State House'} D-${dist}`};
+                if (leg.pos) entry.flop = leg.pos;
+                addIfNew(entry);
+            });
+        }
+    }
+    // Pattern B: Bare alphanumeric district + name (e.g. "13A Demuth")
+    for (let m of text.matchAll(/\b(\d{1,3}[A-Za-z])\s+([A-Za-z][A-Za-z'-]+)/gi)) {
+        const dist = m[1].toUpperCase(), nameHint = m[2];
+        for (let key in stateLeg) {
+            const [st, ch] = key.split('-');
+            const legs = stateLeg[key].filter(l => l.d.toUpperCase() === dist && (
+                l.l.toLowerCase() === nameHint.toLowerCase() || l.f.toLowerCase() === nameHint.toLowerCase() ||
+                l.l.toLowerCase().startsWith(nameHint.toLowerCase()) || l.f.toLowerCase().startsWith(nameHint.toLowerCase())
+            ));
+            if (legs.length) {
+                const prefix = ch === 'SS' ? 'SD' : 'HD';
+                legs.forEach(leg => {
+                    const entry = {state:st, target:`${prefix}${dist}`, distNum:dist, chamberType:ch, first:leg.f, last:leg.l, title:getStateLegTitle(key, dist, leg.l, leg.pos), phone:leg.p, pronunciation:'', level:`${st} ${ch === 'SS' ? 'State Senate' : 'State House'} D-${dist}`};
+                    if (leg.pos) entry.flop = leg.pos;
+                    addIfNew(entry);
+                });
             }
         }
     }
@@ -1612,8 +1681,29 @@ function parseEmail() {
     // If no target section detected, treat whole email as potential targets (backward compatible)
     if (targetSectionLines.length === 0) { targetSectionLines = lines; otherLines = []; }
 
+    // Detect global state hint from full text (e.g. "Arizona Democratic Legislators")
+    const stateNames = {'alabama':'AL','alaska':'AK','arizona':'AZ','arkansas':'AR','california':'CA','colorado':'CO','connecticut':'CT','delaware':'DE','florida':'FL','georgia':'GA','hawaii':'HI','idaho':'ID','illinois':'IL','indiana':'IN','iowa':'IA','kansas':'KS','kentucky':'KY','louisiana':'LA','maine':'ME','maryland':'MD','massachusetts':'MA','michigan':'MI','minnesota':'MN','mississippi':'MS','missouri':'MO','montana':'MT','nebraska':'NE','nevada':'NV','new hampshire':'NH','new jersey':'NJ','new mexico':'NM','new york':'NY','north carolina':'NC','north dakota':'ND','ohio':'OH','oklahoma':'OK','oregon':'OR','pennsylvania':'PA','rhode island':'RI','south carolina':'SC','south dakota':'SD','tennessee':'TN','texas':'TX','utah':'UT','vermont':'VT','virginia':'VA','washington':'WA','west virginia':'WV','wisconsin':'WI','wyoming':'WY'};
+    let globalStateHint = null;
+    const textLower = text.toLowerCase();
+    for (const [name, abbr] of Object.entries(stateNames)) {
+        if (textLower.includes(name + ' ') || textLower.includes(name + '\n') || textLower.endsWith(name)) {
+            // Verify this state has legislators in our DB
+            if (stateLeg[abbr + '-SH'] || stateLeg[abbr + '-SS'] || senators[abbr]) {
+                globalStateHint = abbr;
+                break;
+            }
+        }
+    }
+    // Also check for 2-letter abbreviation appearing prominently (e.g. "AZ Democratic")
+    if (!globalStateHint) {
+        const abbrevMatch = text.match(/\b([A-Z]{2})\s+(democratic|republican|gop|dem|rep|state|legislat)/i);
+        if (abbrevMatch && stateAbbrevs.has(abbrevMatch[1])) globalStateHint = abbrevMatch[1];
+    }
+
     const targetChunks = [];
     targetSectionLines.forEach(line => { line.split(/[,;]+/).map(s => s.trim()).filter(Boolean).forEach(c => targetChunks.push(c)); });
+
+    let persistentChamberHint = null; // Carries across chunks from section headers like "Representatives (26 total)"
 
     function processChunk(chunk, aggressive) {
         if (/^\d+\s*(patches?|days?|per)/i.test(chunk)) return;
@@ -1622,8 +1712,20 @@ function parseEmail() {
         const stateMatch = chunk.match(/\b([A-Z]{2})\b/);
         let stateHint = null;
         if (stateMatch && stateAbbrevs.has(stateMatch[1])) stateHint = stateMatch[1];
+        if (!stateHint && globalStateHint) stateHint = globalStateHint;
 
         let chamberHint = null;
+        // Check if this chunk is a section header that sets persistent chamber context
+        if (/\brepresentatives?\b.*\(\d+\s*total\)/i.test(chunk) || /\bstate\s+representatives?\b/i.test(chunk)) {
+            persistentChamberHint = (stateHint && stateLeg[`${stateHint}-SH`]) ? 'SH' : 'US-HOUSE';
+            return; // This is a header line, not a name
+        }
+        if (/\bsenators?\b.*\(\d+\s*total\)/i.test(chunk) || /\bstate\s+senators?\b/i.test(chunk)) {
+            persistentChamberHint = (stateHint && stateLeg[`${stateHint}-SS`]) ? 'SS' : 'US-SEN';
+            return; // This is a header line, not a name
+        }
+        if (/\btotal\s+(democratic|republican|dem|gop)\s+legislat/i.test(chunk)) return; // Footer line
+
         if (/\b(state\s+house|state\s+rep\.?|state\s+representative|state\s+legislat|general\s+assembly\s+house|lower\s+chamber|HD[-\s]?\d)/i.test(chunk)) chamberHint = 'SH';
         else if (/\b(state\s+senate|state\s+sen\.?|state\s+senator|general\s+assembly\s+senate|upper\s+chamber|SD[-\s]?\d)/i.test(chunk)) chamberHint = 'SS';
         else if (/\b(congress(wo)?man|congress(wo)?member|US\s+house|US\s+rep\.?|US\s+representative|federal\s+house|congressional|CD[-\s]?\d)/i.test(chunk)) chamberHint = 'US-HOUSE';
@@ -1632,11 +1734,14 @@ function parseEmail() {
         else if (/\b(senate|sen\.?\b|senator)/i.test(chunk)) { chamberHint = (stateHint && stateLeg[`${stateHint}-SS`]) ? 'SS' : 'US-SEN'; }
         else if (/\b(legislator|leg\.?\b)/i.test(chunk) && stateHint) chamberHint = 'STATE-ANY';
 
+        // Apply persistent chamber hint if no local one detected
+        if (!chamberHint && persistentChamberHint) chamberHint = persistentChamberHint;
+
         // Outside target section: require strong signal
         if (!aggressive && !stateHint && !chamberHint) return;
 
-        const skipWords = new Set(['targets','target','patches','patch','per','office','day','days','the','and','for','with','from','our','that','this','will','are','have','has','not','but','all','can','would','about','also','senator','sen','rep','representative','state','house','senate','member','district','call','calling','congressman','congresswoman','congressmember','congressional','delegate','assembly','assemblyman','assemblywoman','assemblymember','legislator','leg','federal','chamber','upper','lower','general','us','plan','launch','launching','monday','tuesday','wednesday','thursday','friday','saturday','sunday','week','weeks','hopefully','hope','once','here','there','get','got','need','know','going','want','review','reviewed','support','draft','drafting','script','bill','letter','testimony','editorial','branded','collection','documents','related','assistance','started','anything','else','morning','afternoon','evening','back','quickly','much','very','just','really','great','good','your','they','them','their','been','being','were','could','should','more','some','other','than','legal','end','may','new','way','work','working','making','make']);
-        const words = chunk.match(/\b[A-Za-z][A-Za-z'-]{2,}\b/g) || [];
+        const skipWords = new Set(['targets','target','patches','patch','per','office','day','days','the','and','for','with','from','our','that','this','will','are','have','has','not','but','all','can','would','about','also','senator','sen','rep','representative','state','house','senate','member','district','call','calling','congressman','congresswoman','congressmember','congressional','delegate','assembly','assemblyman','assemblywoman','assemblymember','legislator','leg','federal','chamber','upper','lower','general','us','plan','launch','launching','monday','tuesday','wednesday','thursday','friday','saturday','sunday','week','weeks','hopefully','hope','once','here','there','get','got','need','know','going','want','review','reviewed','support','draft','drafting','script','bill','letter','testimony','editorial','branded','collection','documents','related','assistance','started','anything','else','morning','afternoon','evening','back','quickly','much','very','just','really','great','good','your','they','them','their','been','being','were','could','should','more','some','other','than','legal','end','may','new','way','work','working','making','make','total','generated','april','january','february','march','june','july','august','september','october','november','december','democratic','democrat','republican','legislators','representatives','senators','name','arizona','california','colorado','connecticut','florida','georgia','illinois','indiana','iowa','kansas','kentucky','louisiana','maine','maryland','massachusetts','michigan','minnesota','mississippi','missouri','montana','nebraska','nevada','jersey','mexico','york','carolina','dakota','ohio','oklahoma','oregon','pennsylvania','island','tennessee','texas','utah','vermont','virginia','washington','wisconsin','wyoming','north','south','west']);
+        const words = chunk.match(/[A-Za-z\u00C0-\u024F][A-Za-z\u00C0-\u024F'-]{2,}/g) || [];
         const nameWords = words.filter(w => {
             if (/^[A-Z]{2}$/.test(w) && stateAbbrevs.has(w)) return false;
             if (skipWords.has(w.toLowerCase())) return false;
@@ -1645,7 +1750,7 @@ function parseEmail() {
         });
         if (nameWords.length === 0) return;
 
-        const distInChunk = chunk.match(/\b[A-Z]{2}[-\s]?\d{1,2}\b/i) || chunk.match(/[A-Z]{2}[-\s]?S[HS][-\s]?\d+/i);
+        const distInChunk = chunk.match(/\b[A-Z]{2}[-\s]?\d{1,2}[A-Za-z]?\b/i) || chunk.match(/[A-Z]{2}[-\s]?S[HS][-\s]?\d+[A-Za-z]?/i);
         if (distInChunk) return;
 
         function filterByChamber(results) {
@@ -1733,6 +1838,23 @@ function fixSenatorTargets() {
     }
 }
 
+// Fix flop values: if only one member from a multi-member district, set flop to 1
+function fixFlops() {
+    const byDist = {};
+    entries.forEach((e, i) => {
+        if (e.flop) {
+            const key = `${e.state}-${e.target}`;
+            if (!byDist[key]) byDist[key] = [];
+            byDist[key].push(i);
+        }
+    });
+    for (const key in byDist) {
+        if (byDist[key].length === 1) {
+            entries[byDist[key][0]].flop = '1';
+        }
+    }
+}
+
 // ============================================================
 // MANUAL ADD
 // ============================================================
@@ -1749,6 +1871,9 @@ function addManual() {
     const total = document.getElementById('manTotal').value || getTotal();
 
     if (!f || !l) return alert('Need at least First and Last name');
+
+    const isDupe = entries.some(e => e.first === f && e.last === l && e.phone === phone);
+    if (isDupe && !confirm(`${f} ${l} is already in the table. Add anyway?`)) return;
 
     entries.push({
         state: st,
@@ -1771,6 +1896,7 @@ function addManual() {
 // TABLE RENDER
 // ============================================================
 function render() {
+    fixFlops();
     document.getElementById('count').textContent = entries.length;
     const tbody = document.getElementById('tbody');
     const hasFlop = entries.some(e => e.flop);
@@ -1816,6 +1942,7 @@ function clearAll() {
 // ============================================================
 function exportCSV() {
     if (!entries.length) return alert('No entries to export');
+    fixFlops();
 
     const senEntries = entries.filter(e => e.target.includes('Sn'));
     const usHouse = entries.filter(e => e.target.startsWith('CD'));
