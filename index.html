@@ -932,6 +932,15 @@ const stateSpeakers = {
     'MN-SH': '13A', 'VA-SH': '88', 'AZ-SH': '29-1', 'MD-SH': '21-3'
 };
 
+// US House Speaker — {state, district}
+const usHouseSpeaker = {st: 'LA', d: '4'};
+
+// Helper: get title for US House member
+function getUSHouseTitle(st, dist, lastName) {
+    if (usHouseSpeaker.st === st && usHouseSpeaker.d === String(dist)) return `Speaker ${lastName}`;
+    return `Rep. ${lastName}`;
+}
+
 // Helper: pad district number, but skip padding for alphanumeric districts (e.g. MN's 13A)
 function padDist(dist, padLen) {
     if (/[A-Za-z]/.test(dist)) return String(dist).toUpperCase();
@@ -1109,7 +1118,7 @@ function loadChamber() {
                     if (!already) {
                         entries.push({
                             state: s, target: `CD${String(rep.d).padStart(cdPad,'0')}`, distNum: rep.d,
-                            first: rep.f, last: rep.l, title: `Rep. ${rep.l}`, phone: rep.p,
+                            first: rep.f, last: rep.l, title: getUSHouseTitle(st || s, rep.d, rep.l), phone: rep.p,
                             pronunciation: '', goal: getGoal(), total: getTotal()
                         });
                         count++;
@@ -1156,7 +1165,7 @@ function loadChamber() {
             if (!already) {
                 entries.push({
                     state: st, target: `CD${String(rep.d).padStart(cdPad,'0')}`, distNum: rep.d,
-                    first: rep.f, last: rep.l, title: `Rep. ${rep.l}`, phone: rep.p,
+                    first: rep.f, last: rep.l, title: getUSHouseTitle(st || s, rep.d, rep.l), phone: rep.p,
                     pronunciation: '', goal: getGoal(), total: getTotal()
                 });
                 count++;
@@ -1314,7 +1323,7 @@ function findByLastName(lastName, stateHint, firstHint) {
             if (re.test(rep.l) || partialRe.test(rep.l)) {
                 if (firstHint && !firstMatch(rep.f, firstHint)) return;
                 const cdPad = house[st].length > 0 ? (house[st].reduce((mx, r) => Math.max(mx, parseInt(r.d) || 0), 0) >= 100 ? 3 : 2) : 2;
-                results.push({state:st, target:`CD${String(rep.d).padStart(cdPad,'0')}`, distNum:rep.d, first:rep.f, last:rep.l, title:`Rep. ${rep.l}`, phone:rep.p, pronunciation:'', level:`US House ${st}${rep.d}`});
+                results.push({state:st, target:`CD${String(rep.d).padStart(cdPad,'0')}`, distNum:rep.d, first:rep.f, last:rep.l, title:getUSHouseTitle(st, rep.d, rep.l), phone:rep.p, pronunciation:'', level:`US House ${st}${rep.d}`});
             }
         });
     }
@@ -1355,7 +1364,7 @@ function findByFirstName(firstName, stateHint) {
         house[st].forEach(rep => {
             if (re.test(rep.f)) {
                 const cdPad = house[st].reduce((mx, r) => Math.max(mx, parseInt(r.d) || 0), 0) >= 100 ? 3 : 2;
-                results.push({state:st, target:`CD${String(rep.d).padStart(cdPad,'0')}`, distNum:rep.d, first:rep.f, last:rep.l, title:`Rep. ${rep.l}`, phone:rep.p, pronunciation:'', level:`US House ${st}${rep.d}`});
+                results.push({state:st, target:`CD${String(rep.d).padStart(cdPad,'0')}`, distNum:rep.d, first:rep.f, last:rep.l, title:getUSHouseTitle(st, rep.d, rep.l), phone:rep.p, pronunciation:'', level:`US House ${st}${rep.d}`});
             }
         });
     }
@@ -1511,7 +1520,7 @@ function parseEmail() {
                 const rep = house[n.st].find(h => h.d === n.d);
                 if (rep) {
                     const cdPad = house[n.st].reduce((mx, r) => Math.max(mx, parseInt(r.d) || 0), 0) >= 100 ? 3 : 2;
-                    addIfNew({state:n.st, target:`CD${String(n.d).padStart(cdPad,'0')}`, distNum:n.d, first:rep.f, last:rep.l, title:`Rep. ${rep.l}`, phone:rep.p, pronunciation:'', level:`US House ${n.st}${n.d}`});
+                    addIfNew({state:n.st, target:`CD${String(n.d).padStart(cdPad,'0')}`, distNum:n.d, first:rep.f, last:rep.l, title:getUSHouseTitle(n.st, n.d, rep.l), phone:rep.p, pronunciation:'', level:`US House ${n.st}${n.d}`});
                 }
             }
         }
@@ -1603,7 +1612,7 @@ function parseEmail() {
             const rep = house[st].find(h => h.d === dist);
             if (rep) {
                 const cdPad = house[st].reduce((mx, r) => Math.max(mx, parseInt(r.d) || 0), 0) >= 100 ? 3 : 2;
-                addIfNew({state:st, target:`CD${String(dist).padStart(cdPad,'0')}`, distNum:dist, first:rep.f, last:rep.l, title:`Rep. ${rep.l}`, phone:rep.p, pronunciation:'', level:`US House ${st}${dist}`});
+                addIfNew({state:st, target:`CD${String(dist).padStart(cdPad,'0')}`, distNum:dist, first:rep.f, last:rep.l, title:getUSHouseTitle(st, dist, rep.l), phone:rep.p, pronunciation:'', level:`US House ${st}${dist}`});
             }
         }
     }
