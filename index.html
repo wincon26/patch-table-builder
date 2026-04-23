@@ -1615,40 +1615,50 @@ function parseEmail() {
         const dist = m[3];
         const chamber = prefix === 'HD' ? 'SH' : 'SS';
         
-        // Check if there's a name after the district code in the surrounding text
+        // Check if there's a name before or after the district code
+        const beforeMatch = text.substring(Math.max(0, m.index - 80), m.index);
         const afterMatch = text.substring(m.index + m[0].length, m.index + m[0].length + 80);
-        const nameAfter = afterMatch.match(/^\s+([A-Za-z][A-Za-z'-]+(?:\s+[A-Za-z][A-Za-z'-]+)*)/);
+        const nameAfter = afterMatch.match(/^\s+([A-Za-z\u00C0-\u024F][A-Za-z\u00C0-\u024F'-]+(?:\s+[A-Za-z\u00C0-\u024F][A-Za-z\u00C0-\u024F'-]+)*)/);
+        const nameBefore = beforeMatch.match(/([A-Za-z\u00C0-\u024F][A-Za-z\u00C0-\u024F'-]+(?:\s+[A-Za-z\u00C0-\u024F][A-Za-z\u00C0-\u024F'-]+)*)\s*$/);
+        const nameContext = nameAfter ? nameAfter[1].trim() : (nameBefore ? nameBefore[1].trim() : null);
+        // Filter out common non-name words from name context
+        const distSkip = new Set(['the','and','for','with','from','our','that','this','will','are','state','house','senate','district','rep','representative','senator','call','target','targets','alabama','arizona','california','georgia','illinois','indiana','maryland','michigan','minnesota','nevada','ohio','oklahoma','oregon','texas','virginia','washington','wisconsin','north','south','west','new','jersey','mexico','york','carolina','dakota','pennsylvania']);
+        const nameContextWords = nameContext ? nameContext.split(/\s+/).filter(w => !distSkip.has(w.toLowerCase()) && !/^(HD|SD|CD)$/i.test(w) && w.length >= 2) : [];
         
-        // Search all states (or just the hinted one)
+        // Collect all matching legs across states, then filter by name if available
+        const allMatches = [];
         for (let key in stateLeg) {
             const [st, ch] = key.split('-');
             if (ch !== chamber) continue;
             if (stHint && st !== stHint) continue;
             let legs = stateLeg[key].filter(l => l.d.toUpperCase() === dist.toUpperCase());
             if (legs.length) {
-                // If a name follows the district code, filter to only matching members
-                if (nameAfter && legs.length > 1) {
-                    const nameWords = nameAfter[1].trim().split(/\s+/);
-                    const filtered = legs.filter(leg => {
-                        return nameWords.some(w => 
-                            leg.l.toLowerCase() === w.toLowerCase() || 
-                            leg.f.toLowerCase() === w.toLowerCase() ||
-                            leg.l.toLowerCase().startsWith(w.toLowerCase()) ||
-                            leg.f.toLowerCase().startsWith(w.toLowerCase())
-                        );
-                    });
-                    if (filtered.length) legs = filtered;
-                }
-                const maxDist = stateLeg[key].reduce((mx, l) => Math.max(mx, parseInt(l.d) || 0), 0);
-                const padLen = maxDist >= 100 ? 3 : 2;
-                const paddedDist = padDist(dist, padLen);
-                legs.forEach(leg => {
-                    const entry = {state:st, target:`${prefix}${paddedDist}`, distNum:dist, chamberType:chamber, first:leg.f, last:leg.l, title:getStateLegTitle(key, dist, leg.l, leg.pos), phone:leg.p, pronunciation:'', level:`${st} ${chamber === 'SS' ? 'State Senate' : 'State House'} D-${dist}`};
-                    if (leg.pos) entry.flop = leg.pos;
-                    addIfNew(entry);
-                });
+                legs.forEach(leg => allMatches.push({key, st, leg}));
             }
         }
+        
+        // If name context is present and there are multiple state matches, filter by name
+        let finalMatches = allMatches;
+        if (nameContextWords.length > 0 && allMatches.length > 1) {
+            const nameFiltered = allMatches.filter(({leg}) => {
+                return nameContextWords.some(w => 
+                    leg.l.toLowerCase() === w.toLowerCase() || 
+                    leg.f.toLowerCase() === w.toLowerCase() ||
+                    (w.length >= 3 && leg.l.toLowerCase().startsWith(w.toLowerCase())) ||
+                    (w.length >= 3 && leg.f.toLowerCase().startsWith(w.toLowerCase()))
+                );
+            });
+            if (nameFiltered.length > 0) finalMatches = nameFiltered;
+        }
+        
+        finalMatches.forEach(({key, st, leg}) => {
+            const maxDist = stateLeg[key].reduce((mx, l) => Math.max(mx, parseInt(l.d) || 0), 0);
+            const padLen = maxDist >= 100 ? 3 : 2;
+            const paddedDist = padDist(dist, padLen);
+            const entry = {state:st, target:`${prefix}${paddedDist}`, distNum:dist, chamberType:chamber, first:leg.f, last:leg.l, title:getStateLegTitle(key, dist, leg.l, leg.pos), phone:leg.p, pronunciation:'', level:`${st} ${chamber === 'SS' ? 'State Senate' : 'State House'} D-${dist}`};
+            if (leg.pos) entry.flop = leg.pos;
+            addIfNew(entry);
+        });
     }
 
     // 3. US House district codes: CA-11, NY-14, FL-26
@@ -1821,7 +1831,7 @@ function parseEmail() {
         });
         if (nameWords.length === 0) return;
 
-        const distInChunk = chunk.match(/\b[A-Z]{2}[-\s]?\d{1,2}[A-Za-z]?\b/i) || chunk.match(/[A-Z]{2}[-\s]?S[HS][-\s]?\d+[A-Za-z]?/i);
+        const distInChunk = chunk.match(/\b[A-Z]{2}[-\s]?\d{1,2}[A-Za-z]?\b/i) || chunk.match(/[A-Z]{2}[-\s]?S[HS][-\s]?\d+[A-Za-z]?/i) || chunk.match(/\b(?:HD|SD|CD)[-\s]?\d{1,3}[A-Za-z]?\b/i);
         if (distInChunk) return;
 
         function filterByChamber(results) {
