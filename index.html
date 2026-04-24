@@ -86,6 +86,14 @@
         .found-box { background: var(--accent-light); border: 1px solid #a7f3d0; border-radius: 6px; padding: 12px; margin-top: 12px; }
         .found-box .item { font-size: 13px; padding: 3px 0; color: #065f46; }
 
+        .chat-msg { padding:10px 14px; border-radius:8px; margin-bottom:8px; font-size:13px; line-height:1.5; max-width:90%; }
+        .chat-msg.system { background:#f3f4f6; color:var(--text); }
+        .chat-msg.user { background:var(--primary-light); color:var(--primary); margin-left:auto; text-align:right; }
+        .chat-msg.resolved { background:var(--accent-light); color:#065f46; }
+        .chat-quick-btns { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+        .chat-quick-btns button { padding:5px 12px; border:1px solid var(--border); border-radius:16px; background:#fff; font-family:inherit; font-size:12px; cursor:pointer; transition:all 0.15s; }
+        .chat-quick-btns button:hover { background:var(--primary-light); border-color:var(--primary); color:var(--primary); }
+
         table { width: 100%; border-collapse: collapse; font-size: 13px; }
         thead { background: #f9fafb; }
         th { text-align: left; padding: 10px 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); border-bottom: 2px solid var(--border); }
@@ -127,7 +135,7 @@
         <div class="badges">
             <span class="badge blue">100 Senators</span>
             <span class="badge green">432 House Members</span>
-            <span class="badge purple">MI · IL · NC · OK · OH · GA · NY · NV · TX · CA · WI · WA · NJ · PA · OR · MN · VA · AZ · MD · IN · NM · AL · IA · NE State Legs</span>
+            <span class="badge purple">MI · IL · NC · OK · OH · GA · NY · NV · TX · CA · WI · WA · NJ · PA · OR · MN · VA · AZ · MD · IN · NM · AL · IA · NE · MO State Legs</span>
         </div>
     </div>
 
@@ -154,6 +162,15 @@
             <div class="stat-card"><div class="stat-label">Total</div><div class="stat-value" id="extractedTotal">-</div></div>
         </div>
         <div class="found-box" id="targetsList"></div>
+        <div id="parserChat" style="display:none; margin-top:16px; border-top:1px solid var(--border); padding-top:16px;">
+            <div style="font-size:13px; font-weight:600; color:var(--text-secondary); margin-bottom:8px;">Need help identifying targets:</div>
+            <div id="chatMessages" style="max-height:300px; overflow-y:auto; margin-bottom:12px;"></div>
+            <div id="chatInputRow" style="display:flex; gap:8px;">
+                <input type="text" id="chatInput" placeholder="Type a state, district, or name to clarify..." style="flex:1; font-size:13px;" onkeydown="if(event.key==='Enter')handleChatReply()">
+                <button class="btn btn-primary" onclick="handleChatReply()" style="white-space:nowrap;">Send</button>
+                <button class="btn btn-ghost" onclick="skipAllChat()" style="white-space:nowrap;">Skip All</button>
+            </div>
+        </div>
     </div>
 
     <!-- Campaign Settings -->
@@ -268,7 +285,7 @@
     </div>
 
     <div class="footer-info">
-        <strong>Database:</strong> US Senate (100) · US House (432) · MI State (148) · IL State (177) · NC State (169) · OK State (147) · OH State (132) · GA State (231) · NY State (213) · NV State (63) · TX State (180) · CA State (120) · WI State (132) · WA State (147) · NJ State (120) · PA State (251) · OR State (90) · MN State (201) · VA State (140) · AZ State (90) · MD State (188) · IN State (150) · NM State (112) · AL State (140) · NE Unicameral (49) · IA State (150)<br>
+        <strong>Database:</strong> US Senate (100) · US House (432) · MI State (148) · IL State (177) · NC State (169) · OK State (147) · OH State (132) · GA State (231) · NY State (213) · NV State (63) · TX State (180) · CA State (120) · WI State (132) · WA State (147) · NJ State (120) · PA State (251) · OR State (90) · MN State (201) · VA State (140) · AZ State (90) · MD State (188) · IN State (150) · NM State (112) · AL State (140) · NE Unicameral (49) · MO State (192) · IA State (150)<br>
         <strong>Formats recognized:</strong> "AK Murkowski" · "CA11" · "NY14 AOC" · "MI-SH-74 Hope" · "OK-SS-1" · last name search
     </div>
 </div>
@@ -975,11 +992,22 @@ const neUniData = "1|Bob|Hallstrom|(402) 471-2733|2|Robert|Clements|(402) 471-26
 stateLeg['NE-SS'] = [];
 neUniData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['NE-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
+
+// Missouri House of Representatives (163 districts, 5 vacant: HD-95, HD-110, HD-114, HD-149, HD-160)
+const moHouseData = "1|Jeff|Farnan|573-751-9465|2|Mazzie|Christensen|573-751-4285|3|Danny|Busick|573-751-3647|4|Greg|Sharpe|573-751-3644|5|Louis|Riggs|573-751-3613|6|Ed|Lewis|573-751-6566|7|Peggy|McGaugh|573-751-2917|8|Josh|Hurlbert|573-751-0246|9|Dean|Van Schoiack|573-751-3666|10|Bill|Falkner|573-751-9755|11|Brenda|Shields|573-751-3643|12|Mike|Jones|573-751-9760|13|Sean|Pouche|573-751-6593|14|Ashley|Aune|573-751-3618|15|Kenneth|Jamison|573-751-4787|16|Chris|Brown|573-751-9458|17|Bill|Allen|573-751-1218|18|Eric|Woods|573-751-2199|19|Wick|Thomas|573-751-3310|20|Mike|Steinmeyer|573-751-3674|21|Will|Jobe|573-751-5701|22|Yolanda|Young|573-751-3129|23|Michael L.|Johnson|573-751-0538|24|Emily|Weber|573-751-4485|25|Pattie|Mansur|573-751-2437|26|Tiffany|Price|573-751-2124|27|Melissa A.|Douglas|573-751-7639|28|Donna|Barnes|573-751-9851|29|Aaron|Crossley|573-751-3623|30|Jon|Patterson|573-751-0907|31|Ron|Fowler|573-751-8636|32|Jeff|Coleman|573-751-1487|33|Carolyn S.|Caton|573-751-9766|34|Kemp|Strickler|573-751-1456|35|Keri|Ingle|573-751-1459|36|Anthony|Ealy|573-751-9469|37|Mark A.|Sharp|573-751-0238|38|Martin|Jacobs|573-751-2238|39|Mark|Meirath|573-751-1468|40|Chad|Perkins|573-751-4028|41|Doyle|Justus|573-751-9459|42|Jeff|Myers|573-751-2689|43|Kent|Haden|573-751-3649|44|John|Martin|573-751-1169|45|Kathy|Steinhoff|573-751-4189|46|David Tyson|Smith|573-751-9753|47|Adrian|Plank|573-751-1501|48|Tim|Taylor|573-751-0169|49|Jim|Schulte|573-751-5226|50|Gregg|Bush|573-751-2134|51|Mark W.|Nolte|573-751-2204|52|Bradley|Pollitt|573-751-9774|53|Terry|Thompson|573-751-1462|54|Brandon|Phelps|573-751-3850|55|William|Irwin|573-751-3783|56|Michael|Davis|573-751-2175|57|Rodger L.|Reedy|573-751-3971|58|Willard|Haley|573-751-2077|59|Rudy|Veit|573-751-0665|60|Dave|Griffith|573-751-2412|61|Bruce|Sassmann|573-751-6668|62|Sherri|Gallick|573-751-1344|63|Tricia K.|Byrnes|573-751-1460|64|Deanna|Self|573-751-1484|65|Wendy L.|Hausman|573-751-3717|66|Marlene|Terry|573-751-6845|67|Tonya|Rush|573-751-2135|68|Kem|Smith|573-751-9628|69|Scott A.|Miller|573-751-5365|70|Stephanie|Boykin|573-751-4163|71|LaDonna|Appelbaum|573-751-4183|72|Doug|Clemens|573-751-1832|73|Raychel C.|Proudie|573-751-0855|74|Marla|Smith|573-751-4726|75|Chanel|Mosley|573-751-5538|76|Marlon|Anderson|573-751-7605|77|Kimberly-Ann|Collins|573-751-1400|78|Marty|Murray|573-751-2383|79|LaKeySha|Bosley|573-751-6800|80|Elizabeth|Fuchs|573-751-6736|81|Steve|Butz|573-751-0438|82|Nick|Kimble|573-751-4220|83|Ray|Reed|573-751-2883|84|Del|Taylor|573-751-2198|85|Yolonda Fountain|Henderson|573-751-4468|86|Jeff|Hales|573-751-4265|87|Connie|Steinmetz|573-751-0100|88|Holly|Jones|573-751-7535|89|George|Hruza|573-751-1544|90|Mark|Boyko|573-751-4069|91|Jo|Doll|573-751-1285|92|Michael|Burton|573-751-9472|93|Bridget Walsh|Moore|573-751-0211|94|Jim|Murphy|573-751-3719|96|Brad|Christ|573-751-2150|97|David|Casteel|573-751-3751|98|Jaclyn|Zimmermann|573-751-4392|99|Ian|Mackey|573-751-3859|100|Philip|Oehlerking|573-751-9765|101|Ben|Keathley|573-751-1247|102|Richard William|West|573-751-9768|103|Dave|Hinman|573-751-2176|104|Terri|Violet|573-751-2250|105|Colin|Wellenkamp|573-751-2949|106|Travis|Wilson|573-751-1452|107|Mark|Matthiesen|573-751-1470|108|Mike|Costlow|573-751-3572|109|John|Simmons|573-751-3776|111|Cecelie|Williams|573-751-4567|112|Renee|Reuter|573-751-3607|113|Phil|Amato|573-751-2504|115|Bill|Lucas|573-751-7735|116|Dale L.|Wright|573-751-3455|117|Becky|Laubinger|573-751-2317|118|Mike|McGirl|573-751-2398|119|Brad|Banderman|573-751-0549|120|John W.|Hewkin|573-751-4085|121|Bill|Hardwick|573-751-3834|122|Tara J.|Peters|573-751-1446|123|Jeff|Vernetti|573-751-1119|124|Don|Mayhew|573-751-3604|125|Dane|Diehl|573-751-4065|126|Jim|Kalberloh|573-751-5388|127|Ann|Kelley|573-751-2165|128|Christopher D.|Warwick|573-751-1347|129|John F.|Black|573-751-1167|130|Bishop|Davidson|573-751-2381|131|Bill|Owen|573-751-2948|132|Jeremy|Dean|573-751-3795|133|Melanie|Stinnett|573-751-0136|134|Alex|Riley|573-751-2210|135|Betsy|Fogle|573-751-9809|136|Stephanie|Hein|573-751-0232|137|Darin|Chappell|573-751-3819|138|Burt|Whaley|573-751-3851|139|Bob|Titus|573-751-3833|140|Jamie Ray|Gragg|573-751-2565|141|Melissa|Schmidt|573-751-2205|142|Jeff|Knight|573-751-1490|143|Bennie|Cook|573-751-2264|144|Tony R.|Harbison|573-751-2112|145|Bryant|Wolfin|573-751-5912|146|Barry D.|Hovis|573-751-6662|147|John|Voss|573-751-1443|148|David A.|Dolan|573-751-5471|150|Cameron Bunting|Parker|573-751-3629|151|Steve W.|Jordan|573-751-1494|152|Hardy|Billington|573-751-4039|153|Keith W.|Elliott|573-751-1066|154|Lisa|Durnell|573-751-1455|155|Matthew|Overcast|573-751-2042|156|Brian H.|Seitz|573-751-1309|157|Mitch|Boggs|573-751-4077|158|Scott|Cupps|573-751-1488|159|Dirk E.|Deaton|573-751-9801|161|Lane Jay|Roberts|573-751-3791|162|Bob|Bromley|573-751-7082|163|Cathy Jo|Loy|573-751-5458";
+stateLeg['MO-SH'] = [];
+moHouseData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['MO-SH'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
+
+// Missouri State Senate (34 districts)
+const moSenData = "1|Doug|Beck|573-751-0220|2|Nick|Schroer|573-751-1282|3|Mike|Henderson|573-751-4008|4|Karla|May|573-751-3599|5|Steven|Roberts|573-751-4415|6|Mike|Bernskoetter|573-751-2076|7|Patty|Lewis|573-751-6607|8|Mike|Cierpiot|573-751-1464|9|Barbara|Washington|573-751-3158|10|Travis|Fitzwater|573-751-2757|11|Joe|Nicola|573-751-3074|12|Rusty|Black|573-751-1415|13|Angela|Mosley|573-751-2420|14|Brian|Williams|573-751-4106|15|David|Gregory|573-751-5568|16|Justin|Brown|573-751-5713|17|Maggie|Nurrenbern|573-751-5282|18|Cindy|O'Laughlin|573-751-7985|19|Stephen|Webber|573-751-3931|20|Curtis|Trent|573-751-1503|21|Kurtis|Gregory|573-751-4302|22|Mary Elizabeth|Coleman|573-751-1492|23|Adam|Schnelting|573-751-1141|24|Tracy|McCreery|573-751-9762|25|Jason|Bean|573-751-4843|26|Ben|Brown|573-751-3678|27|Jamie|Burger|573-751-2459|28|Sandy|Crawford|573-751-8793|29|Mike|Moon|573-751-1480|30|Lincoln|Hough|573-751-1311|31|Rick|Brattin|573-751-2108|32|Jill|Carter|573-751-2173|33|Brad|Hudson|573-751-1882|34|Tony|Luetkemeyer|573-751-2183";
+stateLeg['MO-SS'] = [];
+moSenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['MO-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
+
 const stateSpeakers = {
     'MI-SH': '42', 'IL-SH': '7', 'NC-SH': '87', 'OK-SH': '29', 'OH-SH': '78',
     'GA-SH': '159', 'NY-SH': '83', 'NV-SH': '9', 'TX-SH': '83', 'CA-SH': '29',
     'WI-SH': '33', 'WA-SH': '27-2', 'NJ-SH': '19-1', 'PA-SH': '191', 'OR-SH': '14',
-    'MN-SH': '13A', 'VA-SH': '88', 'AZ-SH': '29-1', 'MD-SH': '21-3', 'IN-SH': '37', 'NM-SH': '11', 'AL-SH': '24', 'IA-SH': '57'
+    'MN-SH': '13A', 'VA-SH': '88', 'AZ-SH': '29-1', 'MD-SH': '21-3', 'IN-SH': '37', 'NM-SH': '11', 'AL-SH': '24', 'MO-SH': '30', 'IA-SH': '57'
 };
 
 // US House Speaker — {state, district}
@@ -1281,63 +1309,415 @@ function getTotal() { return parseInt(document.getElementById('totalPatches').te
 // EMAIL PARSER — Context-aware matching
 // ============================================================
 
-// Disambiguation modal for truly ambiguous cases
+// Chat-based disambiguation for ambiguous parser results
 let pendingAmbiguous = [];
 let resolvedEntries = [];
+let chatCurrentItem = null;
 
-function showDisambigModal() {
-    if (!pendingAmbiguous.length) { finalizeParse(resolvedEntries); return; }
-    const item = pendingAmbiguous.shift();
-    let modal = document.getElementById('disambigModal');
-    if (!modal) {
-        modal = document.createElement('div');
-        modal.id = 'disambigModal';
-        modal.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:9999;';
-        document.body.appendChild(modal);
+function showParserChat() {
+    const chatEl = document.getElementById('parserChat');
+    const msgsEl = document.getElementById('chatMessages');
+    if (!pendingAmbiguous.length) {
+        if (chatCurrentItem) return; // still processing
+        finalizeParse(resolvedEntries);
+        return;
     }
-    modal.style.display = 'flex';
-    modal.innerHTML = `
-        <div style="background:#fff;border-radius:10px;padding:24px;max-width:500px;width:90%;max-height:80vh;overflow-y:auto;box-shadow:0 8px 30px rgba(0,0,0,0.2);">
-            <div style="font-size:16px;font-weight:700;margin-bottom:4px;">Multiple matches for "${item.context}"</div>
-            <div style="font-size:13px;color:#6b7280;margin-bottom:16px;">Select the correct target, or skip.</div>
-            ${item.candidates.map((c, i) => `
-                <button onclick="pickCandidate(${i})" style="display:block;width:100%;text-align:left;padding:12px;margin-bottom:8px;border:1px solid #e5e7eb;border-radius:6px;background:#fafbfc;cursor:pointer;font-family:inherit;font-size:13px;transition:background 0.15s;" onmouseover="this.style.background='#e8eefb'" onmouseout="this.style.background='#fafbfc'">
-                    <strong>${c.first} ${c.last}</strong> <span style="color:#6b7280;">— ${c.level}</span><br>
-                    <span style="font-size:12px;color:#6b7280;">${c.title} · ${c.phone}</span>
-                </button>
-            `).join('')}
-            <button onclick="pickCandidate(-1)" style="display:block;width:100%;text-align:center;padding:10px;border:1px solid #e5e7eb;border-radius:6px;background:transparent;cursor:pointer;font-family:inherit;font-size:13px;color:#6b7280;margin-top:4px;" onmouseover="this.style.background='#fee2e2'" onmouseout="this.style.background='transparent'">
-                Skip — none of these
-            </button>
-        </div>
-    `;
-    window._currentCandidates = item.candidates;
+    chatEl.style.display = '';
+    chatCurrentItem = pendingAmbiguous.shift();
+    const candidates = chatCurrentItem.candidates;
+    const context = chatCurrentItem.context;
+    
+    // Build the chat message
+    let msgHTML = `<div class="chat-msg system">`;
+    if (candidates.length <= 5) {
+        // Small set — show quick-pick buttons
+        msgHTML += `I found ${candidates.length} possible matches for "<strong>${context}</strong>". Which one?`;
+        msgHTML += `<div class="chat-quick-btns">`;
+        candidates.forEach((c, i) => {
+            msgHTML += `<button onclick="chatPickCandidate(${i})">${c.first} ${c.last} — ${c.level}</button>`;
+        });
+        msgHTML += `<button onclick="chatPickCandidate(-1)" style="color:var(--text-secondary);">Skip</button>`;
+        msgHTML += `</div>`;
+    } else {
+        // Large set — need state/district to narrow
+        const states = [...new Set(candidates.map(c => c.state))];
+        msgHTML += `"<strong>${context}</strong>" matches ${candidates.length} people across ${states.length} states. `;
+        msgHTML += `Which state? (or type a district like "HD-86")`;
+        msgHTML += `<div class="chat-quick-btns">`;
+        states.slice(0, 12).forEach(st => {
+            msgHTML += `<button onclick="chatNarrowByState('${st}')">${st}</button>`;
+        });
+        if (states.length > 12) msgHTML += `<button disabled>+${states.length - 12} more</button>`;
+        msgHTML += `<button onclick="chatPickCandidate(-1)" style="color:var(--text-secondary);">Skip</button>`;
+        msgHTML += `</div>`;
+    }
+    msgHTML += `</div>`;
+    msgsEl.innerHTML += msgHTML;
+    msgsEl.scrollTop = msgsEl.scrollHeight;
 }
 
-function pickCandidate(idx) {
-    if (idx >= 0) resolvedEntries.push(window._currentCandidates[idx]);
-    showDisambigModal();
+function chatPickCandidate(idx) {
+    const msgsEl = document.getElementById('chatMessages');
+    if (idx >= 0 && chatCurrentItem) {
+        const c = chatCurrentItem.candidates[idx];
+        resolvedEntries.push(c);
+        msgsEl.innerHTML += `<div class="chat-msg resolved">✓ Selected ${c.first} ${c.last} (${c.state}) — ${c.title}</div>`;
+        // Also update the targetsList
+        document.getElementById('targetsList').innerHTML += `<div class="item">✓ ${c.first} ${c.last} (${c.state}) — ${c.title} — ${c.phone}</div>`;
+    } else {
+        msgsEl.innerHTML += `<div class="chat-msg user">Skipped</div>`;
+    }
+    // Disable buttons in the last system message
+    const lastMsg = msgsEl.querySelector('.chat-msg.system:last-of-type');
+    if (lastMsg) lastMsg.querySelectorAll('button').forEach(b => { b.disabled = true; b.style.opacity = '0.5'; });
+    chatCurrentItem = null;
+    showParserChat();
+}
+
+function chatNarrowByState(st) {
+    if (!chatCurrentItem) return;
+    const msgsEl = document.getElementById('chatMessages');
+    msgsEl.innerHTML += `<div class="chat-msg user">${st}</div>`;
+    
+    // Filter candidates to this state
+    const filtered = chatCurrentItem.candidates.filter(c => c.state === st);
+    if (filtered.length === 0) {
+        msgsEl.innerHTML += `<div class="chat-msg system">No matches in ${st}. Try another state.</div>`;
+        return;
+    }
+    if (filtered.length === 1) {
+        // Auto-add
+        const c = filtered[0];
+        resolvedEntries.push(c);
+        msgsEl.innerHTML += `<div class="chat-msg resolved">✓ Selected ${c.first} ${c.last} (${c.state}) — ${c.title}</div>`;
+        document.getElementById('targetsList').innerHTML += `<div class="item">✓ ${c.first} ${c.last} (${c.state}) — ${c.title} — ${c.phone}</div>`;
+        // Disable old buttons
+        const msgs = msgsEl.querySelectorAll('.chat-msg.system');
+        msgs.forEach(m => m.querySelectorAll('button').forEach(b => { b.disabled = true; b.style.opacity = '0.5'; }));
+        chatCurrentItem = null;
+        showParserChat();
+        return;
+    }
+    // Still ambiguous within state — show pick buttons
+    // Disable old buttons first
+    const msgs = msgsEl.querySelectorAll('.chat-msg.system');
+    msgs.forEach(m => m.querySelectorAll('button').forEach(b => { b.disabled = true; b.style.opacity = '0.5'; }));
+    
+    chatCurrentItem.candidates = filtered;
+    let msgHTML = `<div class="chat-msg system">${filtered.length} matches in ${st}:`;
+    msgHTML += `<div class="chat-quick-btns">`;
+    filtered.forEach((c, i) => {
+        msgHTML += `<button onclick="chatPickCandidate(${i})">${c.first} ${c.last} — ${c.level}</button>`;
+    });
+    msgHTML += `<button onclick="chatPickCandidate(-1)" style="color:var(--text-secondary);">Skip</button>`;
+    msgHTML += `</div></div>`;
+    msgsEl.innerHTML += msgHTML;
+    msgsEl.scrollTop = msgsEl.scrollHeight;
+}
+
+function handleChatReply() {
+    const input = document.getElementById('chatInput');
+    const text = input.value.trim();
+    if (!text || !chatCurrentItem) return;
+    input.value = '';
+    
+    const msgsEl = document.getElementById('chatMessages');
+    msgsEl.innerHTML += `<div class="chat-msg user">${text}</div>`;
+    
+    // Try to interpret the reply
+    const stateMatch = text.match(/^([A-Z]{2})$/i);
+    const distMatch = text.match(/(?:HD|SD|CD)[-\s]?(\d{1,3}[A-Za-z]?)/i);
+    
+    if (stateMatch) {
+        chatNarrowByState(stateMatch[1].toUpperCase());
+        return;
+    }
+    
+    if (distMatch) {
+        // Filter by district
+        const dist = distMatch[1];
+        const filtered = chatCurrentItem.candidates.filter(c => 
+            c.distNum && c.distNum.toString() === dist
+        );
+        if (filtered.length === 1) {
+            const c = filtered[0];
+            resolvedEntries.push(c);
+            msgsEl.innerHTML += `<div class="chat-msg resolved">✓ Selected ${c.first} ${c.last} (${c.state}) — ${c.title}</div>`;
+            document.getElementById('targetsList').innerHTML += `<div class="item">✓ ${c.first} ${c.last} (${c.state}) — ${c.title} — ${c.phone}</div>`;
+            const msgs = msgsEl.querySelectorAll('.chat-msg.system');
+            msgs.forEach(m => m.querySelectorAll('button').forEach(b => { b.disabled = true; b.style.opacity = '0.5'; }));
+            chatCurrentItem = null;
+            showParserChat();
+            return;
+        }
+        if (filtered.length > 1) {
+            chatCurrentItem.candidates = filtered;
+            let msgHTML = `<div class="chat-msg system">${filtered.length} matches for district ${dist}:`;
+            msgHTML += `<div class="chat-quick-btns">`;
+            filtered.forEach((c, i) => {
+                msgHTML += `<button onclick="chatPickCandidate(${i})">${c.first} ${c.last} (${c.state})</button>`;
+            });
+            msgHTML += `<button onclick="chatPickCandidate(-1)" style="color:var(--text-secondary);">Skip</button>`;
+            msgHTML += `</div></div>`;
+            msgsEl.innerHTML += msgHTML;
+            msgsEl.scrollTop = msgsEl.scrollHeight;
+            return;
+        }
+    }
+    
+    // Try as a name to filter candidates
+    const nameFiltered = chatCurrentItem.candidates.filter(c =>
+        c.last.toLowerCase().includes(text.toLowerCase()) ||
+        c.first.toLowerCase().includes(text.toLowerCase()) ||
+        c.state.toLowerCase() === text.toLowerCase()
+    );
+    if (nameFiltered.length === 1) {
+        const c = nameFiltered[0];
+        resolvedEntries.push(c);
+        msgsEl.innerHTML += `<div class="chat-msg resolved">✓ Selected ${c.first} ${c.last} (${c.state}) — ${c.title}</div>`;
+        document.getElementById('targetsList').innerHTML += `<div class="item">✓ ${c.first} ${c.last} (${c.state}) — ${c.title} — ${c.phone}</div>`;
+        chatCurrentItem = null;
+        showParserChat();
+        return;
+    }
+    if (nameFiltered.length > 1 && nameFiltered.length < chatCurrentItem.candidates.length) {
+        chatCurrentItem.candidates = nameFiltered;
+        let msgHTML = `<div class="chat-msg system">Narrowed to ${nameFiltered.length}:`;
+        msgHTML += `<div class="chat-quick-btns">`;
+        nameFiltered.forEach((c, i) => {
+            msgHTML += `<button onclick="chatPickCandidate(${i})">${c.first} ${c.last} (${c.state}) — ${c.level}</button>`;
+        });
+        msgHTML += `<button onclick="chatPickCandidate(-1)" style="color:var(--text-secondary);">Skip</button>`;
+        msgHTML += `</div></div>`;
+        msgsEl.innerHTML += msgHTML;
+        msgsEl.scrollTop = msgsEl.scrollHeight;
+        return;
+    }
+    
+    msgsEl.innerHTML += `<div class="chat-msg system">Couldn't narrow it down with "${text}". Try a 2-letter state code (e.g., AL), a district (e.g., HD-86), or a name.</div>`;
+    msgsEl.scrollTop = msgsEl.scrollHeight;
+}
+
+function skipAllChat() {
+    pendingAmbiguous = [];
+    chatCurrentItem = null;
+    const chatEl = document.getElementById('parserChat');
+    chatEl.style.display = 'none';
+    finalizeParse(resolvedEntries);
 }
 
 function finalizeParse(found) {
-    const modal = document.getElementById('disambigModal');
-    if (modal) modal.style.display = 'none';
+    const chatEl = document.getElementById('parserChat');
+    if (chatEl) chatEl.style.display = 'none';
     if (found.length) {
         const infoEl = document.getElementById('extractedInfo');
         infoEl.style.display = '';
         document.getElementById('extractedPatches').textContent = document.getElementById('patchesPerDay').value;
         document.getElementById('extractedDays').textContent = document.getElementById('campaignDays').value;
         document.getElementById('extractedTotal').textContent = document.getElementById('totalPatches').textContent;
-        document.getElementById('targetsList').innerHTML = found.map(t => `<div class="item">✓ ${t.first} ${t.last} (${t.state}) — ${t.title} — ${t.phone}</div>`).join('');
-        found.forEach(f => {
-            const isDupe = entries.some(e => e.first === f.first && e.last === f.last && e.phone === f.phone);
-            if (!isDupe) entries.push({...f, goal: getGoal(), total: getTotal()});
-        });
-        fixSenatorTargets();
-        render();
+        // Store found for editing
+        window._pendingConfirmTargets = found;
+        renderPendingTargets();
     } else {
-        alert('No targets found. Try formats like "CA-11 Pelosi", "AK Murkowski", "MI-SH-74 Hope", or add manually.');
+        // No targets found — show chat for the user to tell us who they want
+        const infoEl = document.getElementById('extractedInfo');
+        infoEl.style.display = '';
+        document.getElementById('targetsList').innerHTML = '';
+        window._pendingConfirmTargets = [];
+        renderPendingTargets();
+        // Show the review chat with a helpful message
+        const reviewChat = document.getElementById('reviewChat');
+        const reviewMsgs = document.getElementById('reviewChatMessages');
+        reviewChat.style.display = '';
+        reviewMsgs.innerHTML = `<div class="chat-msg system">No targets were automatically identified. Type a name, state + name (e.g., "AL Lee"), or district code (e.g., "HD-86") to add targets.</div>`;
     }
+}
+
+function renderPendingTargets() {
+    const found = window._pendingConfirmTargets || [];
+    const targetsList = document.getElementById('targetsList');
+    
+    // Render each target with a remove button
+    targetsList.innerHTML = found.map((t, i) => `
+        <div class="item" style="display:flex; align-items:center; justify-content:space-between; padding:4px 0;">
+            <span>✓ ${t.first} ${t.last} (${t.state}) — ${t.title} — ${t.phone}</span>
+            <button onclick="removePendingTarget(${i})" style="background:none; border:none; color:var(--danger); cursor:pointer; font-size:16px; padding:2px 8px; border-radius:4px; flex-shrink:0;" title="Remove this target" onmouseover="this.style.background='var(--danger-light)'" onmouseout="this.style.background='none'">✕</button>
+        </div>
+    `).join('');
+    
+    // Show confirm/cancel/chat area
+    let confirmEl = document.getElementById('confirmAddTargets');
+    if (!confirmEl) {
+        confirmEl = document.createElement('div');
+        confirmEl.id = 'confirmAddTargets';
+        confirmEl.style.cssText = 'margin-top:16px; padding-top:16px; border-top:1px solid var(--border);';
+        document.getElementById('extractedInfo').appendChild(confirmEl);
+    }
+    confirmEl.style.display = '';
+    confirmEl.innerHTML = `
+        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
+            <button class="btn btn-primary" onclick="confirmAddTargets()" style="font-size:14px; padding:10px 20px;" ${found.length === 0 ? 'disabled style="opacity:0.5;font-size:14px;padding:10px 20px;"' : ''}>
+                Add ${found.length} target${found.length === 1 ? '' : 's'} to table
+            </button>
+            <button class="btn btn-ghost" onclick="cancelParse()" style="font-size:13px; color:var(--danger);">
+                Cancel
+            </button>
+            <span style="font-size:13px; color:var(--text-secondary);">
+                ${found.length} legislator${found.length === 1 ? '' : 's'} — click ✕ to remove, or use chat below to adjust.
+            </span>
+        </div>
+        <div id="reviewChat" style="display:none; border-top:1px solid var(--border); padding-top:12px;">
+            <div style="font-size:13px; font-weight:600; color:var(--text-secondary); margin-bottom:8px;">Adjust targets:</div>
+            <div id="reviewChatMessages" style="max-height:200px; overflow-y:auto; margin-bottom:10px;"></div>
+            <div style="display:flex; gap:8px;">
+                <input type="text" id="reviewChatInput" placeholder="Type a name to add (e.g., 'AL Daniels') or ask to remove someone..." style="flex:1; font-size:13px;" onkeydown="if(event.key==='Enter')handleReviewChat()">
+                <button class="btn btn-primary" onclick="handleReviewChat()" style="white-space:nowrap;">Send</button>
+            </div>
+        </div>
+    `;
+    // Auto-show review chat if there are targets (so user can add/adjust)
+    const reviewChat = document.getElementById('reviewChat');
+    if (reviewChat) reviewChat.style.display = '';
+}
+
+function removePendingTarget(idx) {
+    const found = window._pendingConfirmTargets || [];
+    const removed = found.splice(idx, 1)[0];
+    renderPendingTargets();
+    // Show removal in review chat
+    const reviewMsgs = document.getElementById('reviewChatMessages');
+    if (reviewMsgs) {
+        reviewMsgs.innerHTML += `<div class="chat-msg system" style="color:var(--danger);">Removed ${removed.first} ${removed.last} (${removed.state})</div>`;
+        reviewMsgs.scrollTop = reviewMsgs.scrollHeight;
+    }
+}
+
+function cancelParse() {
+    window._pendingConfirmTargets = [];
+    document.getElementById('extractedInfo').style.display = 'none';
+    document.getElementById('targetsList').innerHTML = '';
+    const confirmEl = document.getElementById('confirmAddTargets');
+    if (confirmEl) confirmEl.style.display = 'none';
+}
+
+function handleReviewChat() {
+    const input = document.getElementById('reviewChatInput');
+    const text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+    
+    const reviewMsgs = document.getElementById('reviewChatMessages');
+    reviewMsgs.innerHTML += `<div class="chat-msg user">${text}</div>`;
+    
+    // Check if they want to remove someone
+    const removeMatch = text.match(/^(?:remove|drop|delete|take out|no|not)\s+(.+)/i);
+    if (removeMatch) {
+        const nameToRemove = removeMatch[1].trim().toLowerCase();
+        const found = window._pendingConfirmTargets || [];
+        const idx = found.findIndex(t => 
+            t.last.toLowerCase().includes(nameToRemove) || 
+            t.first.toLowerCase().includes(nameToRemove) ||
+            (t.first + ' ' + t.last).toLowerCase().includes(nameToRemove)
+        );
+        if (idx >= 0) {
+            const removed = found.splice(idx, 1)[0];
+            reviewMsgs.innerHTML += `<div class="chat-msg system" style="color:var(--danger);">Removed ${removed.first} ${removed.last} (${removed.state})</div>`;
+            renderPendingTargets();
+        } else {
+            reviewMsgs.innerHTML += `<div class="chat-msg system">Couldn't find "${removeMatch[1]}" in the current list.</div>`;
+        }
+        reviewMsgs.scrollTop = reviewMsgs.scrollHeight;
+        return;
+    }
+    
+    // Otherwise try to add — parse the input as a target
+    // Extract state hint
+    const stMatch = text.match(/\b([A-Z]{2})\b/);
+    const stHint = stMatch ? stMatch[1] : null;
+    // Extract district code
+    const distMatch = text.match(/(?:HD|SD|CD)[-\s]?(\d{1,3}[A-Za-z]?)/i);
+    // Extract name words
+    const nameWords = text.match(/[A-Za-z\u00C0-\u024F][A-Za-z\u00C0-\u024F'-]{2,}/g) || [];
+    const skipSet = new Set(['add','also','include','target','state','house','senate','district','rep','representative','senator','the','and','from','please']);
+    const cleanWords = nameWords.filter(w => !skipSet.has(w.toLowerCase()) && !/^(HD|SD|CD|[A-Z]{2})$/i.test(w));
+    
+    let results = [];
+    if (cleanWords.length > 0) {
+        const lastName = cleanWords[cleanWords.length - 1];
+        const firstName = cleanWords.length >= 2 ? cleanWords[0] : null;
+        results = findByLastName(lastName, stHint && stateAbbrevs.has(stHint) ? stHint : null, firstName);
+    }
+    
+    // Filter by district if provided
+    if (distMatch && results.length > 1) {
+        const dist = distMatch[1];
+        const filtered = results.filter(r => r.distNum && r.distNum.toString() === dist);
+        if (filtered.length) results = filtered;
+    }
+    
+    if (results.length === 1) {
+        const t = results[0];
+        // Check if already in pending list
+        const already = (window._pendingConfirmTargets || []).some(p => p.first === t.first && p.last === t.last && p.phone === t.phone);
+        if (already) {
+            reviewMsgs.innerHTML += `<div class="chat-msg system">${t.first} ${t.last} is already in the list.</div>`;
+        } else {
+            window._pendingConfirmTargets.push(t);
+            reviewMsgs.innerHTML += `<div class="chat-msg resolved">✓ Added ${t.first} ${t.last} (${t.state}) — ${t.title}</div>`;
+            renderPendingTargets();
+        }
+    } else if (results.length > 1 && results.length <= 8) {
+        // Show pick buttons
+        let msgHTML = `<div class="chat-msg system">${results.length} matches — which one?<div class="chat-quick-btns">`;
+        results.forEach((c, i) => {
+            msgHTML += `<button onclick="reviewChatPick(${i})">${c.first} ${c.last} (${c.state}) — ${c.level}</button>`;
+        });
+        msgHTML += `</div></div>`;
+        reviewMsgs.innerHTML += msgHTML;
+        window._reviewChatCandidates = results;
+    } else if (results.length > 8) {
+        const states = [...new Set(results.map(r => r.state))];
+        let msgHTML = `<div class="chat-msg system">${results.length} matches across ${states.length} states. Add a state code to narrow down (e.g., "${states[0]} ${cleanWords[cleanWords.length-1]}").</div>`;
+        reviewMsgs.innerHTML += msgHTML;
+    } else {
+        reviewMsgs.innerHTML += `<div class="chat-msg system">No matches found for "${text}". Try a full name with state (e.g., "AL Paul Lee") or a district code (e.g., "AL HD-86").</div>`;
+    }
+    reviewMsgs.scrollTop = reviewMsgs.scrollHeight;
+}
+
+function reviewChatPick(idx) {
+    const t = window._reviewChatCandidates[idx];
+    if (!t) return;
+    const reviewMsgs = document.getElementById('reviewChatMessages');
+    const already = (window._pendingConfirmTargets || []).some(p => p.first === t.first && p.last === t.last && p.phone === t.phone);
+    if (already) {
+        reviewMsgs.innerHTML += `<div class="chat-msg system">${t.first} ${t.last} is already in the list.</div>`;
+    } else {
+        window._pendingConfirmTargets.push(t);
+        reviewMsgs.innerHTML += `<div class="chat-msg resolved">✓ Added ${t.first} ${t.last} (${t.state}) — ${t.title}</div>`;
+        renderPendingTargets();
+    }
+    // Disable buttons
+    const btns = reviewMsgs.querySelectorAll('.chat-quick-btns button');
+    btns.forEach(b => { b.disabled = true; b.style.opacity = '0.5'; });
+    reviewMsgs.scrollTop = reviewMsgs.scrollHeight;
+}
+
+function confirmAddTargets() {
+    const found = window._pendingConfirmTargets || [];
+    if (!found.length) return;
+    found.forEach(f => {
+        const isDupe = entries.some(e => e.first === f.first && e.last === f.last && e.phone === f.phone);
+        if (!isDupe) entries.push({...f, goal: getGoal(), total: getTotal()});
+    });
+    fixSenatorTargets();
+    render();
+    // Update confirm area to show success
+    const confirmEl = document.getElementById('confirmAddTargets');
+    if (confirmEl) {
+        confirmEl.innerHTML = `<span style="font-size:13px; color:#065f46; font-weight:600;">✓ ${found.length} target${found.length === 1 ? '' : 's'} added to table.</span>`;
+    }
+    window._pendingConfirmTargets = [];
 }
 
 // Helper: search all databases for a last name, optionally filtered by state/first name
@@ -1352,15 +1732,23 @@ function firstMatch(dbFirst, inputFirst) {
 
 function findByLastName(lastName, stateHint, firstHint) {
     const results = [];
-    const re = new RegExp('^' + lastName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$', 'i');
+    // Normalize accents for matching: á→a, é→e, ñ→n, etc.
+    const stripAccents = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const lastNorm = stripAccents(lastName);
+    const re = new RegExp('^' + lastNorm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$', 'i');
     // Also match partial for hyphenated names: "Balart" matches "Diaz-Balart"
-    const partialRe = new RegExp('(^|[\\s-])' + lastName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '($|[\\s-])', 'i');
+    const partialRe = new RegExp('(^|[\\s-])' + lastNorm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '($|[\\s-])', 'i');
+
+    function testName(dbName) {
+        const norm = stripAccents(dbName);
+        return re.test(norm) || partialRe.test(norm);
+    }
 
     // Senators
     for (let st in senators) {
         if (stateHint && st !== stateHint) continue;
         senators[st].forEach((sen, i) => {
-            if (re.test(sen.l) || partialRe.test(sen.l)) {
+            if (testName(sen.l)) {
                 if (firstHint && !firstMatch(sen.f, firstHint)) return;
                 results.push({state:st, target:`${st}Sn1`, first:sen.f, last:sen.l, title:`Senator ${sen.l}`, phone:sen.p, pronunciation:'', level:'US Senate'});
             }
@@ -1370,7 +1758,7 @@ function findByLastName(lastName, stateHint, firstHint) {
     for (let st in house) {
         if (stateHint && st !== stateHint) continue;
         house[st].forEach(rep => {
-            if (re.test(rep.l) || partialRe.test(rep.l)) {
+            if (testName(rep.l)) {
                 if (firstHint && !firstMatch(rep.f, firstHint)) return;
                 const cdPad = house[st].length > 0 ? (house[st].reduce((mx, r) => Math.max(mx, parseInt(r.d) || 0), 0) >= 100 ? 3 : 2) : 2;
                 results.push({state:st, target:`CD${String(rep.d).padStart(cdPad,'0')}`, distNum:rep.d, first:rep.f, last:rep.l, title:getUSHouseTitle(st, rep.d, rep.l), phone:rep.p, pronunciation:'', level:`US House ${st}${rep.d}`});
@@ -1387,7 +1775,7 @@ function findByLastName(lastName, stateHint, firstHint) {
         const maxDist = stateLeg[key].reduce((mx, l) => Math.max(mx, parseInt(l.d) || 0), 0);
         const padLen = maxDist >= 100 ? 3 : 2;
         stateLeg[key].forEach(leg => {
-            if (re.test(leg.l) || partialRe.test(leg.l)) {
+            if (testName(leg.l)) {
                 if (firstHint && !firstMatch(leg.f, firstHint)) return;
                 const paddedDist = padDist(leg.d, padLen);
                 const entry = {state:st, target:`${prefix}${paddedDist}`, distNum:leg.d, chamberType:chamber, first:leg.f, last:leg.l, title:getStateLegTitle(key, leg.d, leg.l, leg.pos), phone:leg.p, pronunciation:'', level:`${st} ${levelName} D-${leg.d}`};
@@ -1665,14 +2053,15 @@ function parseEmail() {
     // Also catches patterns like "FL 26 mario" or "FL-26 Diaz-Balart"
     for (let m of text.matchAll(/\b([A-Z]{2})[-\s]?(\d{1,2})\b/gi)) {
         const st = m[1].toUpperCase(), dist = m[2];
+        const distNorm = String(parseInt(dist)); // strip leading zeros: "04" → "4"
         // Skip if SH/SS/HD/SD precedes the number (already caught above)
         const lookback = text.substring(Math.max(0, m.index - 5), m.index + m[0].length);
         if (/S[HS]|HD|SD/i.test(lookback)) continue;
         if (house[st]) {
-            const rep = house[st].find(h => h.d === dist);
+            const rep = house[st].find(h => h.d === distNorm);
             if (rep) {
                 const cdPad = house[st].reduce((mx, r) => Math.max(mx, parseInt(r.d) || 0), 0) >= 100 ? 3 : 2;
-                addIfNew({state:st, target:`CD${String(dist).padStart(cdPad,'0')}`, distNum:dist, first:rep.f, last:rep.l, title:getUSHouseTitle(st, dist, rep.l), phone:rep.p, pronunciation:'', level:`US House ${st}${dist}`});
+                addIfNew({state:st, target:`CD${String(distNorm).padStart(cdPad,'0')}`, distNum:distNorm, first:rep.f, last:rep.l, title:getUSHouseTitle(st, distNorm, rep.l), phone:rep.p, pronunciation:'', level:`US House ${st}${distNorm}`});
             }
         }
     }
@@ -1782,7 +2171,12 @@ function parseEmail() {
     }
 
     const targetChunks = [];
-    targetSectionLines.forEach(line => { line.split(/[,;]+/).map(s => s.trim()).filter(Boolean).forEach(c => targetChunks.push(c)); });
+    targetSectionLines.forEach(line => {
+        // Strip parenthetical metadata (party/district/county info) before chunking
+        // e.g., "(R - District 96, Catawba)" → removed so county names don't become false matches
+        const cleanLine = line.replace(/\([^)]*\)/g, ' ');
+        cleanLine.split(/[,;]+/).map(s => s.trim()).filter(Boolean).forEach(c => targetChunks.push(c));
+    });
 
     let persistentChamberHint = null; // Carries across chunks from section headers like "Representatives (26 total)"
 
@@ -1821,8 +2215,11 @@ function parseEmail() {
         // Outside target section: require strong signal
         if (!aggressive && !stateHint && !chamberHint) return;
 
-        const skipWords = new Set(['targets','target','patches','patch','per','office','day','days','the','and','for','with','from','our','that','this','will','are','have','has','not','but','all','can','would','about','also','senator','sen','rep','representative','state','house','senate','member','district','call','calling','congressman','congresswoman','congressmember','congressional','delegate','assembly','assemblyman','assemblywoman','assemblymember','legislator','leg','federal','chamber','upper','lower','general','us','plan','launch','launching','monday','tuesday','wednesday','thursday','friday','saturday','sunday','week','weeks','hopefully','hope','once','here','there','get','got','need','know','going','want','review','reviewed','support','draft','drafting','script','bill','letter','testimony','editorial','branded','collection','documents','related','assistance','started','anything','else','morning','afternoon','evening','back','quickly','much','very','just','really','great','good','your','they','them','their','been','being','were','could','should','more','some','other','than','legal','end','may','new','way','work','working','making','make','total','generated','april','january','february','march','june','july','august','september','october','november','december','democratic','democrat','republican','legislators','representatives','senators','name','arizona','california','colorado','connecticut','florida','georgia','illinois','indiana','iowa','kansas','kentucky','louisiana','maine','maryland','massachusetts','michigan','minnesota','mississippi','missouri','montana','nebraska','nevada','jersey','mexico','york','carolina','dakota','ohio','oklahoma','oregon','pennsylvania','island','tennessee','texas','utah','vermont','virginia','washington','wisconsin','wyoming','north','south','west']);
-        const words = chunk.match(/[A-Za-z\u00C0-\u024F][A-Za-z\u00C0-\u024F'-]{2,}/g) || [];
+        const skipWords = new Set(['targets','target','patches','patch','per','office','day','days','the','and','for','with','from','our','that','this','will','are','have','has','not','but','all','can','would','about','also','senator','sen','rep','representative','state','house','senate','member','district','call','calling','congressman','congresswoman','congressmember','congressional','delegate','assembly','assemblyman','assemblywoman','assemblymember','legislator','leg','federal','chamber','upper','lower','general','us','plan','launch','launching','monday','tuesday','wednesday','thursday','friday','saturday','sunday','week','weeks','hopefully','hope','once','here','there','get','got','need','know','going','want','review','reviewed','support','draft','drafting','script','bill','letter','testimony','editorial','branded','collection','documents','related','assistance','started','anything','else','morning','afternoon','evening','back','quickly','much','very','just','really','great','good','your','they','them','their','been','being','were','could','should','more','some','other','than','legal','end','may','new','way','work','working','making','make','total','generated','april','january','february','march','june','july','august','september','october','november','december','democratic','democrat','republican','legislators','representatives','senators','name','arizona','california','colorado','connecticut','florida','georgia','illinois','indiana','iowa','kansas','kentucky','louisiana','maine','maryland','massachusetts','michigan','minnesota','mississippi','missouri','montana','nebraska','nevada','jersey','mexico','york','carolina','dakota','ohio','oklahoma','oregon','pennsylvania','island','tennessee','texas','utah','vermont','virginia','washington','wisconsin','wyoming','north','south','west','county']);
+        // Strip parenthetical metadata (party, district, county info) before extracting name words
+        // e.g., "(R - District 96, Catawba)" or "(D - District 114, Buncombe)" → removed
+        const chunkClean = chunk.replace(/\([^)]*\)/g, ' ');
+        const words = chunkClean.match(/[A-Za-z\u00C0-\u024F][A-Za-z\u00C0-\u024F'-]{2,}/g) || [];
         const nameWords = words.filter(w => {
             if (/^[A-Z]{2}$/.test(w) && stateAbbrevs.has(w)) return false;
             if (skipWords.has(w.toLowerCase())) return false;
@@ -1848,6 +2245,16 @@ function parseEmail() {
         if (nameWords.length >= 2) {
             const possibleLast = nameWords[nameWords.length - 1];
             const possibleFirst = nameWords[0];
+            // First try the full phrase as a hyphenated last name (e.g., "ocasio cortez" → "Ocasio-Cortez")
+            if (nameWords.length === 2) {
+                const hyphenated = nameWords[0] + '-' + nameWords[1];
+                let results = filterByChamber(findByLastName(hyphenated, stateHint, null));
+                if (results.length) { addOrDisambiguate(results, `${nameWords[0]} ${nameWords[1]}${stateHint ? ' (' + stateHint + ')' : ''}`); return; }
+                // Also try as "First Last" compound last name (e.g., "Cortez Masto" → last="Cortez Masto")
+                const compound = nameWords.join(' ');
+                results = filterByChamber(findByLastName(compound, stateHint, null));
+                if (results.length) { addOrDisambiguate(results, `${compound}${stateHint ? ' (' + stateHint + ')' : ''}`); return; }
+            }
             let results = filterByChamber(findByLastName(possibleLast, stateHint, possibleFirst));
             if (results.length) { addOrDisambiguate(results, `${possibleFirst} ${possibleLast}${stateHint ? ' (' + stateHint + ')' : ''}`); return; }
             results = filterByChamber(findByLastName(possibleFirst, stateHint, null));
@@ -1878,13 +2285,29 @@ function parseEmail() {
     for (let chunk of targetChunks) processChunk(chunk, true);
     // Process other lines conservatively
     for (let line of otherLines) {
-        line.split(/[,;]+/).map(s => s.trim()).filter(Boolean).forEach(chunk => processChunk(chunk, false));
+        line.replace(/\([^)]*\)/g, ' ').split(/[,;]+/).map(s => s.trim()).filter(Boolean).forEach(chunk => processChunk(chunk, false));
     }
 
     // Finalize
     resolvedEntries = found;
+    // Clear chat messages from any previous parse
+    const chatMsgs = document.getElementById('chatMessages');
+    if (chatMsgs) chatMsgs.innerHTML = '';
+    
     if (pendingAmbiguous.length) {
-        showDisambigModal();
+        // Always show the info panel so the chat is visible
+        const infoEl = document.getElementById('extractedInfo');
+        infoEl.style.display = '';
+        document.getElementById('extractedPatches').textContent = document.getElementById('patchesPerDay').value;
+        document.getElementById('extractedDays').textContent = document.getElementById('campaignDays').value;
+        document.getElementById('extractedTotal').textContent = document.getElementById('totalPatches').textContent;
+        // Show any already-found targets (but don't add to table yet — wait for confirmation)
+        if (found.length) {
+            document.getElementById('targetsList').innerHTML = found.map(t => `<div class="item">✓ ${t.first} ${t.last} (${t.state}) — ${t.title} — ${t.phone}</div>`).join('');
+        } else {
+            document.getElementById('targetsList').innerHTML = '';
+        }
+        showParserChat();
     } else {
         finalizeParse(found);
     }
