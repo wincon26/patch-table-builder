@@ -134,8 +134,8 @@
         <p>Paste client emails to auto-extract targets, or add manually</p>
         <div class="badges">
             <span class="badge blue">100 Senators</span>
-            <span class="badge green">432 House Members</span>
-            <span class="badge purple">MI · IL · NC · OK · OH · GA · NY · NV · TX · CA · WI · WA · NJ · PA · OR · MN · VA · AZ · MD · IN · NM · AL · IA · NE · MO State Legs</span>
+            <span class="badge green">431 House Members</span>
+            <span class="badge purple">MI · IL · NC · OK · OH · GA · NY · NV · TX · CA · WI · WA · NJ · PA · OR · MN · VA · AZ · MD · IN · NM · AL · IA · NE · MO · CO · HI · SC State Legs</span>
         </div>
     </div>
 
@@ -285,7 +285,7 @@
     </div>
 
     <div class="footer-info">
-        <strong>Database:</strong> US Senate (100) · US House (432) · MI State (148) · IL State (177) · NC State (169) · OK State (147) · OH State (132) · GA State (231) · NY State (213) · NV State (63) · TX State (180) · CA State (120) · WI State (132) · WA State (147) · NJ State (120) · PA State (251) · OR State (90) · MN State (201) · VA State (140) · AZ State (90) · MD State (188) · IN State (150) · NM State (112) · AL State (140) · NE Unicameral (49) · MO State (192) · IA State (150)<br>
+        <strong>Database:</strong> US Senate (100) · US House (431) · MI State (148) · IL State (177) · NC State (169) · OK State (147) · OH State (132) · GA State (231) · NY State (213) · NV State (63) · TX State (180) · CA State (120) · WI State (132) · WA State (147) · NJ State (120) · PA State (251) · OR State (90) · MN State (201) · VA State (140) · AZ State (90) · MD State (188) · IN State (150) · NM State (112) · AL State (140) · NE Unicameral (49) · MO State (192) · CO State (100) · HI State (76) · SC State (170) · IA State (150)<br>
         <strong>Formats recognized:</strong> "AK Murkowski" · "CA11" · "NY14 AOC" · "MI-SH-74 Hope" · "OK-SS-1" · last name search
     </div>
 </div>
@@ -299,7 +299,7 @@ let entries = [];
 const senators = {"AL":[{f:"Katie",l:"Britt",p:"(202) 224-5744"},{f:"Tommy",l:"Tuberville",p:"(202) 224-4124"}],"AK":[{f:"Lisa",l:"Murkowski",p:"(202) 224-6665"},{f:"Dan",l:"Sullivan",p:"(202) 224-3004"}],"AZ":[{f:"Ruben",l:"Gallego",p:"(202) 224-4521"},{f:"Mark",l:"Kelly",p:"(202) 224-2235"}],"AR":[{f:"John",l:"Boozman",p:"(202) 224-4843"},{f:"Tom",l:"Cotton",p:"(202) 224-2353"}],"CA":[{f:"Alex",l:"Padilla",p:"(202) 224-3553"},{f:"Adam",l:"Schiff",p:"(202) 224-3841"}],"CO":[{f:"Michael",l:"Bennet",p:"(202) 224-5852"},{f:"John",l:"Hickenlooper",p:"(202) 224-5941"}],"CT":[{f:"Richard",l:"Blumenthal",p:"(202) 224-2823"},{f:"Chris",l:"Murphy",p:"(202) 224-4041"}],"DE":[{f:"Lisa",l:"Blunt Rochester",p:"(202) 224-2441"},{f:"Chris",l:"Coons",p:"(202) 224-5042"}],"FL":[{f:"Ashley",l:"Moody",p:"(202) 224-3041"},{f:"Rick",l:"Scott",p:"(202) 224-5274"}],"GA":[{f:"Jon",l:"Ossoff",p:"(202) 224-3521"},{f:"Raphael",l:"Warnock",p:"(202) 224-3643"}],"HI":[{f:"Mazie",l:"Hirono",p:"(202) 224-6361"},{f:"Brian",l:"Schatz",p:"(202) 224-3934"}],"ID":[{f:"Mike",l:"Crapo",p:"(202) 224-6142"},{f:"Jim",l:"Risch",p:"(202) 224-2752"}],"IL":[{f:"Tammy",l:"Duckworth",p:"(202) 224-2854"},{f:"Dick",l:"Durbin",p:"(202) 224-2152"}],"IN":[{f:"Jim",l:"Banks",p:"(202) 224-4814"},{f:"Todd",l:"Young",p:"(202) 224-5623"}],"IA":[{f:"Joni",l:"Ernst",p:"(202) 224-3254"},{f:"Chuck",l:"Grassley",p:"(202) 224-3744"}],"KS":[{f:"Roger",l:"Marshall",p:"(202) 224-4774"},{f:"Jerry",l:"Moran",p:"(202) 224-6521"}],"KY":[{f:"Mitch",l:"McConnell",p:"(202) 224-2541"},{f:"Rand",l:"Paul",p:"(202) 224-4343"}],"LA":[{f:"Bill",l:"Cassidy",p:"(202) 224-5824"},{f:"John",l:"Kennedy",p:"(202) 224-4623"}],"ME":[{f:"Susan",l:"Collins",p:"(202) 224-2523"},{f:"Angus",l:"King",p:"(202) 224-5344"}],"MD":[{f:"Angela",l:"Alsobrooks",p:"(202) 224-4524"},{f:"Chris",l:"Van Hollen",p:"(202) 224-4654"}],"MA":[{f:"Ed",l:"Markey",p:"(202) 224-2742"},{f:"Elizabeth",l:"Warren",p:"(202) 224-4543"}],"MI":[{f:"Gary",l:"Peters",p:"(202) 224-6221"},{f:"Elissa",l:"Slotkin",p:"(202) 224-4822"}],"MN":[{f:"Amy",l:"Klobuchar",p:"(202) 224-3244"},{f:"Tina",l:"Smith",p:"(202) 224-5641"}],"MS":[{f:"Cindy",l:"Hyde-Smith",p:"(202) 224-5054"},{f:"Roger",l:"Wicker",p:"(202) 224-6253"}],"MO":[{f:"Josh",l:"Hawley",p:"(202) 224-6154"},{f:"Eric",l:"Schmitt",p:"(202) 224-5721"}],"MT":[{f:"Steve",l:"Daines",p:"(202) 224-2651"},{f:"Tim",l:"Sheehy",p:"(202) 224-2644"}],"NE":[{f:"Deb",l:"Fischer",p:"(202) 224-6551"},{f:"Pete",l:"Ricketts",p:"(202) 224-4224"}],"NV":[{f:"Catherine",l:"Cortez Masto",p:"(202) 224-3542"},{f:"Jacky",l:"Rosen",p:"(202) 224-6244"}],"NH":[{f:"Maggie",l:"Hassan",p:"(202) 224-3324"},{f:"Jeanne",l:"Shaheen",p:"(202) 224-2841"}],"NJ":[{f:"Cory",l:"Booker",p:"(202) 224-3224"},{f:"Andy",l:"Kim",p:"(202) 224-4744"}],"NM":[{f:"Martin",l:"Heinrich",p:"(202) 224-5521"},{f:"Ben Ray",l:"Luján",p:"(202) 224-6621"}],"NY":[{f:"Kirsten",l:"Gillibrand",p:"(202) 224-4451"},{f:"Chuck",l:"Schumer",p:"(202) 224-6542"}],"NC":[{f:"Ted",l:"Budd",p:"(202) 224-3154"},{f:"Thom",l:"Tillis",p:"(202) 224-6342"}],"ND":[{f:"Kevin",l:"Cramer",p:"(202) 224-2043"},{f:"John",l:"Hoeven",p:"(202) 224-2551"}],"OH":[{f:"Jon",l:"Husted",p:"(202) 224-3353"},{f:"Bernie",l:"Moreno",p:"(202) 224-2315"}],"OK":[{f:"James",l:"Lankford",p:"(202) 224-5754"},{f:"Markwayne",l:"Mullin",p:"(202) 224-4721"}],"OR":[{f:"Jeff",l:"Merkley",p:"(202) 224-3753"},{f:"Ron",l:"Wyden",p:"(202) 224-5244"}],"PA":[{f:"John",l:"Fetterman",p:"(202) 224-4254"},{f:"David",l:"McCormick",p:"(202) 224-6324"}],"RI":[{f:"Jack",l:"Reed",p:"(202) 224-4642"},{f:"Sheldon",l:"Whitehouse",p:"(202) 224-2921"}],"SC":[{f:"Lindsey",l:"Graham",p:"(202) 224-5972"},{f:"Tim",l:"Scott",p:"(202) 224-6121"}],"SD":[{f:"Mike",l:"Rounds",p:"(202) 224-5842"},{f:"John",l:"Thune",p:"(202) 224-2321"}],"TN":[{f:"Marsha",l:"Blackburn",p:"(202) 224-3344"},{f:"Bill",l:"Hagerty",p:"(202) 224-4944"}],"TX":[{f:"John",l:"Cornyn",p:"(202) 224-2934"},{f:"Ted",l:"Cruz",p:"(202) 224-5922"}],"UT":[{f:"John",l:"Curtis",p:"(202) 224-5251"},{f:"Mike",l:"Lee",p:"(202) 224-5444"}],"VT":[{f:"Bernie",l:"Sanders",p:"(202) 224-5141"},{f:"Peter",l:"Welch",p:"(202) 224-4242"}],"VA":[{f:"Tim",l:"Kaine",p:"(202) 224-4024"},{f:"Mark",l:"Warner",p:"(202) 224-2023"}],"WA":[{f:"Maria",l:"Cantwell",p:"(202) 224-3441"},{f:"Patty",l:"Murray",p:"(202) 224-2621"}],"WV":[{f:"Shelley Moore",l:"Capito",p:"(202) 224-6472"},{f:"Jim",l:"Justice",p:"(202) 224-3954"}],"WI":[{f:"Tammy",l:"Baldwin",p:"(202) 224-5653"},{f:"Ron",l:"Johnson",p:"(202) 224-5323"}],"WY":[{f:"John",l:"Barrasso",p:"(202) 224-6441"},{f:"Cynthia",l:"Lummis",p:"(202) 224-3424"}]};
 
 // ============================================================
-// HOUSE DATABASE — 432 Members (current as of April 2026)
+// HOUSE DATABASE — 431 Members (current as of April 2026)
 // ============================================================
 const houseRaw = `AL|1|Barry|Moore|(202) 225-2901
 AL|2|Shomari|Figures|(202) 225-4931
@@ -405,7 +405,7 @@ FL|16|Vern|Buchanan|(202) 225-5015
 FL|17|W.|Steube|(202) 225-5792
 FL|18|Scott|Franklin|(202) 225-1252
 FL|19|Byron|Donalds|(202) 225-2536
-FL|20|Sheila|Cherfilus-McCormick|(202) 225-1313
+FL|20|VACANT||()
 FL|21|Brian|Mast|(202) 225-3026
 FL|22|Lois|Frankel|(202) 225-9890
 FL|23|Jared|Moskowitz|(202) 225-3001
@@ -768,7 +768,7 @@ stateLeg['IL-SH'] = [];
 ilHouseData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['IL-SH'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
 // North Carolina State Senate (50 districts) — Updated with individual phone numbers
-const ncSenData = "1|Bobby|Hanig|(919) 715-8293|2|Norman|Sanderson|(919) 733-5706|3|Bob|Brinson|(919) 733-5621|4|Buck|Newton|(919) 733-5878|5|Kandie|Smith|(919) 715-8363|6|Michael|Lazzara|(919) 715-3034|7|Michael|Lee|(919) 715-2525|8|Bill|Rabon|(919) 733-5563|9|Brent|Jackson|(919) 733-5705|10|Benton|Sawrey|(919) 715-3040|11|Lisa|Barnes|(919) 715-3030|12|Jim|Burgin|(919) 733-5748|13|Lisa|Grafstein|(919) 733-9349|14|Dan|Blue|(919) 733-5752|15|Jay|Chaudhuri|(919) 715-6400|16|Gale|Adcock|(919) 715-3036|17|Sydney|Batch|(919) 733-5653|18|Terence|Everitt|(919) 733-5850|19|Val|Applewhite|(919) 733-5776|20|Natalie|Murdock|(919) 733-4599|21|Tom|McInnis|(919) 733-5953|22|Sophia|Chitlik|(919) 733-4809|23|Jonah|Garson|(919) 733-5804|24|Danny Earl|Britt Jr.|(919) 733-5651|25|Amy|Galey|(919) 301-1446|26|Phil|Berger|(919) 733-5708|27|Michael|Garrett|(919) 733-5856|28|Gladys|Robinson|(919) 715-3042|29|David|Craven Jr.|(919) 733-5870|30|Steve|Jarvis|(919) 733-5743|31|Dana|Jones|(919) 733-7850|32|Paul|Lowe Jr.|(919) 733-5620|33|Carl|Ford|(919) 733-5665|34|Chris|Measmer|(919) 733-7223|35|Todd|Johnson|(919) 733-7659|36|Eddie|Settle|(919) 733-5742|37|Vickie|Sawyer|(919) 715-3038|38|Mujtaba|Mohammed|(919) 733-5955|39|DeAndrea|Salvador|(919) 733-5655|40|Joyce|Waddell|(919) 733-5650|41|Caleb|Theodros|(919) 715-3050|42|Woodson|Bradley|(919) 715-8331|43|Brad|Overcash|(919) 733-5734|44|W. Ted|Alexander|(919) 715-0690|45|Mark|Hollo|(919) 733-5876|46|Warren|Daniel|(919) 715-7823|47|Ralph|Hise|(919) 733-3360|48|Timothy|Moffitt|(919) 733-5745|49|Julie|Mayfield|(919) 715-3001|50|Kevin|Corbin|(919) 733-5875";
+const ncSenData = "1|Bobby|Hanig|(919) 715-8293|2|Norman|Sanderson|(919) 733-5706|3|Bob|Brinson|(919) 733-5621|4|Buck|Newton|(919) 733-5878|5|Kandie|Smith|(919) 715-8363|6|Michael|Lazzara|(919) 715-3034|7|Michael|Lee|(919) 715-2525|8|Bill|Rabon|(919) 733-5963|9|Brent|Jackson|(919) 733-5705|10|Benton|Sawrey|(919) 715-3040|11|Lisa|Barnes|(919) 715-3030|12|Jim|Burgin|(919) 733-5748|13|Lisa|Grafstein|(919) 733-9349|14|Dan|Blue|(919) 733-5752|15|Jay|Chaudhuri|(919) 715-6400|16|Gale|Adcock|(919) 715-3036|17|Sydney|Batch|(919) 733-5653|18|Terence|Everitt|(919) 733-5850|19|Val|Applewhite|(919) 733-5776|20|Natalie|Murdock|(919) 733-4599|21|Tom|McInnis|(919) 733-5953|22|Sophia|Chitlik|(919) 733-4809|23|Jonah|Garson|(919) 733-5804|24|Danny Earl|Britt Jr.|(919) 733-5651|25|Amy|Galey|(919) 301-1446|26|Phil|Berger|(919) 733-5708|27|Michael|Garrett|(919) 733-5856|28|Gladys|Robinson|(919) 715-3042|29|David|Craven Jr.|(919) 733-5870|30|Steve|Jarvis|(919) 733-5743|31|Dana|Jones|(919) 733-7850|32|Paul|Lowe Jr.|(919) 733-5620|33|Carl|Ford|(919) 733-5665|34|Chris|Measmer|(919) 733-7223|35|Todd|Johnson|(919) 733-7659|36|Eddie|Settle|(919) 733-5742|37|Vickie|Sawyer|(919) 715-3038|38|Mujtaba|Mohammed|(919) 733-5955|39|DeAndrea|Salvador|(919) 733-5655|40|Joyce|Waddell|(919) 733-5650|41|Caleb|Theodros|(919) 715-3050|42|Woodson|Bradley|(919) 715-8331|43|Brad|Overcash|(919) 733-5734|44|W. Ted|Alexander|(919) 715-0690|45|Mark|Hollo|(919) 733-5876|46|Warren|Daniel|(919) 715-7823|47|Ralph|Hise|(919) 733-3360|48|Timothy|Moffitt|(919) 733-5745|49|Julie|Mayfield|(919) 715-3001|50|Kevin|Corbin|(919) 733-5875";
 stateLeg['NC-SS'] = [];
 ncSenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['NC-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
@@ -1003,20 +1003,60 @@ const moSenData = "1|Doug|Beck|573-751-0220|2|Nick|Schroer|573-751-1282|3|Mike|H
 stateLeg['MO-SS'] = [];
 moSenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['MO-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
+
+// Colorado House of Representatives (65 districts)
+const coHouseData = "1|Javier|Mabrey|303-866-2966|2|Steven|Woodrow|303-866-2967|3|Meg|Froelich|303-866-2921|4|Cecelia|Espenoza|303-866-2954|5|Alex|Valdez|303-866-2925|6|Sean|Camacho|303-866-2911|7|Jennifer|Bacon|303-866-2909|8|Lindsay|Gilchrist|303-866-2959|9|Emily|Sirota|303-866-2910|10|Junie|Joseph|303-866-2915|11|Karen|McCormick|303-866-2780|12|Kyle|Brown|303-866-2920|13|Julie|McCluskie|303-866-2952|14|Ava|Flanell|303-866-2965|15|Scott|Bottoms|303-866-5525|16|Rebecca|Keltie|303-866-2937|17|Regina|English|303-866-3069|18|Amy|Paschal|303-866-2932|19|Dan|Woog|303-866-2924|20|Jarvis|Caldwell|303-866-2191|21|Mary|Bradfield|303-866-2946|22|Ken|DeGraaf|303-866-2927|23|Monica|Duran|303-866-5522|24|Lisa|Feret|303-866-2950|25|Tammy|Story|303-866-2582|26|Meghan|Lukens|303-866-2923|27|Brianna|Titone|303-866-2962|28|Sheila|Lieder|303-866-2939|29|Lori|Goldstein|303-866-2843|30|Rebekah|Stewart|303-866-2951|31|Jacque|Phillips|303-866-2918|32|Manny|Rutinel|303-866-2945|33|Kenny|Nguyen|303-866-4667|34|Jenny|Willford|303-866-2931|35|Lorena|Garcia|303-866-2964|36|Michael|Carter|303-866-2942|37|Chad|Clifford|303-866-5510|38|Gretchen|Rydin|303-866-2953|39|Brandi|Bradley|303-866-2935|40|Naquetta|Ricks|303-866-2944|41|Jamie|Jackson|303-866-2919|42|Mandy|Lindsay|303-866-3911|43|Bob|Marshall|303-866-2936|44|Anthony|Hartsook|303-866-2933|45|Max|Brooks|303-866-2948|46|Tisha|Mauro|303-866-2968|47|Ty|Winter|303-866-2747|48|Carlos|Barron|303-866-2943|49|Lesley|Smith|303-866-2578|50|Ryan|Gonzalez|303-866-2929|51|Ron|Weinberg|303-866-2947|52|Yara|Zokaie|303-866-4569|53|Andrew|Boesenecker|303-866-2917|54|Matt|Soper|303-866-2583|55|Rick|Taggart|303-866-3068|56|Chris|Richardson|303-866-2912|57|Elizabeth|Velasco|303-866-2949|58|Larry Don|Suckla|303-866-2955|59|Katie|Stewart|303-866-2914|60|Stephanie|Luck|303-866-2905|61|Eliza|Hamrick|303-866-3706|62|Matthew|Martinez|303-866-2916|63|Dusty|Johnson|303-866-2398|64|Scott|Slaugh|303-866-2906|65|Lori|Garcia Sander|303-866-2907";
+stateLeg['CO-SH'] = [];
+coHouseData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['CO-SH'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
+
+// Colorado State Senate (35 districts)
+const coSenData = "1|Byron|Pelton|303-866-6360|2|Lisa|Frizell|303-866-4869|3|Nick|Hinrichsen|303-866-4878|4|Mark|Baisley|303-866-4877|5|Marc|Catlin|303-866-5292|6|Cleave|Simpson|303-866-4875|7|Janice|Rich|303-866-3077|8|Dylan|Roberts|303-866-4871|9|Lynda|Zamora Wilson|303-866-4835|10|Larry|Liston|303-866-2737|11|Thomas|Exum Sr.|303-866-6364|12|Marc|Snyder|303-866-4880|13|Scott|Bright|303-866-4855|14|Cathy|Kipp|303-866-4841|15|Janice|Marchman|303-866-4853|16|Chris|Kolker|303-866-4883|17|Katie|Wallace|303-866-5291|18|Judy|Amabile|303-866-4872|19|Lindsey|Daugherty|303-866-4840|20|Lisa|Cutter|303-866-4859|21|Adrienne|Benavidez|303-866-4857|22|Jessie|Danielson|303-866-4856|23|Barbara|Kirkmeyer|303-866-4876|24|Kyle|Mullica|303-866-4451|25|William|Lindstedt|303-866-4863|26|Jeff|Bridges|303-866-4846|27|Tom|Sullivan|303-866-4873|28|Mike|Weissman|303-866-4879|29|Iman|Jodeh|303-866-3432|30|John|Carson|303-866-4881|31|Matt|Ball|303-866-4861|32|Robert|Rodriguez|303-866-4852|33|James|Coleman|303-866-4864|34|Julie|Gonzales|303-866-4862|35|Rod|Pelton|303-866-4884";
+stateLeg['CO-SS'] = [];
+coSenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['CO-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
+
+
+// Hawaii House of Representatives (51 districts)
+const hiHouseData = "1|Matthias|Kusch|808-586-6680|2|Sue L.|Keohokapu-Lee Loy|808-586-6120|3|Chris|Todd|808-586-6200|4|Greggor|Ilagan|808-586-6530|5|Jeanne|Kapela|808-586-9605|6|Kirstin|Kahaloa|808-586-8530|7|Nicole E.|Lowen|808-586-8400|8|David A.|Tarnas|808-586-8510|9|Justin H.|Woodson|808-586-6210|10|Tyson K.|Miyake|808-586-9444|11|Terez|Amato|808-586-8525|12|Kyle T.|Yamashita|808-586-6330|13|Mahina|Poepoe|808-586-6790|14|Elle|Cochran|808-586-6160|15|Nadine K.|Nakamura|808-586-6100|16|Luke A.|Evslin|808-586-6270|17|Dee|Morikawa|808-586-6280|18|Joe|Gedeon|808-586-6420|19|Mark J.|Hashem|808-586-6510|20|Tina Nakada|Grandinetti|808-586-6310|21|Jackson D.|Sayama|808-586-6900|22|Andrew Takuya|Garrett|808-586-8475|23|Ikaika|Olds|808-586-8515|24|Adrian K.|Tam|808-586-8520|25|Kim Coco|Iwamoto|808-586-8485|26|Della Au|Belatti|808-586-9425|27|Jenna|Takenouchi|808-586-9415|28|Michael|Ratcliffe|808-586-6180|29|Ikaika|Hussey|808-586-6050|30|Shirley Ann|Templo|808-586-6010|31|Linda|Ichiyama|808-586-6220|32|Garner M.|Shimizu|808-586-9470|33|Sam Satoru|Kong|808-586-8455|34|Gregg|Takayama|808-586-6340|35|Cory M.|Chun|808-586-6170|36|Daisy|Hartsfield|808-586-6520|37|Trish|La Chica|808-586-6150|38|Lauren|Matsumoto|808-586-9490|39|Elijah|Pierick|808-586-8490|40|Julie Reyes|Oda|808-586-9730|41|David|Alcos III|808-586-6080|42|Diamond|Garcia|808-586-8500|43|Kanani|Souza|808-586-8465|44|Darius K.|Kila|808-586-9480|45|Christopher L.|Muraoka|808-586-8460|46|Amy A.|Perruso|808-586-6700|47|Sean|Quinlan|808-586-6380|48|Lisa|Kitagawa|808-586-8540|49|Scot Z.|Matayoshi|808-586-8470|50|Mike|Lee|808-586-6480|51|Lisa|Marten|808-586-9450";
+stateLeg['HI-SH'] = [];
+hiHouseData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['HI-SH'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
+
+// Hawaii State Senate (25 districts)
+const hiSenData = "1|Lorraine R.|Inouye|808-586-7335|2|Joy A.|San Buenaventura|808-586-6890|3|Dru Mamo|Kanuha|808-586-9385|4|Herbert M.|Richards III|808-586-6760|5|Troy N.|Hashimoto|808-586-7344|6|Angus L.K.|McKelvey|808-586-6070|7|Lynn|DeCoite|808-587-7225|8|Ronald D.|Kouchi|808-586-6030|9|Stanley|Chang|808-586-8420|10|Les|Ihara Jr.|808-586-6250|11|Carol|Fukunaga|808-586-6460|12|Sharon Y.|Moriwaki|808-586-6740|13|Karl|Rhoads|808-586-6130|14|Donna Mercado|Kim|808-587-7200|15|Glenn|Wakai|808-586-8585|16|Brandon J.C.|Elefante|808-586-6230|17|Donovan M.|Dela Cruz|808-586-6090|18|Michelle N.|Kidani|808-586-7100|19|Rachele|Lamosao|808-586-6970|20|Kurt|Fevella|808-586-6360|21|Mike|Gabbard|808-586-6830|22|Samantha|DeCorte|808-586-7793|23|Brenton|Awa|808-586-7330|24|Jarrett|Keohokalole|808-587-7215|25|Chris|Lee|808-587-8388";
+stateLeg['HI-SS'] = [];
+hiSenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['HI-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
+
+
+// South Carolina House of Representatives (124 districts)
+const scHouseData = "1|William R.|Whitmire|803-734-3068|2|Adam L.|Duncan|803-212-4472|3|Phillip|Bowers|803-212-6908|4|David R.|Hiott|803-734-3138|5|Neal A.|Collins|803-212-6913|6|April|Cromer|803-212-6887|7|Thomas Lee|Gilreath|803-212-6954|8|Donald G.|Chapman|803-212-6919|9|Richard Blake|Sanders|803-212-6889|10|Thomas|Beach|803-212-6931|11|Craig A.|Gagnon|803-212-6934|12|Daniel|Gibson|803-212-6814|13|John R.|McCravy III|803-212-6939|14|Luke S.|Rankin|803-212-6713|15|JA|Moore|803-212-6890|16|Mark N.|Willis|803-212-6882|17|James Mikell|Burns|803-212-6891|18|T. Alan|Morgan Jr.|803-212-6881|19|Patrick B.|Haddon|803-734-3141|20|Stephen|Frank|803-212-6795|21|Dianne|Mitchell|803-212-6883|22|Paul B.|Wickensimer|803-212-6877|23|Chandra E.|Dillard|803-212-6791|24|Bruce W.|Bannister|803-734-3144|25|Wendell K.|Jones|803-212-6941|26|David|Martin|803-212-6892|27|David|Vaughan|803-212-6779|28|William C.|Huff|803-212-6966|29|Dennis C.|Moss|803-734-3107|30|M. Brian|Lawson|803-212-6885|31|Rosalyn D.|Henderson-Myers|803-212-6965|32|W. Scott|Montgomery IV|803-212-6790|33|Travis A.|Moore|803-212-6893|34|Sarita L.|Edgerton|803-212-6792|35|William M.|Chumley|803-212-6894|36|Robert J.|Harris|803-212-6788|37|Steven Wayne|Long|803-212-6878|38|Josiah|Magnuson|803-212-6876|39|Cally R.|Forrest Jr.|803-212-6938|40|Joseph S.|White|803-212-6951|41|Annie E.|McDaniel|803-212-6789|42|Leon D.|Gilliam|803-212-6968|43|Thomas R.|Ligon|803-212-6972|44|Mike M.|Neese|803-212-6937|45|Brandon|Newton|803-212-6874|46|Heath|Sessions|803-212-6780|47|Thomas E.|Pope|803-734-2701|48|Brandon|Guffey|803-212-6888|49|John Richard C.|King|803-212-6873|50|Keishan M.|Scott|803-212-6958|51|J. David|Weeks|803-734-3102|52|Jermaine L.|Johnson Sr.|803-212-6818|53|Richard L.|Yow|803-212-6949|54|Jason S.|Luck|803-212-6896|55|Jackie E.|Hayes|803-734-3099|56|Timothy A.|McGinnis|803-212-6935|57|Lucas|Atkinson|803-212-6936|58|Jeffrey E.|Johnson|803-212-6810|59|Terry|Alexander|803-734-3004|60|Phillip D.|Lowe|803-734-2975|61|Carla|Schuessler|803-212-6926|62|Robert Q.|Williams|803-734-3142|63|Wallace H.|Jordan Jr.|803-734-3114|64|Fawn M.|Pedalino|803-212-6929|65|Cody T.|Mitchell|803-212-6964|66|Jackie R.|Terribile|803-212-6967|67|G. Murrell|Smith Jr.|803-734-3125|68|Heather Ammons|Crawford|803-212-6933|69|Chris|Wooten|803-212-6897|70|Robert T.|Reese|803-212-4473|71|Nathan|Ballentine|803-734-2969|72|Seth|Rose|803-212-6971|73|Christopher R.|Hart|803-734-3061|74|J. Todd|Rutherford|803-734-9441|75|Heather|Bauer|803-212-6943|76|Leon|Howard|803-734-3049|77|Kambrell H.|Garvin|803-212-6875|78|Beth E.|Bernstein|803-212-6940|79|Hamilton R.|Grant|803-212-6794|80|Kathy|Landing|803-212-6975|81|Charles V.|Hartz|803-212-6884|82|William|Clyburn|803-734-3033|83|William M.|Hixon|803-734-3022|84|Melissa Lackey|Oremus|803-212-6917|85|John Gregory|Kilmartin|803-212-6963|86|Bill|Taylor|803-212-6923|87|Paula Rawl|Calhoon|803-212-6924|88|John T.|Lastinger Jr.|803-212-6726|89|Micajah P.|Caskey IV|803-734-3113|90|Justin T.|Bamberg|803-212-6907|91|Lonnie|Hosey|803-734-2829|92|Brandon L.|Cox|803-212-6886|93|Jerry N.|Govan Jr.|803-212-6945|94|Gil|Gatch|803-212-6871|95|Gilda|Cobb-Hunter|803-734-2809|96|Donald Ryan|McCabe Jr.|803-212-6728|97|Robby|Robbins|803-212-6973|98|Greg|Ford|803-212-6925|99|Marvin|Smith|803-212-6719|100|Sylleste H.|Davis|803-734-3046|101|Roger K.|Kirby|803-212-6947|102|Harriet A.|Holman|803-212-4474|103|Carl L.|Anderson|803-734-2933|104|William H.|Bailey|803-212-6918|105|Kevin|Hardee|803-212-6796|106|Thomas Duval|Guest Jr.|803-212-6781|107|Thomas C.|Brittain Jr.|803-212-6727|108|Lee|Hewitt|803-212-6927|109|Tiffany|Spann-Wilder|803-212-6721|110|Thomas F.|Hartnett Jr.|803-212-6950|111|Wendell G.|Gilliard|803-212-6793|112|Joseph M.|Bustos|803-212-6880|113|Courtney S.|Waters|803-212-6716|114|Gary S.|Brewer Jr.|803-212-6948|115|Elizabeth|Wetmore|803-212-6872|116|James E.|Teeple|803-212-6817|117|Jordan S.|Pace|803-212-6879|118|William G.|Herbkersman|803-734-3015|119|Leonidas E.|Stavrinakis|803-734-3039|120|Wm. Weston J.|Newton|803-734-3120|121|Michael F.|Rivers Sr.|803-212-6952|122|William|Hager|803-212-6974|123|Jeff|Bradley|803-212-6815|124|Shannon S.|Erickson|803-734-3053";
+stateLeg['SC-SH'] = [];
+scHouseData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['SC-SH'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
+
+// South Carolina State Senate (46 districts)
+const scSenData = "1|Thomas C.|Alexander|803-212-6220|2|Rex F.|Rice|803-212-6116|3|Richard J.|Cash|803-212-6124|4|Michael W.|Gambrell|803-212-6032|5|Thomas D.|Corbin|803-212-6100|6|Jason|Elliott|803-212-6108|7|Karl B.|Allen|803-212-6040|8|Ross|Turner|803-212-6148|9|Daniel B.|Verdin III|803-212-6250|10|Billy|Garrett|803-212-6016|11|Josh|Kimbrell|803-212-6108|12|Lee|Bright|803-212-6000|13|Shane R.|Martin|803-212-6420|14|Harvey S.|Peeler Jr.|803-212-6430|15|Wes|Climer|803-212-6230|16|Michael|Johnson|803-212-6172|17|Everett|Stubbs|803-212-6124|18|Ronnie W.|Cromer|803-212-6240|19|Tameika Isaac|Devine|803-212-6048|20|Ed|Sutton|803-212-6056|21|Darrell|Jackson|803-212-6048|22|Overture|Walker|803-212-6100|23|Carlisle|Kennedy|803-212-6116|24|Tom|Young Jr.|803-212-6320|25|A. Shane|Massey|803-212-6330|26|Russell L.|Ott|803-212-6140|27|Allen|Blackmon|803-212-6172|28|Greg|Hembree|803-212-6350|29|JD|Chaplin|803-212-6148|30|Kent M.|Williams|803-212-6000|31|Mike|Reichenbach|803-212-6016|32|Ronnie A.|Sabb|803-212-6056|33|Luke A.|Rankin|803-212-6610|34|Stephen L.|Goldfinch|803-212-6008|35|Jeffrey R.|Graham|803-212-6008|36|Jeff|Zell|803-212-6040|37|Lawrence K.|Grooms|803-212-6400|38|Sean M.|Bennett|803-212-6410|39|Tom|Fernandez|803-212-6024|40|Brad|Hutto|803-212-6140|41|Matthew W.|Leber|803-212-6032|42|Deon T.|Tedder|803-212-6132|43|George E.|Campsen III|803-212-6340|44|Brian|Adams|803-212-6024|45|Margie Bright|Matthews|803-212-6132|46|Tom|Davis|803-212-6080";
+stateLeg['SC-SS'] = [];
+scSenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['SC-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
+
 const stateSpeakers = {
     'MI-SH': '42', 'IL-SH': '7', 'NC-SH': '87', 'OK-SH': '29', 'OH-SH': '78',
     'GA-SH': '159', 'NY-SH': '83', 'NV-SH': '9', 'TX-SH': '83', 'CA-SH': '29',
     'WI-SH': '33', 'WA-SH': '27-2', 'NJ-SH': '19-1', 'PA-SH': '191', 'OR-SH': '14',
-    'MN-SH': '13A', 'VA-SH': '88', 'AZ-SH': '29-1', 'MD-SH': '21-3', 'IN-SH': '37', 'NM-SH': '11', 'AL-SH': '24', 'MO-SH': '30', 'IA-SH': '57'
+    'MN-SH': '13A', 'VA-SH': '88', 'AZ-SH': '29-1', 'MD-SH': '21-3', 'IN-SH': '37', 'NM-SH': '11', 'AL-SH': '24', 'MO-SH': '30', 'CO-SH': '13', 'HI-SH': '15', 'SC-SH': '67', 'IA-SH': '57'
 };
 
 // US House Speaker — {state, district}
 const usHouseSpeaker = {st: 'LA', d: '4'};
 
 // Helper: get title for US House member
+// Strip generational suffixes from last names for display in call titles
+// "White Jr." → "White", "McCravy III" → "McCravy", "Rivers Sr." → "Rivers"
+function cleanLastName(name) {
+    return name.replace(/\s+(Jr\.?|Sr\.?|II|III|IV|V|VI|VII|VIII)$/i, '').trim();
+}
+
 function getUSHouseTitle(st, dist, lastName) {
-    if (usHouseSpeaker.st === st && usHouseSpeaker.d === String(dist)) return `Speaker ${lastName}`;
-    return `Rep. ${lastName}`;
+    const clean = cleanLastName(lastName);
+    if (usHouseSpeaker.st === st && usHouseSpeaker.d === String(dist)) return `Speaker ${clean}`;
+    return `Rep. ${clean}`;
 }
 
 // Helper: pad district number, but skip padding for alphanumeric districts (e.g. MN's 13A)
@@ -1027,17 +1067,17 @@ function padDist(dist, padLen) {
 
 // Helper: get title for a state leg member
 function getStateLegTitle(chamberKey, dist, lastName, pos) {
+    const clean = cleanLastName(lastName);
     const speakerVal = stateSpeakers[chamberKey];
     if (speakerVal) {
         if (speakerVal.includes('-')) {
-            // Multi-member: check district AND position
-            if (speakerVal === `${dist}-${pos}`) return `Speaker ${lastName}`;
+            if (speakerVal === `${dist}-${pos}`) return `Speaker ${clean}`;
         } else {
-            if (speakerVal === String(dist)) return `Speaker ${lastName}`;
+            if (speakerVal === String(dist)) return `Speaker ${clean}`;
         }
     }
     const chamber = chamberKey.split('-')[1];
-    return chamber === 'SS' ? `Senator ${lastName}` : `Representative ${lastName}`;
+    return chamber === 'SS' ? `Senator ${clean}` : `Representative ${clean}`;
 }
 
 const nicknames = {
@@ -1177,7 +1217,7 @@ function loadChamber() {
                     if (!already) {
                         entries.push({
                             state: s, target: `${s}Sn1`, first: sen.f, last: sen.l,
-                            title: `Senator ${sen.l}`, phone: sen.p, pronunciation: '',
+                            title: `Senator ${cleanLastName(sen.l)}`, phone: sen.p, pronunciation: '',
                             goal: getGoal(), total: getTotal()
                         });
                         count++;
@@ -1224,7 +1264,7 @@ function loadChamber() {
             if (!already) {
                 entries.push({
                     state: st, target: `${st}Sn1`, first: sen.f, last: sen.l,
-                    title: `Senator ${sen.l}`, phone: sen.p, pronunciation: '',
+                    title: `Senator ${cleanLastName(sen.l)}`, phone: sen.p, pronunciation: '',
                     goal: getGoal(), total: getTotal()
                 });
                 count++;
@@ -1750,7 +1790,7 @@ function findByLastName(lastName, stateHint, firstHint) {
         senators[st].forEach((sen, i) => {
             if (testName(sen.l)) {
                 if (firstHint && !firstMatch(sen.f, firstHint)) return;
-                results.push({state:st, target:`${st}Sn1`, first:sen.f, last:sen.l, title:`Senator ${sen.l}`, phone:sen.p, pronunciation:'', level:'US Senate'});
+                results.push({state:st, target:`${st}Sn1`, first:sen.f, last:sen.l, title:`Senator ${cleanLastName(sen.l)}`, phone:sen.p, pronunciation:'', level:'US Senate'});
             }
         });
     }
@@ -1794,7 +1834,7 @@ function findByFirstName(firstName, stateHint) {
     for (let st in senators) {
         if (stateHint && st !== stateHint) continue;
         senators[st].forEach((sen, i) => {
-            if (re.test(sen.f)) results.push({state:st, target:`${st}Sn1`, first:sen.f, last:sen.l, title:`Senator ${sen.l}`, phone:sen.p, pronunciation:'', level:'US Senate'});
+            if (re.test(sen.f)) results.push({state:st, target:`${st}Sn1`, first:sen.f, last:sen.l, title:`Senator ${cleanLastName(sen.l)}`, phone:sen.p, pronunciation:'', level:'US Senate'});
         });
     }
     for (let st in house) {
@@ -1950,6 +1990,10 @@ function parseEmail() {
         pendingAmbiguous.push({context: contextLabel, candidates: uniquePeople});
     }
 
+    // Clean text for district code parsers: strip parenthetical metadata and pipe-delimited district info
+    // This prevents "(HD-80, Fort Wayne)" or "| HD-14" from triggering false district matches
+    const cleanText = text.replace(/\([^)]*\)/g, ' ').replace(/\|[^|\n]*/g, ' ');
+
     // 1. Nicknames (AOC, etc.)
     for (let nick in nicknames) {
         if (new RegExp('\\b' + nick + '\\b', 'i').test(text)) {
@@ -1997,7 +2041,7 @@ function parseEmail() {
 
     // 2.5 HD/SD prefix patterns: "HD-27", "WA HD-27", "HD 27 Jinkins", "SD-5"
     // These look up directly in state legislature data
-    for (let m of text.matchAll(/\b(?:([A-Z]{2})\s+)?(HD|SD)[-\s]?(\d{1,3}[A-Za-z]?)\b/gi)) {
+    for (let m of cleanText.matchAll(/\b(?:([A-Z]{2})\s+)?(HD|SD)[-\s]?(\d{1,3}[A-Za-z]?)\b/gi)) {
         const stHint = m[1] ? m[1].toUpperCase() : null;
         const prefix = m[2].toUpperCase();
         const dist = m[3];
@@ -2010,7 +2054,7 @@ function parseEmail() {
         const nameBefore = beforeMatch.match(/([A-Za-z\u00C0-\u024F][A-Za-z\u00C0-\u024F'-]+(?:\s+[A-Za-z\u00C0-\u024F][A-Za-z\u00C0-\u024F'-]+)*)\s*$/);
         const nameContext = nameAfter ? nameAfter[1].trim() : (nameBefore ? nameBefore[1].trim() : null);
         // Filter out common non-name words from name context
-        const distSkip = new Set(['the','and','for','with','from','our','that','this','will','are','state','house','senate','district','rep','representative','senator','call','target','targets','alabama','arizona','california','georgia','illinois','indiana','maryland','michigan','minnesota','nevada','ohio','oklahoma','oregon','texas','virginia','washington','wisconsin','north','south','west','new','jersey','mexico','york','carolina','dakota','pennsylvania']);
+        const distSkip = new Set(['the','and','for','with','from','our','that','this','will','are','state','house','senate','district','rep','representative','senator','call','target','targets','alabama','arizona','california','illinois','indiana','maryland','michigan','minnesota','ohio','oklahoma','oregon','texas','wisconsin','north','south','west','new','jersey','mexico','york','carolina','dakota','pennsylvania']);
         const nameContextWords = nameContext ? nameContext.split(/\s+/).filter(w => !distSkip.has(w.toLowerCase()) && !/^(HD|SD|CD)$/i.test(w) && w.length >= 2) : [];
         
         // Collect all matching legs across states, then filter by name if available
@@ -2027,14 +2071,15 @@ function parseEmail() {
         
         // If name context is present and there are multiple state matches, filter by name
         let finalMatches = allMatches;
+        const sA = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
         if (nameContextWords.length > 0 && allMatches.length > 1) {
             const nameFiltered = allMatches.filter(({leg}) => {
-                return nameContextWords.some(w => 
-                    leg.l.toLowerCase() === w.toLowerCase() || 
-                    leg.f.toLowerCase() === w.toLowerCase() ||
-                    (w.length >= 3 && leg.l.toLowerCase().startsWith(w.toLowerCase())) ||
-                    (w.length >= 3 && leg.f.toLowerCase().startsWith(w.toLowerCase()))
-                );
+                return nameContextWords.some(w => {
+                    const wn = sA(w.toLowerCase()), ln = sA(leg.l.toLowerCase()), fn = sA(leg.f.toLowerCase());
+                    return ln === wn || fn === wn ||
+                        (wn.length >= 3 && ln.startsWith(wn)) ||
+                        (wn.length >= 3 && fn.startsWith(wn));
+                });
             });
             if (nameFiltered.length > 0) finalMatches = nameFiltered;
         }
@@ -2051,7 +2096,7 @@ function parseEmail() {
 
     // 3. US House district codes: CA-11, NY-14, FL-26
     // Also catches patterns like "FL 26 mario" or "FL-26 Diaz-Balart"
-    for (let m of text.matchAll(/\b([A-Z]{2})[-\s]?(\d{1,2})\b/gi)) {
+    for (let m of cleanText.matchAll(/\b([A-Z]{2})[-\s]?(\d{1,2})\b/gi)) {
         const st = m[1].toUpperCase(), dist = m[2];
         const distNorm = String(parseInt(dist)); // strip leading zeros: "04" → "4"
         // Skip if SH/SS/HD/SD precedes the number (already caught above)
@@ -2069,7 +2114,7 @@ function parseEmail() {
     // 3.5 Alphanumeric district codes: "MN 13A", "MN-13A", "MN 13A Demuth", "13A Demuth"
     // Handles states like MN with districts like 13A, 67B
     // Pattern A: State + alphanumeric district (e.g. "MN 13A")
-    for (let m of text.matchAll(/\b([A-Z]{2})[-\s]?(\d{1,3}[A-Za-z])\b/gi)) {
+    for (let m of cleanText.matchAll(/\b([A-Z]{2})[-\s]?(\d{1,3}[A-Za-z])\b/gi)) {
         const st = m[1].toUpperCase(), dist = m[2].toUpperCase();
         // Skip if SH/SS/HD/SD preceded this
         const lookback = text.substring(Math.max(0, m.index - 5), m.index + m[0].length);
@@ -2100,7 +2145,7 @@ function parseEmail() {
         }
     }
     // Pattern B: Bare alphanumeric district + name (e.g. "13A Demuth")
-    for (let m of text.matchAll(/\b(\d{1,3}[A-Za-z])\s+([A-Za-z][A-Za-z'-]+)/gi)) {
+    for (let m of cleanText.matchAll(/\b(\d{1,3}[A-Za-z])\s+([A-Za-z][A-Za-z'-]+)/gi)) {
         const dist = m[1].toUpperCase(), nameHint = m[2];
         for (let key in stateLeg) {
             const [st, ch] = key.split('-');
@@ -2133,12 +2178,19 @@ function parseEmail() {
         const line = lines[i];
         if (/\btargets?\b.*:/i.test(line) || /\btargets?\s+(will|are|include|below)\b/i.test(line) || /\btargeting\b/i.test(line)) {
             inTargetSection = true;
+            // Also push the header itself as a target section line so state/chamber context is preserved
+            // e.g., "South Carolina State Senate targets:" contains state + chamber info
+            targetSectionLines.push(line);
             const afterColon = line.replace(/^.*?:\s*/, '');
             if (afterColon && afterColon !== line) targetSectionLines.push(afterColon);
             continue;
         }
         if (inTargetSection) {
-            if (/^(here'?s?\b|please\b|thank|let\s+me|attached|fyi|note:|cc:|bcc:|from:|subject:|regards|sincerely|best|cheers)/i.test(line) || line.length < 2) {
+            // End target section at sign-off lines — but only if the line is SHORT and standalone
+            // (not "Best practices" or "John Best" — those are content, not sign-offs)
+            const isSignoff = /^(regards|sincerely|cheers|warm\s+regards|kind\s+regards|talk\s+soon|all\s+the\s+best),?\s*$/i.test(line)
+                || (/^(best|thanks|thank\s+you),?\s*$/i.test(line) && line.length < 15);
+            if (isSignoff || /^(here'?s?\b|please\b|let\s+me|attached|fyi|note:|cc:|bcc:|from:|subject:)/i.test(line) || line.length < 2) {
                 inTargetSection = false;
                 if (line.length >= 2) otherLines.push(line);
                 continue;
@@ -2149,7 +2201,24 @@ function parseEmail() {
         }
     }
     // If no target section detected, treat whole email as potential targets (backward compatible)
-    if (targetSectionLines.length === 0) { targetSectionLines = lines; otherLines = []; }
+    if (targetSectionLines.length === 0) { 
+        // But strip email signature lines (sign-off + name/title after it)
+        let hitSignoff = false;
+        const filtered = [];
+        for (const line of lines) {
+            if (hitSignoff) continue; // everything after sign-off is signature
+            // Sign-off must be a short standalone line (not "John Best" or "Best practices")
+            const isSignoffLine = /^(regards|sincerely|cheers|warm\s+regards|kind\s+regards|talk\s+soon|all\s+the\s+best),?\s*$/i.test(line)
+                || (/^(best|thanks|thank\s+you),?\s*$/i.test(line) && line.length < 15);
+            if (isSignoffLine) {
+                hitSignoff = true;
+                continue;
+            }
+            filtered.push(line);
+        }
+        targetSectionLines = filtered;
+        otherLines = []; 
+    }
 
     // Detect global state hint from full text (e.g. "Arizona Democratic Legislators")
     const stateNames = {'alabama':'AL','alaska':'AK','arizona':'AZ','arkansas':'AR','california':'CA','colorado':'CO','connecticut':'CT','delaware':'DE','florida':'FL','georgia':'GA','hawaii':'HI','idaho':'ID','illinois':'IL','indiana':'IN','iowa':'IA','kansas':'KS','kentucky':'KY','louisiana':'LA','maine':'ME','maryland':'MD','massachusetts':'MA','michigan':'MI','minnesota':'MN','mississippi':'MS','missouri':'MO','montana':'MT','nebraska':'NE','nevada':'NV','new hampshire':'NH','new jersey':'NJ','new mexico':'NM','new york':'NY','north carolina':'NC','north dakota':'ND','ohio':'OH','oklahoma':'OK','oregon':'OR','pennsylvania':'PA','rhode island':'RI','south carolina':'SC','south dakota':'SD','tennessee':'TN','texas':'TX','utah':'UT','vermont':'VT','virginia':'VA','washington':'WA','west virginia':'WV','wisconsin':'WI','wyoming':'WY'};
@@ -2173,24 +2242,60 @@ function parseEmail() {
     const targetChunks = [];
     targetSectionLines.forEach(line => {
         // Strip parenthetical metadata (party/district/county info) before chunking
-        // e.g., "(R - District 96, Catawba)" → removed so county names don't become false matches
-        const cleanLine = line.replace(/\([^)]*\)/g, ' ');
+        let cleanLine = line.replace(/\([^)]*\)/g, ' ');
+        // Strip numbered list prefixes: "1.", "2)", "12.", etc.
+        cleanLine = cleanLine.replace(/^\s*\d+[\.\)]\s*/, '');
+        // Strip bullet dashes/asterisks at start: "- ", "* ", "• "
+        cleanLine = cleanLine.replace(/^\s*[-*•]\s+/, '');
         cleanLine.split(/[,;]+/).map(s => s.trim()).filter(Boolean).forEach(c => targetChunks.push(c));
     });
 
     let persistentChamberHint = null; // Carries across chunks from section headers like "Representatives (26 total)"
+    let persistentStateHint = null; // Carries across chunks from state headers like "Indiana House:"
+    // If text contains multiple state names, disable globalStateHint (it would be ambiguous)
+    const fullStateNames = {'alabama':'AL','alaska':'AK','arizona':'AZ','arkansas':'AR','california':'CA','colorado':'CO','connecticut':'CT','delaware':'DE','florida':'FL','georgia':'GA','hawaii':'HI','idaho':'ID','illinois':'IL','indiana':'IN','iowa':'IA','kansas':'KS','kentucky':'KY','louisiana':'LA','maine':'ME','maryland':'MD','massachusetts':'MA','michigan':'MI','minnesota':'MN','mississippi':'MS','missouri':'MO','montana':'MT','nebraska':'NE','nevada':'NV','new hampshire':'NH','new jersey':'NJ','new mexico':'NM','new york':'NY','north carolina':'NC','north dakota':'ND','south carolina':'SC','south dakota':'SD','ohio':'OH','oklahoma':'OK','oregon':'OR','pennsylvania':'PA','rhode island':'RI','tennessee':'TN','texas':'TX','utah':'UT','vermont':'VT','virginia':'VA','west virginia':'WV','washington':'WA','wisconsin':'WI','wyoming':'WY'};
+    const statesFoundInText = new Set();
+    for (const [name, abbr] of Object.entries(fullStateNames)) {
+        if (new RegExp('\\b' + name + '\\b', 'i').test(text)) statesFoundInText.add(abbr);
+    }
+    // Also check for 2-letter abbreviations followed by chamber words
+    for (const m of text.matchAll(/\b([A-Z]{2})\s+(house|senate|rep|sen|legislat|democrat|republican)/gi)) {
+        if (stateAbbrevs.has(m[1])) statesFoundInText.add(m[1]);
+    }
+    if (statesFoundInText.size > 1) globalStateHint = null; // Ambiguous — don't use global hint
 
     function processChunk(chunk, aggressive) {
         if (/^\d+\s*(patches?|days?|per)/i.test(chunk)) return;
-        if (/^(good\s+morning|good\s+afternoon|hi\b|hello\b|hey\b|dear\b|thanks|thank\s+you|please|let\s+me|we'?re?\b|here'?s?|attached|fyi)/i.test(chunk)) return;
+        if (/^(good\s+morning|good\s+afternoon|hello\b|hey\b|dear\b|thanks|thank\s+you|please|let\s+me|we'?re?\b|here'?s?|attached|fyi)/i.test(chunk)) return;
+        // Skip "hi" greeting but not "HI" state abbreviation (Hawaii)
+        if (/^hi\b/i.test(chunk) && !/^HI\s*[:\-]?\s*[A-Z]/i.test(chunk) && !/^HI\s+(HD|SD|house|senate|state|rep|sen|democrat|republican|legislat)/i.test(chunk)) return;
 
         const stateMatch = chunk.match(/\b([A-Z]{2})\b/);
         let stateHint = null;
         if (stateMatch && stateAbbrevs.has(stateMatch[1])) stateHint = stateMatch[1];
+        // Check for full state name in this chunk (e.g., "Indiana House:")
+        if (!stateHint) {
+            for (const [name, abbr] of Object.entries(fullStateNames)) {
+                if (new RegExp('\\b' + name + '\\b', 'i').test(chunk)) {
+                    stateHint = abbr;
+                    persistentStateHint = abbr; // Set persistent for subsequent chunks
+                    break;
+                }
+            }
+        }
+        if (!stateHint && persistentStateHint) stateHint = persistentStateHint;
         if (!stateHint && globalStateHint) stateHint = globalStateHint;
 
         let chamberHint = null;
-        // Check if this chunk is a section header that sets persistent chamber context
+        // Check if this chunk is a section header that sets persistent state + chamber context
+        // e.g., "Indiana House:", "Alabama Senate:", "New Mexico House targets:"
+        const isStateHeader = stateHint && /\b(house|senate|rep|sen|legislat|caucus|delegation|targets?)\b/i.test(chunk) && /:\s*$/.test(chunk.trim());
+        if (isStateHeader) {
+            persistentStateHint = stateHint;
+            if (/\b(house|rep)/i.test(chunk)) persistentChamberHint = stateLeg[`${stateHint}-SH`] ? 'SH' : 'US-HOUSE';
+            else if (/\b(senate|sen)/i.test(chunk)) persistentChamberHint = stateLeg[`${stateHint}-SS`] ? 'SS' : 'US-SEN';
+            return; // Header line, not a name
+        }
         if (/\brepresentatives?\b.*\(\d+\s*total\)/i.test(chunk) || /\bstate\s+representatives?\b/i.test(chunk)) {
             persistentChamberHint = (stateHint && stateLeg[`${stateHint}-SH`]) ? 'SH' : 'US-HOUSE';
             return; // This is a header line, not a name
@@ -2215,7 +2320,7 @@ function parseEmail() {
         // Outside target section: require strong signal
         if (!aggressive && !stateHint && !chamberHint) return;
 
-        const skipWords = new Set(['targets','target','patches','patch','per','office','day','days','the','and','for','with','from','our','that','this','will','are','have','has','not','but','all','can','would','about','also','senator','sen','rep','representative','state','house','senate','member','district','call','calling','congressman','congresswoman','congressmember','congressional','delegate','assembly','assemblyman','assemblywoman','assemblymember','legislator','leg','federal','chamber','upper','lower','general','us','plan','launch','launching','monday','tuesday','wednesday','thursday','friday','saturday','sunday','week','weeks','hopefully','hope','once','here','there','get','got','need','know','going','want','review','reviewed','support','draft','drafting','script','bill','letter','testimony','editorial','branded','collection','documents','related','assistance','started','anything','else','morning','afternoon','evening','back','quickly','much','very','just','really','great','good','your','they','them','their','been','being','were','could','should','more','some','other','than','legal','end','may','new','way','work','working','making','make','total','generated','april','january','february','march','june','july','august','september','october','november','december','democratic','democrat','republican','legislators','representatives','senators','name','arizona','california','colorado','connecticut','florida','georgia','illinois','indiana','iowa','kansas','kentucky','louisiana','maine','maryland','massachusetts','michigan','minnesota','mississippi','missouri','montana','nebraska','nevada','jersey','mexico','york','carolina','dakota','ohio','oklahoma','oregon','pennsylvania','island','tennessee','texas','utah','vermont','virginia','washington','wisconsin','wyoming','north','south','west','county']);
+        const skipWords = new Set(['targets','target','patches','patch','per','office','day','days','the','and','for','with','from','our','that','this','will','are','have','has','not','but','all','can','would','about','also','senator','sen','rep','representative','state','house','senate','member','district','call','calling','congressman','congresswoman','congressmember','congressional','delegate','assembly','assemblyman','assemblywoman','assemblymember','legislator','leg','federal','chamber','upper','lower','general','us','plan','launch','launching','monday','tuesday','wednesday','thursday','friday','saturday','sunday','week','weeks','hopefully','hope','once','here','there','get','got','need','know','going','want','review','reviewed','support','draft','drafting','script','bill','letter','testimony','editorial','branded','collection','documents','related','assistance','started','anything','else','morning','afternoon','evening','back','quickly','much','very','just','really','great','good','your','they','them','their','been','being','were','could','should','more','some','other','than','legal','end','may','new','way','work','working','making','make','total','generated','april','january','february','march','june','july','august','september','october','november','december','democratic','democrat','republican','legislators','representatives','senators','name','arizona','california','colorado','connecticut','florida','illinois','indiana','iowa','kansas','kentucky','louisiana','maine','maryland','massachusetts','michigan','minnesota','mississippi','missouri','nebraska','jersey','mexico','york','carolina','dakota','ohio','oklahoma','oregon','pennsylvania','island','tennessee','texas','utah','vermont','wisconsin','wyoming','north','south','west','county']);
         // Strip parenthetical metadata (party, district, county info) before extracting name words
         // e.g., "(R - District 96, Catawba)" or "(D - District 114, Buncombe)" → removed
         const chunkClean = chunk.replace(/\([^)]*\)/g, ' ');
@@ -2285,7 +2390,8 @@ function parseEmail() {
     for (let chunk of targetChunks) processChunk(chunk, true);
     // Process other lines conservatively
     for (let line of otherLines) {
-        line.replace(/\([^)]*\)/g, ' ').split(/[,;]+/).map(s => s.trim()).filter(Boolean).forEach(chunk => processChunk(chunk, false));
+        let cl = line.replace(/\([^)]*\)/g, ' ').replace(/^\s*\d+[\.\)]\s*/, '').replace(/^\s*[-*•]\s+/, '');
+        cl.split(/[,;]+/).map(s => s.trim()).filter(Boolean).forEach(chunk => processChunk(chunk, false));
     }
 
     // Finalize
