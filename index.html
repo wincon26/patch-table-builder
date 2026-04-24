@@ -135,7 +135,7 @@
         <div class="badges">
             <span class="badge blue">100 Senators</span>
             <span class="badge green">431 House Members</span>
-            <span class="badge purple">MI · IL · NC · OK · OH · GA · NY · NV · TX · CA · WI · WA · NJ · PA · OR · MN · VA · AZ · MD · IN · NM · AL · IA · NE · MO · CO · HI · SC State Legs</span>
+            <span class="badge purple">MI · IL · NC · OK · OH · GA · NY · NV · TX · CA · WI · WA · NJ · PA · OR · MN · VA · AZ · MD · IN · NM · AL · IA · NE · MO · CO · HI · SC · DE State Legs</span>
         </div>
     </div>
 
@@ -285,7 +285,7 @@
     </div>
 
     <div class="footer-info">
-        <strong>Database:</strong> US Senate (100) · US House (431) · MI State (148) · IL State (177) · NC State (169) · OK State (147) · OH State (132) · GA State (231) · NY State (213) · NV State (63) · TX State (180) · CA State (120) · WI State (132) · WA State (147) · NJ State (120) · PA State (251) · OR State (90) · MN State (201) · VA State (140) · AZ State (90) · MD State (188) · IN State (150) · NM State (112) · AL State (140) · NE Unicameral (49) · MO State (192) · CO State (100) · HI State (76) · SC State (170) · IA State (150)<br>
+        <strong>Database:</strong> US Senate (100) · US House (431) · MI State (148) · IL State (177) · NC State (169) · OK State (147) · OH State (132) · GA State (231) · NY State (213) · NV State (63) · TX State (180) · CA State (120) · WI State (132) · WA State (147) · NJ State (120) · PA State (251) · OR State (90) · MN State (201) · VA State (140) · AZ State (90) · MD State (188) · IN State (150) · NM State (112) · AL State (140) · NE Unicameral (49) · MO State (192) · CO State (100) · HI State (76) · SC State (170) · DE State (62) · IA State (150)<br>
         <strong>Formats recognized:</strong> "AK Murkowski" · "CA11" · "NY14 AOC" · "MI-SH-74 Hope" · "OK-SS-1" · last name search
     </div>
 </div>
@@ -1036,11 +1036,22 @@ const scSenData = "1|Thomas C.|Alexander|803-212-6220|2|Rex F.|Rice|803-212-6116
 stateLeg['SC-SS'] = [];
 scSenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['SC-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
 
+
+// Delaware House of Representatives (41 districts)
+const deHouseData = "1|Nnamdi O.|Chukwuocha|302-744-4351|2|Stephanie T.|Bolden|302-744-4351|3|Josue|Ortega|302-744-4351|4|Jeff|Hilovsky|302-744-4079|5|Kendra L.|Johnson|302-744-4351|6|Debra J.|Heffernan|302-744-4351|7|Larry D.|Lambert Jr.|302-744-4351|8|Sherae'a|Moore|302-744-4351|9|Kevin S.|Hensley|302-744-4171|10|Melanie Ross|Levin|302-744-4351|11|Jeffrey N.|Spiegelman|302-744-4171|12|Krista|Griffith|302-744-4351|13|DeShanna U.|Neal|302-744-4351|14|Claire|Snyder-Hall|302-744-4351|15|Kamela T.|Smith|302-744-4351|16|Franklin D.|Cooke Jr.|302-744-4351|17|Melissa|Minor-Brown|302-744-4351|18|Sophie|Phillips|302-744-4351|19|Kimberly|Williams|302-744-4351|20|Alonna|Berry|302-744-4351|21|Frank|Burns|302-744-4351|22|Michael F.|Smith|302-744-4171|23|Mara|Gorman|302-744-4351|24|Edward S.|Osienski|302-744-4351|25|Cyndie|Romer|302-744-4351|26|Madinah|Wilson-Anton|302-744-4351|27|Eric|Morrison|302-744-4351|28|William J.|Carson Jr.|302-744-4351|29|William|Bush IV|302-744-4351|30|W. Shannon|Morris|302-744-4171|31|Sean M.|Lynn|302-744-4351|32|Kerri Evelyn|Harris|302-744-4351|33|Charles S.|Postles Jr.|302-744-4171|34|Lyndon D.|Yearick|302-744-4171|35|Jesse R.|Vanderwende|302-744-4171|36|Bryan W.|Shupe|302-744-4171|37|Valerie Jones|Giltner|302-744-4171|38|Ronald E.|Gray|302-744-4171|39|Daniel B.|Short|302-744-4171|40|Timothy D.|Dukes|302-744-4171|41|Richard G.|Collins|302-744-4171";
+stateLeg['DE-SH'] = [];
+deHouseData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['DE-SH'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
+
+// Delaware State Senate (21 districts)
+const deSenData = "1|Dan|Cruce|302-744-4147|2|Darius J.|Brown|302-744-4286|3|S. Elizabeth|Lockman|302-744-4168|4|Laura V.|Sturgeon|302-744-4135|5|Ray|Seigfried|302-744-4137|6|Russell|Huxtable|302-744-4136|7|Spiros|Mantzavinos|302-744-4133|8|David P.|Sokola|302-744-4139|9|John|Walsh|302-744-4163|10|Stephanie L.|Hansen|302-744-4138|11|Bryan|Townsend|302-744-4165|12|Nicole|Poore|302-744-4164|13|Marie|Pinkney|302-744-4167|14|Kyra L.|Hoffner|302-744-4310|15|Dave G.|Lawson|302-744-4237|16|Eric L.|Buckson|302-744-4169|17|W. Charles|Paradee III|302-744-4162|18|David L.|Wilson|302-744-4048|19|Brian G.|Pettyjohn|302-744-4117|20|Gerald W.|Hocker|302-744-4144|21|Bryant L.|Richardson|302-744-4298";
+stateLeg['DE-SS'] = [];
+deSenData.split('|').forEach((val, i, arr) => { if (i % 4 === 0) stateLeg['DE-SS'].push({d: arr[i], f: arr[i+1], l: arr[i+2], p: arr[i+3]}); });
+
 const stateSpeakers = {
     'MI-SH': '42', 'IL-SH': '7', 'NC-SH': '87', 'OK-SH': '29', 'OH-SH': '78',
     'GA-SH': '159', 'NY-SH': '83', 'NV-SH': '9', 'TX-SH': '83', 'CA-SH': '29',
     'WI-SH': '33', 'WA-SH': '27-2', 'NJ-SH': '19-1', 'PA-SH': '191', 'OR-SH': '14',
-    'MN-SH': '13A', 'VA-SH': '88', 'AZ-SH': '29-1', 'MD-SH': '21-3', 'IN-SH': '37', 'NM-SH': '11', 'AL-SH': '24', 'MO-SH': '30', 'CO-SH': '13', 'HI-SH': '15', 'SC-SH': '67', 'IA-SH': '57'
+    'MN-SH': '13A', 'VA-SH': '88', 'AZ-SH': '29-1', 'MD-SH': '21-3', 'IN-SH': '37', 'NM-SH': '11', 'AL-SH': '24', 'MO-SH': '30', 'CO-SH': '13', 'HI-SH': '15', 'SC-SH': '67', 'DE-SH': '17', 'IA-SH': '57'
 };
 
 // US House Speaker — {state, district}
@@ -2168,7 +2179,9 @@ function parseEmail() {
     // Strategy: detect the "targets section" of the email and only do aggressive name matching there.
     // Outside the targets section, only match if there's a strong signal (title like "Sen." or state abbreviation + name).
     const stateAbbrevs = new Set(Object.keys(senators));
-    const lines = text.split(/\n/).map(s => s.trim()).filter(Boolean);
+    const lines = text.split(/\n/).map(s => s.trim()).filter(Boolean)
+        // Strip email header lines — these contain subject/metadata, not target names
+        .filter(l => !/^(from:|to:|cc:|bcc:|date:|subject:|sent:|reply-to:|---------- forwarded)/i.test(l));
 
     // Detect target section
     let inTargetSection = false;
@@ -2254,8 +2267,10 @@ function parseEmail() {
     let persistentStateHint = null; // Carries across chunks from state headers like "Indiana House:"
     // If text contains multiple state names, disable globalStateHint (it would be ambiguous)
     const fullStateNames = {'alabama':'AL','alaska':'AK','arizona':'AZ','arkansas':'AR','california':'CA','colorado':'CO','connecticut':'CT','delaware':'DE','florida':'FL','georgia':'GA','hawaii':'HI','idaho':'ID','illinois':'IL','indiana':'IN','iowa':'IA','kansas':'KS','kentucky':'KY','louisiana':'LA','maine':'ME','maryland':'MD','massachusetts':'MA','michigan':'MI','minnesota':'MN','mississippi':'MS','missouri':'MO','montana':'MT','nebraska':'NE','nevada':'NV','new hampshire':'NH','new jersey':'NJ','new mexico':'NM','new york':'NY','north carolina':'NC','north dakota':'ND','south carolina':'SC','south dakota':'SD','ohio':'OH','oklahoma':'OK','oregon':'OR','pennsylvania':'PA','rhode island':'RI','tennessee':'TN','texas':'TX','utah':'UT','vermont':'VT','virginia':'VA','west virginia':'WV','washington':'WA','wisconsin':'WI','wyoming':'WY'};
+    // Sort by key length descending so "west virginia" matches before "virginia", etc.
+    const fullStateEntries = Object.entries(fullStateNames).sort((a, b) => b[0].length - a[0].length);
     const statesFoundInText = new Set();
-    for (const [name, abbr] of Object.entries(fullStateNames)) {
+    for (const [name, abbr] of fullStateEntries) {
         if (new RegExp('\\b' + name + '\\b', 'i').test(text)) statesFoundInText.add(abbr);
     }
     // Also check for 2-letter abbreviations followed by chamber words
@@ -2275,7 +2290,7 @@ function parseEmail() {
         if (stateMatch && stateAbbrevs.has(stateMatch[1])) stateHint = stateMatch[1];
         // Check for full state name in this chunk (e.g., "Indiana House:")
         if (!stateHint) {
-            for (const [name, abbr] of Object.entries(fullStateNames)) {
+            for (const [name, abbr] of fullStateEntries) {
                 if (new RegExp('\\b' + name + '\\b', 'i').test(chunk)) {
                     stateHint = abbr;
                     persistentStateHint = abbr; // Set persistent for subsequent chunks
@@ -2396,6 +2411,7 @@ function parseEmail() {
 
     // Finalize
     resolvedEntries = found;
+    window._resolvedForTest = found; // Expose for test harness
     // Clear chat messages from any previous parse
     const chatMsgs = document.getElementById('chatMessages');
     if (chatMsgs) chatMsgs.innerHTML = '';
